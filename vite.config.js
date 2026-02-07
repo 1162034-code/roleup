@@ -3,8 +3,9 @@ import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import liveReload from 'vite-plugin-live-reload';
-import { imageWebpPlugin } from './vite-plugins/image-webp-plugin.js';
-import { scssCompilePlugin } from './vite-plugins/scss-compile-plugin.js';
+import { imageWebpPlugin } from './vite/image-webp-plugin.js';
+import { scssCompilePlugin } from './vite/scss-compile-plugin.js';
+import { THEME_CONFIG } from './vite/config/theme.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -14,21 +15,21 @@ export default defineConfig({
     // SCSSコンパイルプラグイン
     scssCompilePlugin({
       srcDir: resolve(__dirname, 'src/scss'),
-      destDir: resolve(__dirname, 'dest/app/wp-content/themes/roleup_2026/assets'),
+      destDir: resolve(__dirname, THEME_CONFIG.assetsPath),
       watch: true,
       style: 'expanded',
       sourceMap: false,
     }),
     // PHPファイルの自動リロード
     liveReload([
-      'dest/app/wp-content/themes/roleup_2026/**/*.php',
-      'dest/app/wp-content/themes/roleup_2026/**/*.css',
-      'dest/app/wp-content/themes/roleup_2026/**/*.js',
+      `${THEME_CONFIG.themePath}/**/*.php`,
+      `${THEME_CONFIG.themePath}/**/*.css`,
+      `${THEME_CONFIG.themePath}/**/*.js`,
     ]),
     // 画像のWebP変換プラグイン
     imageWebpPlugin({
       srcDir: resolve(__dirname, 'src/img'),
-      destDir: resolve(__dirname, 'dest/app/wp-content/themes/roleup_2026/assets/img'),
+      destDir: resolve(__dirname, THEME_CONFIG.imgPath),
       watch: true,
     }),
   ],
@@ -40,7 +41,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dest/app/wp-content/themes/roleup_2026/assets',
+    outDir: THEME_CONFIG.assetsPath,
     emptyOutDir: false,
     rollupOptions: {
       input: {
