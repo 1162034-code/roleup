@@ -1,0 +1,108 @@
+@use "../foundation" as *;
+
+/* ========================================
+  footer（共通）
+======================================== */
+
+.l-footer {
+  $this: &;
+
+  color: #fff;
+  background: linear-gradient(to bottom, rgb(32 32 32 / 90%), #202020);
+
+  &__inner {
+    max-width: rem(1194);
+    padding: rem(80) rem(40);
+    margin-inline: auto;
+
+    @include mq(pc) {
+      display: flex;
+      gap: rem(80);
+    }
+  }
+
+  &__top {
+    flex-shrink: 0;
+
+    @include mq(tab, max) {
+      margin-bottom: rem(48);
+    }
+  }
+
+  &__logo {
+    margin-bottom: rem(24);
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  &__logo-text {
+    font-family: var(--ff-garamond);
+    font-size: rem(24);
+    font-weight: 400;
+    background: var(--gradient-logo);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__info {
+    font-family: var(--ff-mincho);
+    font-size: rem(12);
+    font-weight: 500;
+    line-height: 1.8;
+    color: #fff;
+  }
+
+  &__nav {
+    display: grid;
+    flex: 1;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(64);
+
+    @include mq(tab, max) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(32);
+    }
+  }
+
+  &__nav-heading {
+    margin-bottom: rem(16);
+    font-family: var(--ff-garamond);
+    font-size: rem(16);
+    font-weight: 400;
+    color: var(--color-gray-light);
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+
+    a {
+      font-family: var(--ff-mincho);
+      font-size: rem(14);
+      font-weight: 500;
+      color: #fff;
+      transition: opacity 0.3s;
+
+      @media (any-hover: hover) {
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    padding: rem(24) rem(40);
+    text-align: center;
+  }
+
+  &__copyright {
+    font-family: var(--ff-jost);
+    font-size: rem(10);
+    font-weight: 500;
+    color: var(--color-gray-light);
+  }
+}

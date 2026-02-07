@@ -1,0 +1,45 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  icon
+======================================== */
+%icon {
+  position: relative;
+  display: inline-block;
+  font-style: normal;
+  line-height: 1;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+.c-icon {
+  @extend %icon;
+}
+
+.c-icon-arrow-tri-r {
+  @extend %icon;
+
+  aspect-ratio: 1;
+  clip-path: polygon(0 100%, 0 0, 100% 50%);
+}
+
+.c-icon-arrow-r {
+  @extend %icon;
+
+  aspect-ratio: 1;
+  clip-path: polygon(25% 7%, 32% 0, 82% 50%, 32% 100%, 25% 93%, 68% 50%, 25% 7%);
+}
+
+// $arrow_colors: (
+// 	"white": "../img/common/icon/icon_arrow_white.svg",
+// );
+
+// @each $color, $image-url in $arrow_colors {
+// 	.c-icon-arrow-#{$color} {
+// 		@extend %icon;
+// 		background-image: url($image-url);
+// 		aspect-ratio: 1;
+// 	}
+// }

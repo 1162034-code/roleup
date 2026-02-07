@@ -1,0 +1,79 @@
+@use "../foundation" as *;
+
+/* ========================================
+  header（共通）
+======================================== */
+.l-header {
+  $this: &;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: z('header');
+  width: 100%;
+  height: var(--header-h);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(20);
+    height: inherit;
+    padding-inline: rem(40) rem(55);
+  }
+
+  &__logo {
+    flex-shrink: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      height: inherit;
+    }
+  }
+
+  &__logo-text {
+    font-family: var(--ff-garamond);
+    font-size: rem(24);
+    font-weight: 400;
+    background: var(--gradient-logo);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: rem(32);
+  }
+
+  &__contact {
+    flex-shrink: 0;
+  }
+
+  &__contact-btn {
+    display: inline-grid;
+    place-items: center;
+    padding: rem(5);
+    width: rem(117);
+    height: rem(33);
+    font-family: var(--ff-garamond);
+    font-size: rem(16);
+    color: #fff;
+    line-height: 1.2;
+    background-image: var(--gradient-gold);
+    background-size: 200% 100%;
+    background-position: left center;
+    border: 1px solid #111;
+    border-radius: 100vmax;
+    transition: all 0.3s;
+
+    @media (any-hover: hover) {
+      transition: background-position 0.3s;
+
+      &:hover {
+        background-position: right center;
+      }
+    }
+  }
+}

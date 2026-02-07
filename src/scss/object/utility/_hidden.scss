@@ -1,0 +1,22 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  hidden
+======================================== */
+.u-hidden-sp {
+	@include mq(tab, max) {
+		display: none;
+	}
+}
+
+.u-hidden-tab {
+	@include mq(pc, max) {
+		display: none;
+	}
+}
+
+.u-hidden-pc {
+	@include mq(pc) {
+		display: none;
+	}
+}

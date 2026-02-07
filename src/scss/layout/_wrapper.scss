@@ -1,0 +1,25 @@
+@use "../foundation" as *;
+
+/* ========================================
+  wrapper（共通）
+======================================== */
+.l-wrapper {
+  display: grid;
+  grid-template:
+    "header"
+    "main" 1fr
+    "footer";
+  min-height: 100vh;
+
+  >.l-header {
+    grid-area: header;
+  }
+
+  >.l-main {
+    grid-area: main;
+  }
+
+  >.l-footer {
+    grid-area: footer;
+  }
+}

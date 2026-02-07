@@ -1,0 +1,9 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  コンテンツ幅
+======================================== */
+.c-container {
+  width: min(100% - var(--container-space), var(--container-w));
+  margin-inline: auto;
+}

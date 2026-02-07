@@ -1,0 +1,21 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  margin
+======================================== */
+
+$margin-min: 1;
+$margin-max: 50;
+$step: 5;
+
+@for $i from $margin-min through calc($margin-max / $step) {
+  $value: $i * $step;
+
+  .u-mt-#{$value} {
+    margin-top: rem($value);
+  }
+
+  .u-mb-#{$value} {
+    margin-bottom: rem($value);
+  }
+}

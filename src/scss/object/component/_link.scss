@@ -1,0 +1,64 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  link
+======================================== */
+
+@keyframes line-ani {
+  0% {
+    transform: scale(1);
+    transform-origin: top right
+  }
+
+  50% {
+    transform: scaleX(0);
+    transform-origin: top right
+  }
+
+  51% {
+    transform: scaleX(0);
+    transform-origin: top left
+  }
+
+  100% {
+    transform: scale(1);
+    transform-origin: top left
+  }
+}
+
+.c-link-underline {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-color: currentcolor;
+  }
+
+  @media (hover:hover) {
+    &:hover {
+      &::after {
+        animation-name: line-ani;
+        animation-duration: .6s;
+        animation-timing-function: ease;
+      }
+    }
+  }
+}
+
+// .c-link-underline {
+// 	text-decoration: underline;
+// 	text-decoration-thickness: 1px;
+// 	text-underline-offset: 4px;
+
+// 	@media (hover:hover) {
+// 		&:hover {
+// 			text-decoration: none;
+// 		}
+// 	}
+// }

@@ -1,0 +1,21 @@
+.vscode/
+node_modules
+package-lock.json
+.DS_Store
+.node-versions
+
+# --------------------
+# src
+# --------------------
+/src/img/
+
+# --------------------
+# WordPress
+# --------------------
+/db/
+/dest/app/*
+!/dest/app/wp-content/
+/dest/app/wp-content/*
+!/dest/app/wp-content/themes/
+/dest/app/wp-content/themes/*
+!/dest/app/wp-content/themes/original/

@@ -1,0 +1,42 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  page-top
+======================================== */
+
+.p-page-top {
+  $this: &;
+
+  position: sticky;
+  bottom: rem(50);
+  z-index: 98;
+  height: 0;
+  padding-right: rem(20);
+  text-align: right;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &.is-show {
+    opacity: 1;
+  }
+
+  &__btn {
+    position: relative;
+    top: rem(-30);
+    padding: 0;
+    margin-bottom: rem(-30);
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 50%;
+
+    @media (any-hover:hover) {
+      transition: 0.3s;
+      transition-property: transform;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use ".." as *;
+@import 'https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Shippori+Mincho+B1:wght@400;500;600;700&family=Noto+Serif+JP&family=Sawarabi+Gothic&family=Jost:wght@400;500&family=Noto+Sans+JP:wght@100..900&display=swap';
+
+html {
+  scroll-behavior: smooth;
+
+  @include mq(tab, max) {
+    font-size: vw(16);
+  }
+}
+
+body {
+  min-width: 320px;
+  font-family: var(--ff-mincho);
+  line-height: 1.8;
+  color: var(--main-text-color);
+  background: var(--base-color);
+
+  @include mq(tab, max) {
+    font-size: rem(32);
+  }
+
+  &.is-nav-body-locked,
+  &.is-modal-body-locked {
+    padding-inline-end: var(--scrollbar-width, 0);
+    overflow: hidden;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid blue;
+}
+
+img,
+svg,
+iframe,
+video,
+picture {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  word-break: break-all;
+  text-decoration: none;
+}
+
+a[href^="tel:"] {
+  @include mq(tab) {
+    pointer-events: none;
+  }
+}

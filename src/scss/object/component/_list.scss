@@ -1,0 +1,32 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  list
+======================================== */
+
+.c-list-disc {
+  >li {
+    padding-left: 1em;
+    text-indent: -1em;
+
+    &::before {
+      content: "・";
+    }
+  }
+}
+
+.c-list-num {
+  list-style: none;
+  counter-reset: my-counter;
+
+  >li {
+    position: relative;
+    padding-left: 0.8em;
+    text-indent: -0.8em;
+
+    &::before {
+      content: counter(my-counter)".";
+      counter-increment: my-counter;
+    }
+  }
+}

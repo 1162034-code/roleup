@@ -1,0 +1,12 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  text-align
+======================================== */
+$text-align-values: left, center, right;
+
+@each $alignment in $text-align-values {
+  .u-ta-#{$alignment} {
+    text-align: #{$alignment};
+  }
+}

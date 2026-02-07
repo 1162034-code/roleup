@@ -1,0 +1,68 @@
+@use "sass:map";
+@use "sass:meta";
+
+// --------------------------
+// 記入例
+// 768px以下の場合に適用
+// @include mq(tab, max)
+
+// 769px以上の場合に適用
+// @include mq(tab)
+
+// 1025px以上の場合に適用
+// @include mq(pc)
+// --------------------------
+
+$breakpoints: (
+  'tab': 769px,
+  'pc': 1025px
+);
+
+@mixin mq($breakpoint, $type: min) {
+  @if meta.type-of($breakpoints) == "map" and meta.type-of(map.get($breakpoints, $breakpoint)) == "number" {
+    $size: map.get($breakpoints, $breakpoint);
+
+    @if $type == min {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    } @else if $type == max {
+      @media screen and (max-width: ($size - 1)) {
+        @content;
+      }
+    }
+  } @else if meta.type-of($breakpoint) == number {
+    @if $type == min {
+      @media screen and (min-width: $breakpoint) {
+        @content;
+      }
+    } @else if $type == max {
+      @media screen and (max-width: ($breakpoint - 1)) {
+        @content;
+      }
+    }
+  } @else {
+    @error "Invalid breakpoint: #{$breakpoint}.";
+  }
+}
+
+// rangePCSP mixin - applies styles between tablet and PC breakpoints
+@mixin rangePCSP {
+  @media screen and (min-width: map.get($breakpoints, 'tab')) and (max-width: (map.get($breakpoints, 'pc') - 1)) {
+    @content;
+  }
+}
+
+// ltSP mixin - applies styles less than tablet (SP only)
+@mixin ltSP {
+  @media screen and (max-width: (map.get($breakpoints, 'tab') - 1)) {
+    @content;
+  }
+}
+
+// gtTAB mixin - applies styles greater than or equal to tablet
+@mixin gtTAB {
+  @media screen and (min-width: map.get($breakpoints, 'tab')) {
+    @content;
+  }
+}

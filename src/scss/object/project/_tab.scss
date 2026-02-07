@@ -1,0 +1,46 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  tab
+======================================== */
+.p-tab {
+  width: 100%;
+
+  [role="tablist"] {
+    display: flex;
+  }
+
+  [role="tab"] {
+    padding: 0.5em 1em;
+    background-color: #ccc;
+    border: none;
+    border-radius: 8px 8px 0 0;
+
+    &[aria-selected="true"] {
+      color: #fff;
+      background-color: #000;
+    }
+
+    &[aria-selected="false"] {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  [role="tabpanel"] {
+    height: auto;
+    padding: 1em;
+    background-color: #999;
+    border-radius: 0 8px 8px;
+    opacity: 1;
+    transition: .5S opacity;
+
+    &:not(.is-visible) {
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+  }
+}

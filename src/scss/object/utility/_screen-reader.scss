@@ -1,0 +1,13 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  screen-reader
+======================================== */
+.u-screen-reader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  overflow-wrap: normal;
+  clip: rect(1px, 1px, 1px, 1px);
+}

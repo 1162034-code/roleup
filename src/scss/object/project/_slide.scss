@@ -1,0 +1,54 @@
+@use "../../foundation" as *;
+
+.p-slide {
+  .splide__slide {
+    display: grid;
+    place-items: center;
+    height: rem(500);
+    color: #fff;
+    background: #000;
+
+    &:nth-child(even) {
+      background: gray;
+    }
+  }
+
+  .splide__pagination {
+    display: flex;
+    flex-flow: row wrap;
+    gap: rem(10);
+    align-items: center;
+    padding: 0;
+    font-size: rem(10);
+    text-align: center;
+  }
+
+  .splide__pagination__page {
+    width: rem(12);
+    height: rem(12);
+    padding: 0;
+    margin: 0 0.2em;
+    vertical-align: top;
+    background: #000;
+    border-radius: 100em;
+
+    &[aria-selected="true"] {
+      background: blue;
+    }
+  }
+
+  .thumbnail {
+    width: 70px;
+    height: auto;
+    margin: 0 0.2rem;
+    overflow: hidden;
+    cursor: pointer;
+    list-style: none;
+    border: 2px solid #fff;
+  }
+
+  .thumbnail img {
+    width: 100%;
+    height: auto;
+  }
+}

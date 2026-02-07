@@ -1,0 +1,14 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  bg-color
+======================================== */
+$colors: (
+  'main': var(--main-color),
+);
+
+@each $color-name, $color-value in $colors {
+  .u-bg-color-#{$color-name} {
+    background-color: $color-value;
+  }
+}

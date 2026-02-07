@@ -1,0 +1,16 @@
+@use "foundation" as *;
+@use "foundation/global/setting";
+@use "object/project/editor" with ($emit-editor-css: false); // トップレベルの .p-editor 等は出力しない
+
+/* Base font for block editor: Gutenberg 側のラッパーにのみ適用 */
+body.block-editor-page .editor-styles-wrapper,
+.block-editor-page .editor-styles-wrapper,
+.editor-styles-wrapper {
+  font-family: var(--sans-serif);
+}
+
+body.block-editor-page .wp-block-post-content,
+.block-editor-page .wp-block-post-content,
+.wp-block-post-content {
+  @include editor.editor-content; // 本文パーツのミックスインのみ適用
+}

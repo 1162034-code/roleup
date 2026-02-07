@@ -1,0 +1,13 @@
+@use "../../foundation" as *;
+
+.c-txt-br-pc {
+  @include mq(pc) {
+    display: block;
+  }
+}
+
+.c-text-br-sp {
+  @include mq(pc, max) {
+    display: block;
+  }
+}

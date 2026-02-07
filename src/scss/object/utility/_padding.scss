@@ -1,0 +1,21 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  padding
+======================================== */
+
+$padding-min: 1;
+$padding-max: 50;
+$step: 5;
+
+@for $i from $padding-min through calc($padding-max / $step) {
+  $value: $i * $step;
+
+  .u-pt-#{$value} {
+    padding-top: rem($value);
+  }
+
+  .u-pb-#{$value} {
+    padding-bottom: rem($value);
+  }
+}

@@ -1,0 +1,63 @@
+@use "sass:math";
+@use "sass:map";
+
+// px to vw 変換
+@function vw($size, $viewport: 750) {
+  $rate: calc(100 / $viewport);
+
+  @return calc($rate * $size * 1vw);
+}
+
+// px to rem 変換
+@function rem($pixels, $fontSize: 16) {
+  @return math.div($pixels, $fontSize) * 1rem;
+}
+
+// px to em 変換
+@function em($pixels, $fontSize: 16) {
+  @return math.div($pixels / $fontSize) * 1em;
+}
+
+// ========================================
+// レスポンシブ clamp 関数
+// ----------------------------------------
+// 最小値と最大値を指定して、ビューポート幅に応じて
+// 自動的にスケールする値を生成
+// ----------------------------------------
+// E.g.
+// font-size: fluid-clamp(14, 18);
+// → 14px〜18pxの間でレスポンシブに変化
+// ========================================
+
+@function fluid-clamp($min-px, $max-px, $min-vw: 375, $max-vw: 1920) {
+  // rem値に変換
+  $min-rem: calc($min-px / 16);
+  $max-rem: calc($max-px / 16);
+
+  // ビューポート幅の差分
+  $vw-diff: $max-vw - $min-vw;
+
+  // 値の差分
+  $value-diff: $max-px - $min-px;
+
+  // 中間値の計算式
+  // (最小値 + (最大値 - 最小値) * ((100vw - 最小ビューポート) / (最大ビューポート - 最小ビューポート)))
+  $preferred: calc(
+    #{$min-rem}rem + #{$value-diff} * ((100vw - #{$min-vw}px) / #{$vw-diff})
+  );
+
+  @return clamp(#{$min-rem}rem, #{$preferred}, #{$max-rem}rem);
+}
+
+
+// z-indexの値を管理
+$z-indexes: (
+  'nav': 101,
+  'header': 100,
+  'footer': 90,
+  'main': 1
+);
+
+@function z($key) {
+  @return map.get($z-indexes, $key);
+}
