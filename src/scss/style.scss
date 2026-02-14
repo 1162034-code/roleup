@@ -30,7 +30,6 @@
 @use "object/component/link";
 @use "object/component/list";
 @use "object/component/note";
-@use "object/component/text-br";
 
 /* Project ------------ */
 @use "object/project/accordion";
@@ -40,6 +39,8 @@
 @use "object/project/page-top";
 @use "object/project/slide" as *;
 @use "object/project/tab";
+@use "object/project/ttl";
+@use "object/project/content" as *;
 
 /* Utility ------------ */
 @use "object/utility/bg-color";
@@ -49,3 +50,5 @@
 @use "object/utility/padding";
 @use "object/utility/screen-reader";
 @use "object/utility/text-align";
+@use "object/utility/text-transform";
+@use "object/utility/br";

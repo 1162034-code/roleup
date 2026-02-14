@@ -7,7 +7,8 @@
   --ff-noto-serif: "Noto Serif JP", serif;
   --ff-gothic: "Sawarabi Gothic", sans-serif;
   --ff-jost: "Jost", sans-serif;
-  --sans-serif: "Noto Sans JP", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
+  --sans-serif:
+    "Noto Sans JP", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
   --serif: "Noto Serif JP", serif;
 
   // カラー
@@ -23,10 +24,15 @@
   --color-footer-bg: #202020;
 
   // グラデーション
-  --gradient-gold: linear-gradient(120deg, #785E3E, #E7C8A3, #785E3E);
-  --gradient-text-light: linear-gradient(92.05deg, #111 0.27%, #e7c8a3 99.80%);
-  --gradient-text-dark: linear-gradient(92.05deg, rgb(237 228 213) 0.27%, rgb(143 127 108) 99.80%);
-  --gradient-logo: linear-gradient(58.38deg, rgb(109 73 35) 16.48%, rgb(197 145 65) 50.76%, rgb(224 181 106) 85.05%);
+  --gradient-gold: linear-gradient(120deg, #785e3e, #e7c8a3, #785e3e);
+  --gradient-text-light: linear-gradient(92deg, #111, #e7c8a3);
+  --gradient-text-dark: linear-gradient(92deg, #ede4d5, #8f7f6c);
+  --gradient-logo: linear-gradient(
+    58.38deg,
+    rgb(109 73 35) 16.48%,
+    rgb(197 145 65) 50.76%,
+    rgb(224 181 106) 85.05%
+  );
 
   // header 高さ設定
   --header-h: #{rem(110)};

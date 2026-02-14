@@ -1,0 +1,66 @@
+@use "foundation/" as *;
+
+// ------------------------------------------------------------
+// p-content-loop-img
+// ------------------------------------------------------------
+.p-content-loop-txt {
+  --loop-txt-width: 741px;
+  --loop-gap: 40px;
+
+  position: relative;
+  width: calc(100vw - var(--scrollbar-width));
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.p-content-loop-txt__items {
+  display: flex;
+  gap: 0 var(--loop-gap);
+  align-items: center;
+  transform: translateX(0);
+  animation: loop-left 180s linear infinite;
+  will-change: transform;
+
+  span {
+    display: block;
+    flex-shrink: 0;
+    width: var(--loop-txt-width);
+    height: auto;
+    font-family: var(--ff-garamond);
+    font-size: rem(180);
+    font-weight: 400;
+    color: #f4f4f4;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &.is-right {
+    transform: translateX(calc((var(--loop-txt-width) + var(--loop-gap)) * -7));
+    animation: loop-right 180s linear infinite;
+  }
+
+  & + .p-content-loop-img__items {
+    margin-top: var(--loop-gap);
+  }
+}
+
+@keyframes loop-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc((var(--loop-txt-width) + var(--loop-gap)) * -7));
+  }
+}
+
+@keyframes loop-right {
+  0% {
+    transform: translateX(calc((var(--loop-txt-width) + var(--loop-gap)) * -7));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

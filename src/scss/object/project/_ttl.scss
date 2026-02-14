@@ -1,0 +1,38 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  ttl
+======================================== */
+.p-ttl-a {
+  $ttl-a: &;
+
+  display: inline-grid;
+  gap: rem(8);
+  font-weight: 400;
+
+  &__en {
+    font-family: var(--ff-garamond);
+    font-size: rem(90);
+    line-height: 1;
+    background: var(--gradient-text-light);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__ja {
+    font-family: var(--ff-noto-serif);
+    font-size: rem(16);
+  }
+
+  &.-dark {
+    #{$ttl-a}__en {
+      background: var(--gradient-text-dark);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #{$ttl-a}__ja {
+      color: #fff;
+    }
+  }
+}

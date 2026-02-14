@@ -18,15 +18,19 @@ $theme-colors: (
       "hover-color": #fff,
     ),
   ),
+  "gradient-gold": (
+    "base": var(--gradient-gold),
+    "text-color": #fff,
+  ),
 ) !default;
 $btn-sizes: (
   "default": (
     "width": (
-      "pc": #{rem(240)},
+      "pc": #{rem(320)},
       "sp": #{rem(240)},
     ),
     "height": (
-      "pc": #{rem(60)},
+      "pc": #{rem(66)},
       "sp": #{rem(40)},
     ),
   ),
@@ -65,12 +69,15 @@ $btn-heights: () !default;
   height: var(--btn-h);
   padding-block: var(--btn-padding-y);
   padding-inline: var(--btn-padding-x);
+  font-family: var(--ff-mincho);
+  font-size: rem(18);
+  font-weight: 700;
   line-height: 1.1;
   color: var(--btn-color);
   text-decoration: none;
   cursor: pointer;
   user-select: none;
-  background-color: var(--btn-bg-color);
+  background: var(--btn-bg-color);
   border: var(--btn-border-width) solid var(--btn-border-color);
   border-radius: var(--btn-border-radius);
 }
@@ -82,13 +89,31 @@ $btn-heights: () !default;
 .c-btn {
   @extend %btn;
 
-  @media (any-hover: hover) {
-    transition: border 0.3s, background-color 0.3s, color 0.3s;
+  &:not([class*="gradient-"]) {
+    @media (any-hover: hover) {
+      transition:
+        border 0.3s,
+        background-color 0.3s,
+        color 0.3s;
 
-    &:hover {
-      --btn-border-color: var(--btn-hover-border-color);
-      --btn-bg-color: var(--btn-hover-bg);
-      --btn-color: var(--btn-hover-color);
+      &:hover {
+        --btn-border-color: var(--btn-hover-border-color);
+        --btn-bg-color: var(--btn-hover-bg);
+        --btn-color: var(--btn-hover-color);
+      }
+    }
+  }
+
+  &[class*="gradient-"] {
+    background-position: left center;
+    background-size: 200% 100%;
+
+    @media (any-hover: hover) {
+      transition: background-position 0.3s;
+
+      &:hover {
+        background-position: right center;
+      }
     }
   }
 
@@ -116,10 +141,12 @@ $btn-heights: () !default;
     --btn-bg-color: #{map.get($values, "base")};
     --btn-color: #{map.get($values, "text-color")};
 
-    @media (any-hover: hover) {
-      --btn-hover-border-color: #{map.get($values, "hover", "border")};
-      --btn-hover-bg: #{map.get($values, "hover", "bg")};
-      --btn-hover-color: #{map.get($values, "hover", "color")};
+    &:not([class*="gradient-"]) {
+      @media (any-hover: hover) {
+        --btn-hover-border-color: #{map.get($values, "hover", "border")};
+        --btn-hover-bg: #{map.get($values, "hover", "bg")};
+        --btn-hover-color: #{map.get($values, "hover", "color")};
+      }
     }
   }
 
@@ -130,10 +157,12 @@ $btn-heights: () !default;
     --btn-bg-color: transparent;
     --btn-color: #{map.get($values, "base")};
 
-    @media (any-hover: hover) {
-      --btn-hover-border-color: #{map.get($values, "outline", "hover-bg")};
-      --btn-hover-bg: #{map.get($values, "outline", "hover-bg")};
-      --btn-hover-color: #{map.get($values, "outline", "hover-color")};
+    &:not([class*="gradient-"]) {
+      @media (any-hover: hover) {
+        --btn-hover-border-color: #{map.get($values, "outline", "hover-bg")};
+        --btn-hover-bg: #{map.get($values, "outline", "hover-bg")};
+        --btn-hover-color: #{map.get($values, "outline", "hover-color")};
+      }
     }
   }
 }
@@ -166,6 +195,34 @@ $btn-heights: () !default;
 
     @include mq(tab) {
       --btn-h: #{map.get($height, "pc")};
+    }
+  }
+}
+
+.c-btn-arrow-right {
+  &::after {
+    position: absolute;
+    inset-block: 0;
+    right: rem(20);
+    width: rem(28);
+    height: rem(7);
+    margin-block: auto;
+    content: "";
+    background: url("../img/common/icon/arrow_solid_r.webp") no-repeat
+      center/contain;
+  }
+}
+
+.c-btn-view-more {
+  display: inline-block;
+  padding-bottom: rem(4);
+  font-family: var(--ff-mincho);
+  font-size: rem(18);
+  border-bottom: 1px solid var(--main-text-color);
+  transition: opacity 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
     }
   }
 }

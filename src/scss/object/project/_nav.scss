@@ -31,7 +31,7 @@
 
   &__btn {
     position: relative;
-    z-index: z('nav');
+    z-index: z("nav");
     display: grid;
     place-items: center;
     width: var(--header-h);
@@ -61,7 +61,7 @@
     height: 2px;
     margin-block: auto;
     background-color: #000;
-    transition: .3s ease-in;
+    transition: 0.3s ease-in;
     transition-property: opacity, transform;
 
     &.-line-01 {
@@ -74,7 +74,7 @@
   }
 
   &__menu {
-    @include mq(pc, max) {
+    @include mq(nav, max) {
       position: fixed;
       top: var(--header-h);
       right: -100%;
@@ -87,7 +87,10 @@
       overflow: auto;
       overscroll-behavior-y: contain;
       background: #fff;
-      transition: .3s ease-in;
+      transition: 0.3s ease-in;
+    }
+    @include mq(nav) {
+      padding-top: rem(16);
     }
   }
 
@@ -101,6 +104,194 @@
     @include mq(pc) {
       flex-direction: row;
       gap: rem(28);
+    }
+  }
+
+  &__link-hover,
+  &__link {
+    position: relative;
+    display: block;
+    padding-bottom: rem(16);
+
+    &::after {
+      position: absolute;
+      inset-inline: 0;
+      bottom: -1px;
+      z-index: 3;
+      width: rem(40);
+      height: 1px;
+      margin-inline: auto;
+      content: "";
+      background-color: #c78624;
+      opacity: 0;
+      transition: 0.3s opacity;
+    }
+
+    &:hover,
+    &:focus-within {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__link-hover {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-bottom: rem(16);
+
+    #{$this}__link {
+      padding-bottom: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &:hover,
+    &:focus-within {
+      @media (1111px <= width) {
+        #{$this}__dropdown {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__toggle-btn {
+    display: none;
+
+    @include mq(nav, max) {
+      position: relative;
+      display: block;
+      width: rem(47);
+      height: rem(54);
+      padding: 0;
+      background-color: #fff;
+      border: none;
+    }
+
+    &.is-open {
+      #{$this}__toggle-icon {
+        &::after {
+          @include mq(nav, max) {
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+  }
+
+  &__toggle-icon {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    @include mq(nav, max) {
+      position: absolute;
+      inset: 0;
+      width: 30%;
+      aspect-ratio: 1;
+      margin: auto;
+    }
+
+    &::before,
+    &::after {
+      @include mq(nav, max) {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 2px;
+        margin: auto;
+        content: "";
+        background-color: var(--primary-color);
+      }
+    }
+
+    &::after {
+      @include mq(nav, max) {
+        transform: rotate(-90deg);
+        transition: transform 0.3s;
+      }
+    }
+  }
+
+  &__dropdown {
+    color: #fff;
+
+    @include mq(nav) {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: 3;
+      visibility: hidden;
+      width: max-content;
+      padding: rem(20);
+      background-color: #000;
+      box-shadow: 3px 3px 6px rgb(0 0 0 / 20%);
+      opacity: 0;
+      transform: translateX(-50%);
+      transition: 0.3s;
+    }
+
+    @include mq(nav, max) {
+      grid-column: span 2;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  &__dropdown-list {
+    display: grid;
+    gap: rem(8);
+  }
+
+  &__dropdown-link {
+    position: relative;
+    display: block;
+    padding-right: rem(52);
+    font-size: rem(14);
+    font-weight: 500;
+
+    &::after {
+      position: absolute;
+      inset-block: 0;
+      right: rem(5);
+      display: block;
+      width: rem(28);
+      height: rem(7);
+      margin-block: auto;
+      content: "";
+      background: url("../img/common/icon/arrow_solid_r.webp") no-repeat
+        center / contain;
+    }
+
+    @media (any-hover: hover) {
+      span {
+        position: relative;
+        background: linear-gradient(#fff, #fff) 100% 100%/0 1px no-repeat;
+        transition: background-size 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+      }
+
+      &::after {
+        transition: right 0.3s;
+      }
+
+      &:hover {
+        span {
+          background-position: 0 100%;
+          background-size: 100% 1px;
+        }
+
+        &::after {
+          right: 0;
+        }
+      }
     }
   }
 }

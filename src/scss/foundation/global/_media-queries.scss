@@ -15,7 +15,8 @@
 
 $breakpoints: (
   'tab': 769px,
-  'pc': 1025px
+  'pc': 1025px,
+  'nav': 1200px
 );
 
 @mixin mq($breakpoint, $type: min) {

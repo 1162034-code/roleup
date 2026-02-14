@@ -3,8 +3,9 @@ import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import liveReload from 'vite-plugin-live-reload';
-import { imageWebpPlugin } from './vite/image-webp-plugin.js';
-import { scssCompilePlugin } from './vite/scss-compile-plugin.js';
+import { browserSyncPlugin } from './vite/plugins/browser-sync.js';
+import { imageWebpPlugin } from './vite/plugins/image-webp.js';
+import { scssCompilePlugin } from './vite/plugins/scss-compile.js';
 import { THEME_CONFIG } from './vite/config/theme.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -20,18 +21,20 @@ export default defineConfig({
       style: 'expanded',
       sourceMap: false,
     }),
-    // PHPファイルの自動リロード
-    liveReload([
-      `${THEME_CONFIG.themePath}/**/*.php`,
-      `${THEME_CONFIG.themePath}/**/*.css`,
-      `${THEME_CONFIG.themePath}/**/*.js`,
-    ]),
     // 画像のWebP変換プラグイン
     imageWebpPlugin({
       srcDir: resolve(__dirname, 'src/img'),
       destDir: resolve(__dirname, THEME_CONFIG.imgPath),
       watch: true,
     }),
+    // BrowserSync - WordPressのローカル環境を自動リロード
+    browserSyncPlugin(),
+    // PHPファイルの自動リロード（フォールバック）
+    liveReload([
+      `${THEME_CONFIG.themePath}/**/*.php`,
+      `${THEME_CONFIG.themePath}/**/*.css`,
+      `${THEME_CONFIG.themePath}/**/*.js`,
+    ]),
   ],
   css: {
     preprocessorOptions: {
@@ -68,12 +71,13 @@ export default defineConfig({
     },
     port: 5173,
     strictPort: false,
+    // WordPressのローカル環境をプロキシ
     proxy: {
-      // WordPressのプロキシ設定（必要に応じて調整）
-      '/wp-content': {
+      '/': {
         target: 'https://person-local-wp.dev',
         changeOrigin: true,
-        secure: false,
+        secure: false, // 自己署名証明書を許可
+        ws: true, // WebSocketもプロキシ
       },
     },
   },

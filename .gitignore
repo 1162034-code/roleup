@@ -18,4 +18,4 @@ package-lock.json
 /dest/app/wp-content/*
 !/dest/app/wp-content/themes/
 /dest/app/wp-content/themes/*
-!/dest/app/wp-content/themes/original/
+!/dest/app/wp-content/themes/roleup_2026/

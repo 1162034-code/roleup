@@ -1,12 +1,16 @@
 @use "../../foundation" as *;
 
-.c-txt-br-pc {
+.u-br {
+  display: block;
+}
+
+.u-br-pc {
   @include mq(pc) {
     display: block;
   }
 }
 
-.c-text-br-sp {
+.u-br-sp {
   @include mq(pc, max) {
     display: block;
   }
