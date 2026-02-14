@@ -4,6 +4,7 @@ import ModalManager from './class/modal.js';
 import Accordion from './class/accordion.js';
 import TabModule from './class/tab.js';
 import { pageTop } from './module/pageTop.js';
+import { initOpening } from './module/opening.js';
 
 (function () {
   // ------------------------------------------------------------------
@@ -75,6 +76,11 @@ import { pageTop } from './module/pageTop.js';
     animationDuration: 400, // アニメーション時間をカスタマイズ（ミリ秒）(default: 400)
     animationEasing: 'ease-in-out', // イージング関数をカスタマイズ(default: 'ease-in-out')
   });
+
+  // ------------------------------------------------------------------
+  // ** オープニング（フロントページのみ） **
+  // ------------------------------------------------------------------
+  initOpening();
 
   // ------------------------------------------------------------------
   // ** init **

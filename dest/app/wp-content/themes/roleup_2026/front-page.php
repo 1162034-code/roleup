@@ -1,4 +1,17 @@
 <?php get_header(); ?>
+  <!-- Opening -->
+  <div class="p-opening js-opening" aria-hidden="false">
+    <div class="p-opening__inner">
+      <div class="p-opening__logo">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.webp" width="180" height="41" alt="">
+      </div>
+      <p class="p-opening__ttl">Value, Structured.</p>
+      <p class="p-opening__sttl">意思決定に耐える、M&Aの設計と実行。</p>
+      <div class="p-opening__line" aria-hidden="true"></div>
+    </div>
+    <div class="p-opening__curtain" aria-hidden="true"></div>
+  </div>
+
   <!-- MV（メインビジュアル） -->
   <section class="home-mv">
     <div class="home-mv__bg"></div>
