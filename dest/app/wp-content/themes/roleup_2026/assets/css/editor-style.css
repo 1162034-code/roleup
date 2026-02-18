@@ -18,7 +18,13 @@
   --color-gray-light: #aeaeae;
   --color-gray-border: #414141;
   --color-footer-bg: #202020;
-  --gradient-gold: linear-gradient(120deg, #785e3e, #e7c8a3, #785e3e);
+  --gradient-gold: linear-gradient(
+    120deg,
+    #785e3e,
+    #e7c8a3 40%,
+    #e7c8a3 60%,
+    #785e3e
+  );
   --gradient-text-light: linear-gradient(92deg, #111, #e7c8a3);
   --gradient-text-dark: linear-gradient(92deg, #ede4d5, #8f7f6c);
   --gradient-logo: linear-gradient(

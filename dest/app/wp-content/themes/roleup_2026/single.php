@@ -21,4 +21,4 @@
       </div>
     </div>
   </div>
-<?php get_foote
+<?php get_footer();

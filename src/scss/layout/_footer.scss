@@ -8,25 +8,17 @@
   $this: &;
 
   color: #fff;
-  background: linear-gradient(to bottom, rgb(32 32 32 / 90%), #202020);
+  background: linear-gradient(to bottom, rgba(#202020, 0.9), #202020);
+  border-top: 1px solid #b4b4b4;
 
   &__inner {
-    max-width: rem(1194);
-    padding: rem(80) rem(40);
-    margin-inline: auto;
-
-    @include mq(pc) {
-      display: flex;
-      gap: rem(80);
-    }
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: rem(150) rem(20);
+    padding-block: rem(130) rem(60);
   }
 
-  &__top {
-    flex-shrink: 0;
-
-    @include mq(tab, max) {
-      margin-bottom: rem(48);
-    }
+  &__head {
   }
 
   &__logo {
@@ -37,71 +29,54 @@
     }
   }
 
-  &__logo-text {
-    font-family: var(--ff-garamond);
-    font-size: rem(24);
-    font-weight: 400;
-    background: var(--gradient-logo);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  &__info {
+  &__address {
     font-family: var(--ff-mincho);
     font-size: rem(12);
+    font-style: normal;
     font-weight: 500;
-    color: #fff;
   }
 
   &__nav {
-    display: grid;
-    flex: 1;
-    grid-template-columns: repeat(4, 1fr);
-    gap: rem(64);
-
-    @include mq(tab, max) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: rem(32);
-    }
+    display: flex;
+    gap: rem(60);
+    justify-content: flex-end;
+    padding-top: rem(12);
   }
 
   &__nav-heading {
-    margin-bottom: rem(16);
+    margin-bottom: rem(7);
     font-family: var(--ff-garamond);
-    font-size: rem(16);
-    font-weight: 400;
+    line-height: 1.4;
     color: var(--color-gray-light);
   }
 
   &__nav-list {
     display: flex;
     flex-direction: column;
-    gap: rem(12);
+    gap: rem(7);
 
-    a {
-      font-family: var(--ff-mincho);
-      font-size: rem(14);
-      font-weight: 500;
-      color: #fff;
-      transition: opacity 0.3s;
-
-      @media (any-hover: hover) {
-        &:hover {
-          opacity: 0.6;
-        }
-      }
+    &.-space-lg {
+      gap: rem(22);
     }
   }
 
-  &__bottom {
-    padding: rem(24) rem(40);
-    text-align: center;
+  &__nav-item {
+    a {
+      display: block;
+      font-family: var(--ff-mincho);
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: 1.4;
+    }
   }
 
   &__copyright {
-    font-family: var(--ff-jost);
-    font-size: rem(10);
-    font-weight: 500;
+    font-family: var(--ff-garamond);
     color: var(--color-gray-light);
+
+    small {
+      font-size: rem(10);
+      font-weight: 500;
+    }
   }
 }

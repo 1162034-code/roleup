@@ -4,6 +4,7 @@ $inc_files = [
   // テーマ初期設定
   'setup/theme-support',
   'setup/enqueue',
+  'setup/opening',
   // コンテンツ
   'content/post-types/news',
   // ヘルパー

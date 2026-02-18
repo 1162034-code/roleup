@@ -1,3 +1,5 @@
+import { debounce } from '../utils/debounce.js';
+
 /**
  * アコーディオン
  * @class Accordion
@@ -33,7 +35,7 @@ class Accordion {
   init() {
     this.setupEventListeners();
     this.handleResize();
-    window.addEventListener('resize', this.debounce(this.handleResize.bind(this), 250));
+    window.addEventListener('resize', debounce(this.handleResize.bind(this), 250));
   }
 
   setupEventListeners() {
@@ -143,18 +145,6 @@ class Accordion {
 
   isMobile() {
     return window.innerWidth <= this.options.breakpoint;
-  }
-
-  debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
   }
 }
 

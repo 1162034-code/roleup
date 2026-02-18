@@ -7,8 +7,3 @@
   width: min(100% - var(--container-space), var(--container-w));
   margin-inline: auto;
 }
-
-.c-container-sm {
-  --container-w: #{rem(1020)};
-  @extend .c-container;
-}

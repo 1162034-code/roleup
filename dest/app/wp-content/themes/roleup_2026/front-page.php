@@ -1,22 +1,42 @@
 <?php get_header(); ?>
   <!-- Opening -->
-  <div class="p-opening js-opening" aria-hidden="false">
+  <?php $opening_variant = apply_filters('roleup_opening_variant', 'a'); ?>
+  <div class="p-opening js-opening p-opening--variant-<?php echo esc_attr($opening_variant); ?>" data-opening-variant="<?php echo esc_attr($opening_variant); ?>" aria-hidden="false">
+    <!-- Variant B: GORA KADAN風 背景 -->
+    <div class="p-opening__bg" aria-hidden="true"></div>
+    <div class="p-opening__overlay" aria-hidden="true"></div>
     <div class="p-opening__inner">
       <div class="p-opening__logo">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.webp" width="180" height="41" alt="">
       </div>
-      <p class="p-opening__ttl">Value, Structured.</p>
+      <p class="p-opening__ttl"><span class="p-opening__ttl-inner">Value, Structured.</span></p>
       <p class="p-opening__sttl">意思決定に耐える、M&Aの設計と実行。</p>
       <div class="p-opening__line" aria-hidden="true"></div>
     </div>
     <div class="p-opening__curtain" aria-hidden="true"></div>
+    <!-- Variant B: 左右パネル -->
+    <div class="p-opening__split p-opening__split--left" aria-hidden="true"></div>
+    <div class="p-opening__split p-opening__split--right" aria-hidden="true"></div>
+    <!-- Variant C: 上下パネル -->
+    <div class="p-opening__split p-opening__split--top" aria-hidden="true"></div>
+    <div class="p-opening__split p-opening__split--bottom" aria-hidden="true"></div>
+    <div class="p-opening__gold-line" aria-hidden="true"></div>
+    <!-- Variant D: 円形マスク / NELU風下から上にカーテン -->
+    <div class="p-opening__circle-mask" aria-hidden="true"></div>
+    <div class="p-opening__bottom-curtain" aria-hidden="true"></div>
+    <!-- Variant E: 縦ブラインド -->
+    <div class="p-opening__shutter" aria-hidden="true">
+      <?php for ($i = 1; $i <= 8; $i++) : ?>
+      <div class="p-opening__shutter-strip" aria-hidden="true"></div>
+      <?php endfor; ?>
+    </div>
   </div>
 
   <!-- MV（メインビジュアル） -->
   <section class="home-mv">
     <div class="home-mv__bg"></div>
     <div class="home-mv__content">
-      <h1 class="home-mv__ttl">Value,Structured.</h1>
+      <h1 class="home-mv__ttl js-text-anime-up">Value,Structured.</h1>
       <p class="home-mv__sttl">意思決定に耐える、M&Aの設計と実行。</p>
     </div>
     <p class="home-mv__scroll">Scroll Down</p>
@@ -62,10 +82,10 @@
         </div>
       </div>
     </div>
-    <div class="home-about__inner c-container-sm">
+    <div class="home-about__inner c-container">
       <div class="home-about__heading">
         <h2 class="p-ttl-a">
-          <span class="p-ttl-a__en">About</span>
+          <span class="p-ttl-a__en js-text-anime-up">About</span>
           <span class="p-ttl-a__ja">私たちについて</span>
         </h2>
       </div>
@@ -87,7 +107,7 @@
     <div class="home-service__inner c-container">
       <div class="home-service__header">
         <h2 class="p-ttl-a -dark">
-          <span class="p-ttl-a__en">Service</span>
+          <span class="p-ttl-a__en js-text-anime-up">Service</span>
           <span class="p-ttl-a__ja">事業内容</span>
         </h2>
         <p class="home-service__desc">
@@ -153,7 +173,7 @@
     <div class="home-group__inner c-container">
       <div class="home-group__left">
         <h2 class="p-ttl-a">
-          <span class="p-ttl-a__en">Group</span>
+          <span class="p-ttl-a__en js-text-anime-up">Group</span>
           <span class="p-ttl-a__ja">グループ会社</span>
         </h2>
         <p class="home-group__txt">M&Aを、実行だけで終わらせない。<br><span class="u-txt-uppercase">Roleup</span>グループは、税務・監査の専門法人と連携し、検討から実行、統合後までの意思決定を支えます。</p>
@@ -184,7 +204,7 @@
     <div class="home-performance__inner c-container">
       <div class="home-performance__head">
         <h2 class="p-ttl-a -dark">
-          <span class="p-ttl-a__en">Performance</span>
+          <span class="p-ttl-a__en js-text-anime-up">Performance</span>
           <span class="p-ttl-a__ja">実績</span>
         </h2>
         <p class="home-performance__txt"><span class="u-br">第三者データで証明された、M&A支援実績</span>まずは状況整理からご相談ください</p>
@@ -223,7 +243,7 @@
     <div class="home-global__overlay"></div>
     <div class="home-global__inner c-container">
       <h2 class="p-ttl-a -dark">
-        <span class="p-ttl-a__en">Global Network</span>
+        <span class="p-ttl-a__en js-text-anime-up">Global Network</span>
         <span class="p-ttl-a__ja">グローバルネットワーク</span>
       </h2>
       <p class="home-global__txt">
@@ -242,7 +262,7 @@
     <div class="home-news__inner c-container">
       <div class="home-news__header">
         <h2 class="p-ttl-a">
-          <span class="p-ttl-a__en">News</span>
+          <span class="p-ttl-a__en js-text-anime-up">News</span>
           <span class="p-ttl-a__ja">お知らせ</span>
         </h2>
         <div class="home-news__btn-wrap">
@@ -276,8 +296,13 @@
   <section id="contact" class="home-touch">
     <a href="#" class="home-touch__link">
       <div class="home-touch__inner c-container">
-        <h2 class="home-touch__ttl">Get in Touch</h2>
-        <p class="home-touch__contact">Contact</p>
+        <h2 class="home-touch__ttl">
+          <span class="home-touch__ttl-txt">Get in Touch</span>
+          <span class="home-touch__ttl-txt-gradient" aria-hidden="true">Get in Touch</span>
+        </h2>
+        <p class="home-touch__contact">
+          <span class="home-touch__contact-txt">Contact</span>
+        </p>
       </div>
     </a>
   </section>

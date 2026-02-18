@@ -89,9 +89,6 @@
       background: #fff;
       transition: 0.3s ease-in;
     }
-    @include mq(nav) {
-      padding-top: rem(16);
-    }
   }
 
   &__list {
@@ -103,7 +100,7 @@
 
     @include mq(pc) {
       flex-direction: row;
-      gap: rem(28);
+      gap: rem(29);
     }
   }
 
@@ -112,6 +109,8 @@
     position: relative;
     display: block;
     padding-bottom: rem(16);
+    font-family: var(--ff-garamond);
+    font-weight: 300;
 
     &::after {
       position: absolute;
@@ -125,6 +124,10 @@
       background-color: #c78624;
       opacity: 0;
       transition: 0.3s opacity;
+
+      @include mq(nav) {
+        background-color: #3879db;
+      }
     }
 
     &:hover,

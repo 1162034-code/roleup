@@ -5,6 +5,8 @@ import Accordion from './class/accordion.js';
 import TabModule from './class/tab.js';
 import { pageTop } from './module/pageTop.js';
 import { initOpening } from './module/opening.js';
+import { initScrollbarWidth } from './module/scrollbarWidth.js';
+import { initResizeTransition } from './module/resizeTransition.js';
 
 (function () {
   // ------------------------------------------------------------------
@@ -15,30 +17,12 @@ import { initOpening } from './module/opening.js';
   // ------------------------------------------------------------------
   // ** モーダル、ハンバーガーメニュー開いた時にスクロールバー分の余白を作る **
   // ------------------------------------------------------------------
-  function observeScrollbarWidth() {
-    const outer = document.createElement('div');
-    const inner = document.createElement('div');
+  initScrollbarWidth();
 
-    outer.style.visibility = 'hidden';
-    outer.style.overflow = 'scroll';
-
-    document.body.appendChild(outer);
-    outer.appendChild(inner);
-    const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
-    outer.parentNode.removeChild(outer);
-    document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
-  }
-
-  function debounce(func, wait = 250) {
-    let timeout;
-    return function (...args) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-  }
-
-  window.addEventListener('load', observeScrollbarWidth);
-  window.addEventListener('resize', debounce(observeScrollbarWidth));
+  // ------------------------------------------------------------------
+  // ** リサイズ中は transition を無効化 **
+  // ------------------------------------------------------------------
+  initResizeTransition();
 
   // ------------------------------------------------------------------
   // ** スライド **

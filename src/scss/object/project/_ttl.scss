@@ -11,6 +11,7 @@
   font-weight: 400;
 
   &__en {
+    padding-bottom: rem(14);
     font-family: var(--ff-garamond);
     font-size: rem(90);
     line-height: 1;
@@ -20,6 +21,7 @@
   }
 
   &__ja {
+    margin-top: rem(-18);
     font-family: var(--ff-noto-serif);
     font-size: rem(16);
   }

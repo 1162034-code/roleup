@@ -1,0 +1,26 @@
+.js-text-anime-up {
+  display: inline-block;
+  visibility: hidden;
+  overflow: hidden;
+
+  .char {
+    display: inline-block;
+    transform: translateY(100%);
+  }
+
+  &.is-active {
+    .char {
+      animation: animeUpCharReveal 0.4s var(--ease-out-quart) forwards;
+    }
+  }
+}
+
+@keyframes animeUpCharReveal {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
