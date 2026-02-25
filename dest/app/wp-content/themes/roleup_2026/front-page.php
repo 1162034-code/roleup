@@ -258,7 +258,7 @@
     <div class="home-global__overlay js-parallax-bg" aria-hidden="true"></div>
     <div class="home-global__inner c-container">
       <h2 class="p-ttl-a -dark js-text-anime-up">
-        <span class="p-ttl-a__en js-text-anime-up__main" data-char-split>Global Network</span>
+        <span class="p-ttl-a__en js-text-anime-up__main" data-char-split>Global&nbsp;Network</span>
         <span class="p-ttl-a__ja js-text-anime-up__sub">
           <span class="js-text-anime-up__sub-txt">グローバルネットワーク</span>
         </span>

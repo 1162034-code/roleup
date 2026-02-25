@@ -13,8 +13,8 @@
   &__char {
     display: inline-block;
     opacity: 0;
-    transition: opacity 0.5s var(--ease-out-quart);
-    transition-delay: calc(var(--char-index, 0) * 0.05s);
+    transition: opacity 1.2s var(--ease-in-out-sine);
+    transition-delay: calc(var(--char-index, 0) * 0.04s);
   }
 
   &__sub {
@@ -24,8 +24,8 @@
   &__sub-txt {
     display: inline-block;
     transform: translateY(100%);
-    transition: transform 1s var(--ease-out-quart);
-    transition-delay: 1.2s;
+    transition: transform 1s var(--ease-in-out-sine);
+    transition-delay: 1s;
   }
 
   &.is-active {
