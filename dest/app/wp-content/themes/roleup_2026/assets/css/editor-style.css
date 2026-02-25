@@ -33,9 +33,17 @@
     rgb(197 145 65) 50.76%,
     rgb(224 181 106) 85.05%
   );
-  --header-h: 6.875rem;
+  --header-h: 6.125rem;
   --container-w: 74.625rem;
-  --container-space: 5rem;
+  --container-space: 2.375rem;
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --header-h: 6.875rem;
+    --container-space: 5rem;
+  }
+}
+:root {
   --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
   --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
   --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);

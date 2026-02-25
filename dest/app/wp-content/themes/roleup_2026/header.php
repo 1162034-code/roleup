@@ -1,3 +1,53 @@
+<?php
+/**
+ * ナビゲーションメニュー（header.php で一元管理）
+ *
+ * $nav_items: フル版・シンプル版の両方で使用
+ * $nav_mode: 'full' = ドロップダウン付き, 'simple' = リンクのみ
+ */
+$nav_home = home_url();
+$nav_archive = get_post_type_archive_link("news");
+$nav_items = [
+  [
+    'label'    => 'About',
+    'url'      => $nav_home . '/about/',
+    'children' => [
+      ['label' => 'About', 'url' => $nav_home . '/about/'],
+      ['label' => '代表挨拶', 'url' => $nav_home . '/about/#president'],
+      ['label' => '経営理念', 'url' => $nav_home . '/about/#philosophy'],
+      ['label' => '会社概要', 'url' => $nav_home . '/about/#company'],
+      ['label' => 'メンバー紹介', 'url' => $nav_home . '/about/#member'],
+    ],
+  ],
+  [
+    'label'    => 'Service',
+    'url'      => $nav_home . '/service/',
+    'children' => [
+      ['label' => 'Service', 'url' => $nav_home . '/service/'],
+      ['label' => 'M&Aアドバイザリー', 'url' => $nav_home . '/service/#ma'],
+      ['label' => 'デューデリジェンス', 'url' => $nav_home . '/service/#due'],
+      ['label' => '企業価値評価', 'url' => $nav_home . '/service/#valuation'],
+      ['label' => 'PMI支援', 'url' => $nav_home . '/service/#pmi'],
+      ['label' => '税務サービス', 'url' => $nav_home . '/service/#tax'],
+      ['label' => '監査サービス', 'url' => $nav_home . '/service/#audit'],
+    ],
+  ],
+  [
+    'label'    => 'Group Companies',
+    'url'      => $nav_home . '/group/',
+    'children' => [
+      ['label' => 'Group Companies', 'url' => $nav_home . '/group/'],
+      ['label' => 'Roleup税理士法人', 'url' => $nav_home . '/group/#tax', 'label_html' => '<span class="u-txt-uppercase">Roleup</span>税理士法人'],
+      ['label' => 'Roleup監査法人', 'url' => $nav_home . '/group/#audit', 'label_html' => '<span class="u-txt-uppercase">Roleup</span>監査法人'],
+    ],
+  ],
+  ['label' => 'Performance', 'url' => $nav_home . '/performance/'],
+  ['label' => 'News', 'url' => $nav_archive],
+  ['label' => 'Global Network', 'url' => $nav_home . '/global-network/'],
+  ['label' => 'Recruit', 'url' => $nav_home . '/recruit/'],
+];
+$nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リンクのみ
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -18,136 +68,67 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.webp" width="180" height="41" alt="ROLEUP">
           </a>
         </<?php echo $tag; ?>>
-        <div class="l-header__nav-wrap">
-          <div class="l-header__nav">
-            <div class="p-nav js-nav-wrap">
-              <button class="p-nav__btn js-nav-btn" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く">
-                <span class="p-nav__lines" aria-hidden="true">
-                  <span class="p-nav__line -line-01"></span>
-                  <span class="p-nav__line -line-02"></span>
-                  <span class="p-nav__line -line-03"></span>
-                </span>
-              </button>
-              <nav id="menu" class="p-nav__menu js-nav" aria-label="メニュー">
-                <ul class="p-nav__list">
+        <?php
+        $nav_mode = 'simple';
+        ?>
+        <div class="l-header__nav-simple">
+          <ul class="p-nav__list">
+            <?php foreach ($nav_items as $item) : ?>
+              <li class="p-nav__item">
+                <span class="p-nav__link"><?php echo esc_html($item['label']); ?></span>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+
+        <?php
+        $nav_mode = 'full';
+        ?>
+        <div class="l-header__nav">
+          <div class="p-nav js-nav-wrap">
+            <button class="p-nav__btn js-nav-btn" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く">
+              <span class="p-nav__lines" aria-hidden="true">
+                <span class="p-nav__line -line-01"></span>
+                <span class="p-nav__line -line-02"></span>
+              </span>
+            </button>
+            <nav id="menu" class="p-nav__menu js-nav" aria-label="メニュー">
+              <p class="p-nav__logo">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_02.webp" width="180" height="41" alt="Roleup">
+              </p>
+              <ul class="p-nav__list">
+                <?php foreach ($nav_items as $item) : ?>
+                  <?php $show_dropdown = !empty($item['children']) && $nav_mode === 'full'; ?>
                   <li class="p-nav__item">
-                    <div class="p-nav__link-hover" tabindex="0">
-                      <a href="<?php echo home_url(); ?>/about/" class="p-nav__link">About</a>
-                      <button type="button" class="p-nav__toggle-btn js-dropdown-btn">
-                        <span class="p-nav__toggle-icon"></span>
-                        <span class="js-dropdown-screen-reader u-screen-reader">クリックまたはタップでAboutメニューを開く</span>
-                      </button>
-                      <div class="p-nav__dropdown">
-                        <ul class="p-nav__dropdown-list">
-                          <li>
-                            <a href="<?php echo home_url(); ?>/about/#president" class="p-nav__dropdown-link">
-                              <span>代表挨拶</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="<?php echo home_url(); ?>/about/#philosophy" class="p-nav__dropdown-link">
-                              <span>経営理念</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="<?php echo home_url(); ?>/about/#company" class="p-nav__dropdown-link">
-                              <span>会社概要</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="<?php echo home_url(); ?>/about/#member" class="p-nav__dropdown-link">
-                              <span>メンバー紹介</span>
-                            </a>
-                          </li>
-                        </ul>
+                    <?php if ($show_dropdown) : ?>
+                      <div class="p-nav__link-hover" tabindex="0">
+                        <span class="p-nav__link"><?php echo esc_html($item['label']); ?></span>
+                        <button type="button" class="p-nav__toggle-btn js-dropdown-btn">
+                          <?php echo esc_html($item['label']); ?>
+                        </button>
+                        <div class="p-nav__dropdown">
+                          <ul class="p-nav__dropdown-list">
+                            <?php foreach ($item['children'] as $child) : ?>
+                              <li>
+                                <a href="<?php echo esc_url($child['url']); ?>" class="p-nav__dropdown-link">
+                                  <span><?php echo isset($child['label_html']) ? $child['label_html'] : esc_html($child['label']); ?></span>
+                                </a>
+                              </li>
+                            <?php endforeach; ?>
+                          </ul>
+                        </div>
                       </div>
-                    </div>
+                    <?php else : ?>
+                      <a href="<?php echo esc_url($item['url']); ?>" class="p-nav__link"><?php echo esc_html($item['label']); ?></a>
+                    <?php endif; ?>
                   </li>
-                  <li class="p-nav__item">
-                    <div class="p-nav__link-hover" tabindex="0">
-                      <a href="<?php echo home_url(); ?>/service/" class="p-nav__link">Service</a>
-                      <button type="button" class="p-nav__toggle-btn js-dropdown-btn">
-                        <span class="p-nav__toggle-icon"></span>
-                        <span class="js-dropdown-screen-reader u-screen-reader">クリックまたはタップでServiceメニューを開く</span>
-                      </button>
-                      <div class="p-nav__dropdown">
-                        <ul class="p-nav__dropdown-list">
-                          <li>
-                            <a href="<?php echo home_url(); ?>/service/#ma" class="p-nav__dropdown-link">
-                              <span>M&Aアドバイザリー</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="<?php echo home_url(); ?>/service/#due" class="p-nav__dropdown-link">
-                              <span>デューデリジェンス</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="<?php echo home_url(); ?>/service/#valuation" class="p-nav__dropdown-link">
-                              <span>企業価値評価</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="<?php echo home_url(); ?>/service/#pmi" class="p-nav__dropdown-link">
-                              <span>PMI支援</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="<?php echo home_url(); ?>/service/#tax" class="p-nav__dropdown-link">
-                              <span>税務サービス</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="<?php echo home_url(); ?>/service/#audit" class="p-nav__dropdown-link">
-                              <span>監査サービス</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="p-nav__item">
-                    <div class="p-nav__link-hover" tabindex="0">
-                      <a href="<?php echo home_url(); ?>/group-companies/" class="p-nav__link">Group Companies</a>
-                      <button type="button" class="p-nav__toggle-btn js-dropdown-btn">
-                        <span class="p-nav__toggle-icon"></span>
-                        <span class="js-dropdown-screen-reader u-screen-reader">クリックまたはタップでGroup Companiesメニューを開く</span>
-                      </button>
-                      <div class="p-nav__dropdown">
-                        <ul class="p-nav__dropdown-list">
-                          <li>
-                            <a href="<?php echo home_url(); ?>/service/#ma" class="p-nav__dropdown-link">
-                              <span><span class="u-txt-uppercase">Roleup</span>税理士法人</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="<?php echo home_url(); ?>/service/#due" class="p-nav__dropdown-link">
-                              <span><span class="u-txt-uppercase">Roleup</span>監査法人</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="p-nav__item">
-                    <a href="#performance" class="p-nav__link">Performance</a>
-                  </li>
-                  <li class="p-nav__item">
-                    <a href="#news" class="p-nav__link">News</a>
-                  </li>
-                  <li class="p-nav__item">
-                    <a href="#global" class="p-nav__link">Global Network</a>
-                  </li>
-                  <li class="p-nav__item">
-                    <a href="#" class="p-nav__link">Recruit</a>
-                  </li>
-                </ul>
-              </nav>
-              <div id="js-nav-overlay" class="overlay" aria-hidden="true"></div>
-            </div>
-          </div>
-          <div class="l-header__contact">
-            <a href="#contact" class="l-header__contact-btn">Contact</a>
+                <?php endforeach; ?>
+              </ul>
+              <div class="p-nav__contact">
+                <a href="<?php echo home_url(); ?>/contact/" class="p-nav__contact-btn">Contact</a>
+              </div>
+            </nav>
+            <div id="js-nav-overlay" class="p-nav__overlay" aria-hidden="true"></div>
           </div>
         </div>
       </div>

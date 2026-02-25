@@ -12,17 +12,60 @@
   border-top: 1px solid #b4b4b4;
 
   &__inner {
+    position: relative;
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: rem(150) rem(20);
-    padding-block: rem(130) rem(60);
+    grid-template-columns: 1fr;
+    padding-block: rem(80) rem(40);
+
+    @include mq(tab) {
+      grid-template-columns: auto 1fr;
+      gap: rem(150) rem(20);
+      padding-block: rem(128) rem(60);
+    }
+  }
+
+  &__page-top {
+    position: absolute;
+    right: 0;
+    bottom: rem(40);
+    width: rem(80);
+    height: rem(80);
+    background-color: #000;
+    border: none;
+    border-radius: 50%;
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: rem(9);
+      height: rem(21);
+      margin-block: auto;
+      margin-inline: auto;
+      content: "";
+      background: url("../img/common/icon/arrow_r.webp") no-repeat center /
+        contain;
+      transform: rotate(-90deg);
+    }
+
+    @media (hover: hover) {
+      transition: 0.5s;
+      transition-property: transform;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 
   &__head {
+    @include mq(tab) {
+      padding-top: rem(5);
+    }
   }
 
   &__logo {
-    margin-bottom: rem(24);
+    margin-bottom: rem(25);
 
     a {
       display: inline-block;
@@ -38,13 +81,38 @@
 
   &__nav {
     display: flex;
-    gap: rem(60);
-    justify-content: flex-end;
-    padding-top: rem(12);
+    flex-flow: column wrap;
+    gap: rem(32) rem(63);
+
+    @include mq(tab) {
+      flex-direction: row;
+      gap: rem(63);
+      justify-content: flex-end;
+    }
+
+    @include mq(tab, max) {
+      height: rem(430);
+      margin-top: rem(40);
+    }
+  }
+
+  &__nav-col {
+    &.-last {
+      margin-top: rem(14);
+
+      @include mq(tab) {
+        margin-top: 0;
+      }
+
+      a {
+        font-family: var(--ff-garamond);
+        font-size: rem(16);
+      }
+    }
   }
 
   &__nav-heading {
-    margin-bottom: rem(7);
+    margin-bottom: rem(10);
     font-family: var(--ff-garamond);
     line-height: 1.4;
     color: var(--color-gray-light);
@@ -53,10 +121,10 @@
   &__nav-list {
     display: flex;
     flex-direction: column;
-    gap: rem(7);
+    gap: rem(13);
 
     &.-space-lg {
-      gap: rem(22);
+      gap: rem(18);
     }
   }
 
@@ -67,12 +135,32 @@
       font-size: rem(14);
       font-weight: 500;
       line-height: 1.4;
+
+      @media (any-hover: hover) {
+        span {
+          position: relative;
+          background: linear-gradient(#fff, #fff) 100% 100%/0 1px no-repeat;
+          transition: background-size 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+
+        &:hover {
+          span {
+            background-position: 0 100%;
+            background-size: 100% 1px;
+          }
+        }
+      }
     }
   }
 
   &__copyright {
+    margin-top: rem(22);
     font-family: var(--ff-garamond);
     color: var(--color-gray-light);
+
+    @include mq(tab) {
+      margin-top: 0;
+    }
 
     small {
       font-size: rem(10);

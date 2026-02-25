@@ -49,13 +49,14 @@
   @return clamp(#{$min-rem}rem, #{$preferred}, #{$max-rem}rem);
 }
 
-
 // z-indexの値を管理
 $z-indexes: (
-  'nav': 101,
-  'header': 100,
-  'footer': 90,
-  'main': 1
+  "nav": 101,
+  "nav-btn": 102,
+  "nav-overlay": 100,
+  "header": 100,
+  "footer": 90,
+  "main": 1,
 );
 
 @function z($key) {

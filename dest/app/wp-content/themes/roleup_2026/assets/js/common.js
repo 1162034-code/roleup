@@ -7,6 +7,9 @@ import { pageTop } from './module/pageTop.js';
 import { initOpening } from './module/opening.js';
 import { initScrollbarWidth } from './module/scrollbarWidth.js';
 import { initResizeTransition } from './module/resizeTransition.js';
+import { addActive, toggleActive, removeActiveOnScrollUp } from './module/handleIntersection.js';
+import { initParallax } from './module/parallax.js';
+import { navDropdown } from './module/nav-dropdown.js';
 
 (function () {
   // ------------------------------------------------------------------
@@ -62,12 +65,28 @@ import { initResizeTransition } from './module/resizeTransition.js';
   });
 
   // ------------------------------------------------------------------
-  // ** オープニング（フロントページのみ） **
+  // ** オープニング（フロントページのみ）・スクロールアニメーション **
+  // ページ全体の読み込み完了後に実行
   // ------------------------------------------------------------------
-  initOpening();
+  const runOpeningAndAnimations = () => {
+    initOpening().then(() => {
+      addActive('.js-text-anime-up', '-5px', null, 'is-active');
+      addActive('.js-fade-in', '-25%', null, 'is-active');
+    });
+  };
+  if (document.readyState === 'complete') {
+    runOpeningAndAnimations();
+  } else {
+    window.addEventListener('load', runOpeningAndAnimations);
+  }
+  // ------------------------------------------------------------------
+  // ** パララックス（フロントページのみ） **
+  // ------------------------------------------------------------------
+  initParallax();
 
   // ------------------------------------------------------------------
   // ** init **
   // ------------------------------------------------------------------
   pageTop();
+  navDropdown();
 })();

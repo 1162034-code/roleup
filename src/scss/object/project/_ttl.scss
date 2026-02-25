@@ -7,23 +7,31 @@
   $ttl-a: &;
 
   display: inline-grid;
-  gap: rem(8);
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   &__en {
-    padding-bottom: rem(14);
+    padding-bottom: 0.15em;
     font-family: var(--ff-garamond);
-    font-size: rem(90);
+    font-size: rem(60);
     line-height: 1;
     background: var(--gradient-text-light);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @include mq(tab) {
+      font-size: rem(90);
+    }
   }
 
   &__ja {
-    margin-top: rem(-18);
     font-family: var(--ff-noto-serif);
-    font-size: rem(16);
+    font-size: rem(14);
+
+    @include mq(tab) {
+      font-size: rem(16);
+    }
   }
 
   &.-dark {

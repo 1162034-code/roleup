@@ -4,8 +4,13 @@
 // p-content-loop-img
 // ------------------------------------------------------------
 .p-content-loop-txt {
-  --loop-txt-width: 741px;
-  --loop-gap: 40px;
+  --loop-txt-width: 354px;
+  --loop-gap: 14px;
+
+  @include mq(tab) {
+    --loop-txt-width: 741px;
+    --loop-gap: 40px;
+  }
 
   position: relative;
   width: calc(100vw - var(--scrollbar-width));
@@ -27,12 +32,16 @@
     width: var(--loop-txt-width);
     height: auto;
     font-family: var(--ff-garamond);
-    font-size: rem(180);
+    font-size: rem(86);
     font-weight: 400;
     color: #f4f4f4;
     white-space: nowrap;
     pointer-events: none;
     user-select: none;
+
+    @include mq(tab) {
+      font-size: rem(180);
+    }
   }
 
   &.is-right {

@@ -2,6 +2,9 @@
 
     <footer class="l-footer">
       <div class="l-footer__inner c-container">
+        <button type="button" id="page-top" class="l-footer__page-top">
+          <span class="u-screen-reader">ページトップへ移動</span>
+        </button>
         <div class="l-footer__head">
           <div class="l-footer__logo">
             <a href="/">
@@ -20,16 +23,24 @@
             <p class="l-footer__nav-heading">About</p>
             <ul class="l-footer__nav-list">
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/about/#president">代表挨拶</a>
+                <a href="<?php echo home_url(); ?>/about/#president">
+                  <span>代表挨拶</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/about/#philosophy">経営理念</a>
+                <a href="<?php echo home_url(); ?>/about/#philosophy">
+                  <span>経営理念</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/about/#company">会社概要</a>
+                <a href="<?php echo home_url(); ?>/about/#company">
+                  <span>会社概要</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/about/#member">メンバー紹介</a>
+                <a href="<?php echo home_url(); ?>/about/#member">
+                  <span>メンバー紹介</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -37,22 +48,34 @@
             <p class="l-footer__nav-heading">Service</p>
             <ul class="l-footer__nav-list">
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/service/#ma">M&Aアドバイザリー</a>
+                <a href="<?php echo home_url(); ?>/service/#ma">
+                  <span>M&Aアドバイザリー</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/service/#duedeligence">デューデリジェンス</a>
+                <a href="<?php echo home_url(); ?>/service/#duedeligence">
+                  <span>デューデリジェンス</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/service/#valuation">企業価値評価</a>
+                <a href="<?php echo home_url(); ?>/service/#valuation">
+                  <span>企業価値評価</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/service/#pmi">PMI支援</a>
+                <a href="<?php echo home_url(); ?>/service/#pmi">
+                  <span>PMI支援</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/service/#tax">税務サービス</a>
+                <a href="<?php echo home_url(); ?>/service/#tax">
+                  <span>税務サービス</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/service/#audit">監査サービス</a>
+                <a href="<?php echo home_url(); ?>/service/#audit">
+                  <span>監査サービス</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -60,25 +83,37 @@
             <p class="l-footer__nav-heading">Group Companies</p>
             <ul class="l-footer__nav-list">
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/group/#tax"><span class="u-txt-uppercase">Roleup</span>税理士法人</a>
+                <a href="<?php echo home_url(); ?>/group/#tax">
+                  <span><span class="u-txt-uppercase">Roleup</span>税理士法人</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/group/#audit"><span class="u-txt-uppercase">Roleup</span>監査法人</a>
+                <a href="<?php echo home_url(); ?>/group/#audit">
+                  <span><span class="u-txt-uppercase">Roleup</span>監査法人</span>
+                </a>
               </li>
             </ul>
           </div>
-          <div class="l-footer__nav-col">
+          <div class="l-footer__nav-col -last">
             <ul class="l-footer__nav-list -space-lg">
-              <li class="l-footer__nav-item"><a href="<?php echo home_url(); ?>/performance/">Performance</a>
+              <li class="l-footer__nav-item"><a href="<?php echo home_url(); ?>/performance/">
+                <span>Performance</span>
+              </a>
             </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/news/">News</a>
+                <a href="<?php echo home_url(); ?>/news/">
+                  <span>News</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/global-network/">Global Network</a>
+                <a href="<?php echo home_url(); ?>/global-network/">
+                  <span>Global Network</span>
+                </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/recruit/">Recruit</a>
+                <a href="<?php echo home_url(); ?>/recruit/">
+                  <span>Recruit</span>
+                </a>
               </li>
             </ul>
           </div>

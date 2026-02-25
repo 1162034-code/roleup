@@ -27,11 +27,11 @@ $btn-sizes: (
   "default": (
     "width": (
       "pc": #{rem(320)},
-      "sp": #{rem(240)},
+      "sp": #{rem(335)},
     ),
     "height": (
       "pc": #{rem(66)},
-      "sp": #{rem(40)},
+      "sp": #{rem(58)},
     ),
   ),
 ) !default;
@@ -214,15 +214,41 @@ $btn-heights: () !default;
 }
 
 .c-btn-view-more {
+  position: relative;
   display: inline-block;
   padding-bottom: rem(4);
   font-family: var(--ff-mincho);
-  font-size: rem(18);
-  border-bottom: 1px solid var(--main-text-color);
-  transition: opacity 0.5s;
+
+  @include mq(tab) {
+    font-size: rem(18);
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background: var(--main-text-color);
+  }
 
   @media (any-hover: hover) {
+    transition: 0.5s;
+    transition-property: color;
+
+    &::after {
+      transition: 0.5s;
+      transition-property: transform, background-color;
+    }
+
     &:hover {
+      color: var(--color-gold-dark);
+
+      &::after {
+        background-color: var(--color-gold-dark);
+        transform: translateY(rem(2));
+      }
     }
   }
 }

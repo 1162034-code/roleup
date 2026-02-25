@@ -5,13 +5,13 @@
 }
 
 .u-br-pc {
-  @include mq(pc) {
+  @include mq(tab) {
     display: block;
   }
 }
 
 .u-br-sp {
-  @include mq(pc, max) {
+  @include mq(tab, max) {
     display: block;
   }
 }

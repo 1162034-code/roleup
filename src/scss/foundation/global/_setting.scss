@@ -1,4 +1,5 @@
 @use "./function" as *;
+@use "./media-queries" as *;
 
 :root {
   // フォント
@@ -41,11 +42,16 @@
   );
 
   // header 高さ設定
-  --header-h: #{rem(110)};
+  --header-h: #{rem(98)};
 
   // container 設定
   --container-w: #{rem(1194)};
-  --container-space: #{rem(80)};
+  --container-space: #{rem(38)};
+
+  @include mq(tab) {
+    --header-h: #{rem(110)};
+    --container-space: #{rem(80)};
+  }
 
   // ---------------------------------------------- //
   // easing

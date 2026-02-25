@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
   <!-- Opening -->
   <?php $opening_variant = apply_filters('roleup_opening_variant', 'a'); ?>
   <div class="p-opening js-opening p-opening--variant-<?php echo esc_attr($opening_variant); ?>" data-opening-variant="<?php echo esc_attr($opening_variant); ?>" aria-hidden="false">
@@ -36,10 +37,16 @@
   <section class="home-mv">
     <div class="home-mv__bg"></div>
     <div class="home-mv__content">
-      <h1 class="home-mv__ttl js-text-anime-up">Value,Structured.</h1>
-      <p class="home-mv__sttl">意思決定に耐える、M&Aの設計と実行。</p>
+      <div class="js-text-anime-up">
+        <h1 class="home-mv__ttl js-text-anime-up__main"><span class="u-br-sp">Value,</span>Structured.</h1>
+        <span class="home-mv__sttl js-text-anime-up__sub">
+          <span class="js-text-anime-up__sub-txt"><span class="u-br-sp">意思決定に耐える、</span>M&Aの設計と実行。</span>
+        </span>
+      </div>
     </div>
-    <p class="home-mv__scroll">Scroll Down</p>
+    <div class="home-mv__scroll-wrap">
+      <p class="home-mv__scroll">Scroll Down</p>
+    </div>
     <?php
     $latest_news = new WP_Query(array(
       'post_type'      => 'news',
@@ -55,7 +62,7 @@
       <h2 class="home-mv__news-label">News</h2>
       <a href="<?php the_permalink(); ?>" class="home-mv__news-content">
         <time class="home-mv__news-date" datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"><?php echo esc_html(get_the_date('Y.m.d')); ?></time>
-        <p class="home-mv__news-ttl"><?php the_title(); ?></p>
+        <p class="home-mv__news-ttl"><span><?php the_title(); ?></span></p>
       </a>
     </div>
     <?php
@@ -84,9 +91,11 @@
     </div>
     <div class="home-about__inner c-container">
       <div class="home-about__heading">
-        <h2 class="p-ttl-a">
-          <span class="p-ttl-a__en js-text-anime-up">About</span>
-          <span class="p-ttl-a__ja">私たちについて</span>
+        <h2 class="p-ttl-a js-text-anime-up">
+          <span class="p-ttl-a__en js-text-anime-up__main">About</span>
+          <span class="p-ttl-a__ja js-text-anime-up__sub">
+            <span class="js-text-anime-up__sub-txt">私たちについて</span>
+          </span>
         </h2>
       </div>
       <div class="home-about__body">
@@ -106,9 +115,11 @@
   <section id="service" class="home-service">
     <div class="home-service__inner c-container">
       <div class="home-service__header">
-        <h2 class="p-ttl-a -dark">
-          <span class="p-ttl-a__en js-text-anime-up">Service</span>
-          <span class="p-ttl-a__ja">事業内容</span>
+        <h2 class="p-ttl-a -dark js-text-anime-up">
+          <span class="p-ttl-a__en js-text-anime-up__main">Service</span>
+          <span class="p-ttl-a__ja js-text-anime-up__sub">
+            <span class="js-text-anime-up__sub-txt">事業内容</span>
+          </span>
         </h2>
         <p class="home-service__desc">
           中小企業の事業承継と成長を、資本と経営の両面から支援。<br>
@@ -117,15 +128,15 @@
       </div>
       <ul class="home-service__grid">
         <!-- Card 1 -->
-        <li class="home-service__card">
+        <li class="home-service__card js-fade-in">
           <a href="" class="home-service__card-link">
             <p class="home-service__card-category">M&A Advisory</p>
-            <h3 class="home-service__card-ttl">M&Aアドバイザリー</h3>
+            <h3 class="home-service__card-ttl"><span class="u-br-sp">M&A</span>アドバイザリー</h3>
             <p class="home-service__card-desc">M&A戦略の策定およびディール実行支援。</p>
           </a>
         </li>
         <!-- Card 2 -->
-        <li class="home-service__card">
+        <li class="home-service__card js-fade-in">
           <a href="" class="home-service__card-link">
             <p class="home-service__card-category">Due Diligence</p>
             <h3 class="home-service__card-ttl">デューデリジェンス</h3>
@@ -133,7 +144,7 @@
           </a>
         </li>
         <!-- Card 3 -->
-        <li class="home-service__card">
+        <li class="home-service__card js-fade-in">
           <a href="" class="home-service__card-link">
             <p class="home-service__card-category">Valuation</p>
             <h3 class="home-service__card-ttl">企業価値評価</h3>
@@ -141,7 +152,7 @@
           </a>
         </li>
         <!-- Card 4 -->
-        <li class="home-service__card">
+        <li class="home-service__card js-fade-in">
           <a href="" class="home-service__card-link">
             <p class="home-service__card-category">PMI Support</p>
             <h3 class="home-service__card-ttl">PMI支援</h3>
@@ -149,7 +160,7 @@
           </a>
         </li>
         <!-- Card 5 -->
-        <li class="home-service__card">
+        <li class="home-service__card js-fade-in">
           <a href="" class="home-service__card-link">
             <p class="home-service__card-category">Tax Service</p>
             <h3 class="home-service__card-ttl">税務サービス</h3>
@@ -157,7 +168,7 @@
           </a>
         </li>
         <!-- Card 6 -->
-        <li class="home-service__card">
+        <li class="home-service__card js-fade-in">
           <a href="" class="home-service__card-link">
             <p class="home-service__card-category">Audit Service</p>
             <h3 class="home-service__card-ttl">監査サービス</h3>
@@ -172,9 +183,11 @@
   <section id="group" class="home-group">
     <div class="home-group__inner c-container">
       <div class="home-group__left">
-        <h2 class="p-ttl-a">
-          <span class="p-ttl-a__en js-text-anime-up">Group</span>
-          <span class="p-ttl-a__ja">グループ会社</span>
+        <h2 class="p-ttl-a js-text-anime-up">
+          <span class="p-ttl-a__en js-text-anime-up__main">Group</span>
+          <span class="p-ttl-a__ja js-text-anime-up__sub">
+            <span class="js-text-anime-up__sub-txt">グループ会社</span>
+          </span>
         </h2>
         <p class="home-group__txt">M&Aを、実行だけで終わらせない。<br><span class="u-txt-uppercase">Roleup</span>グループは、税務・監査の専門法人と連携し、検討から実行、統合後までの意思決定を支えます。</p>
         <div class="home-group__btn-wrap">
@@ -182,13 +195,13 @@
         </div>
       </div>
       <ul class="home-group__cards">
-        <li class="home-group__card">
+        <li class="home-group__card js-fade-in">
           <a href="#" class="home-group__card-content -card1">
             <h3 class="home-group__card-ttl"><span class="u-txt-uppercase">Roleup</span>税理士法人</h3>
             <p class="home-group__card-desc">事業承継・M&Aに強い税務パートナー。<br>法人税務／相続税務から、税務DD・ストラクチャリング・PMI税務まで一気通貫で支援します。</p>
           </a>
         </li>
-        <li class="home-group__card">
+        <li class="home-group__card js-fade-in">
           <a href="#" class="home-group__card-content -card2">
             <h3 class="home-group__card-ttl"><span class="u-txt-uppercase">Roleup</span>監査法人</h3>
             <p class="home-group__card-desc">LBOローンで求められる会計監査を専門に担う監査法人。<br>PEファンド・プリンシパル投資家のニーズを踏まえ、M&Aにおける監査要件に対応します。</p>
@@ -200,21 +213,18 @@
 
   <!-- Performance -->
   <section id="performance" class="home-performance">
-    <div class="home-performance__overlay"></div>
+    <div class="home-performance__overlay js-parallax-bg" aria-hidden="true"></div>
     <div class="home-performance__inner c-container">
       <div class="home-performance__head">
-        <h2 class="p-ttl-a -dark">
-          <span class="p-ttl-a__en js-text-anime-up">Performance</span>
-          <span class="p-ttl-a__ja">実績</span>
+        <h2 class="p-ttl-a -dark js-text-anime-up">
+          <span class="p-ttl-a__en js-text-anime-up__main">Performance</span>
+          <span class="p-ttl-a__ja js-text-anime-up__sub">
+            <span class="js-text-anime-up__sub-txt">実績</span>
+          </span>
         </h2>
         <p class="home-performance__txt"><span class="u-br">第三者データで証明された、M&A支援実績</span>まずは状況整理からご相談ください</p>
-        <div class="home-performance__btn-wrap">
-          <a href="#contact" class="c-btn-gradient-gold c-btn-size-default c-btn-arrow-right">
-            <span class="c-btn__txt">お問い合わせはこちら</span>
-          </a>
-        </div>
       </div>
-      <div class="home-performance__body">
+      <div class="home-performance__body js-fade-in">
         <ul class="home-performance__stats">
           <li class="home-performance__stat">
             <h3 class="home-performance__stat-label">公表案件</h3>
@@ -235,16 +245,23 @@
         </ul>
         <p class="home-performance__note">※ ランキングはLSEG（London Stock Exchange Group）が公表する日本M&Aレビューに基づく</p>
       </div>
+      <div class="home-performance__btn-wrap">
+        <a href="#contact" class="c-btn-gradient-gold c-btn-size-default c-btn-arrow-right">
+          <span class="c-btn__txt">お問い合わせはこちら</span>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Global Network -->
   <section id="global" class="home-global">
-    <div class="home-global__overlay"></div>
+    <div class="home-global__overlay js-parallax-bg" aria-hidden="true"></div>
     <div class="home-global__inner c-container">
-      <h2 class="p-ttl-a -dark">
-        <span class="p-ttl-a__en js-text-anime-up">Global Network</span>
-        <span class="p-ttl-a__ja">グローバルネットワーク</span>
+      <h2 class="p-ttl-a -dark js-text-anime-up">
+        <span class="p-ttl-a__en js-text-anime-up__main">Global Network</span>
+        <span class="p-ttl-a__ja js-text-anime-up__sub">
+          <span class="js-text-anime-up__sub-txt">グローバルネットワーク</span>
+        </span>
       </h2>
       <p class="home-global__txt">
         <span class="u-br">世界90か国以上に広がる</span>
@@ -261,44 +278,50 @@
   <section id="news" class="home-news">
     <div class="home-news__inner c-container">
       <div class="home-news__header">
-        <h2 class="p-ttl-a">
-          <span class="p-ttl-a__en js-text-anime-up">News</span>
-          <span class="p-ttl-a__ja">お知らせ</span>
+        <h2 class="p-ttl-a js-text-anime-up">
+          <span class="p-ttl-a__en js-text-anime-up__main">News</span>
+          <span class="p-ttl-a__ja js-text-anime-up__sub">
+            <span class="js-text-anime-up__sub-txt">お知らせ</span>
+          </span>
         </h2>
         <div class="home-news__btn-wrap">
-          <a href="#" class="c-btn-view-more">Vew More</a>
+          <a href="<?php echo esc_url(get_post_type_archive_link("news")); ?>" class="c-btn-view-more">Vew More</a>
         </div>
       </div>
+      <?php
+      $news_query = new WP_Query([
+        'post_type'      => 'news',
+        'posts_per_page' => 3,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+        'post_status'    => 'publish',
+      ]);
+      ?>
       <ul class="home-news__list">
-        <li class="home-news__item">
-          <a href="#" class="home-news__link">
-            <time class="home-news__date" datetime="2026-01-01">2026.01.01</time>
-            <span class="home-news__ttl">ニュースタイトルがここに入ります。企業活動の最新情報。</span>
-          </a>
-        </li>
-        <li class="home-news__item">
-          <a href="#" class="home-news__link">
-            <time class="home-news__date" datetime="2025-12-15">2025.12.15</time>
-            <span class="home-news__ttl">ファイナンシャルアドバイザリーに関する、お知らせ掲示板です。</span>
-          </a>
-        </li>
-        <li class="home-news__item">
-          <a href="#" class="home-news__link">
-            <time class="home-news__date" datetime="2025-11-01">2025.11.01</time>
-            <span class="home-news__ttl">ファイナンシャルアドバイザリーに関するニュースタイトルです。企業の成長を支援する取り組みについて。</span>
-          </a>
-        </li>
+        <?php if ($news_query->have_posts()) : ?>
+          <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
+            <li class="home-news__item">
+              <a href="<?php the_permalink(); ?>" class="home-news__link">
+                <time class="home-news__date" datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"><?php echo esc_html(get_the_date('Y.m.d')); ?></time>
+                <span class="home-news__ttl"><?php echo esc_html(get_the_title()); ?></span>
+              </a>
+            </li>
+          <?php endwhile; ?>
+          <?php wp_reset_postdata(); ?>
+        <?php else : ?>
+          <li class="home-news__item">お知らせはありません。</li>
+        <?php endif; ?>
       </ul>
     </div>
   </section>
 
   <!-- Get in Touch -->
   <section id="contact" class="home-touch">
-    <a href="#" class="home-touch__link">
+    <a href="<?php echo esc_url(home_url()); ?>/contact/" class="home-touch__link">
       <div class="home-touch__inner c-container">
         <h2 class="home-touch__ttl">
-          <span class="home-touch__ttl-txt">Get in Touch</span>
-          <span class="home-touch__ttl-txt-gradient" aria-hidden="true">Get in Touch</span>
+          <span class="home-touch__ttl-txt">Get in <span>Touch</span></span>
+          <span class="home-touch__ttl-txt-gradient" aria-hidden="true">Get in <span>Touch</span></span>
         </h2>
         <p class="home-touch__contact">
           <span class="home-touch__contact-txt">Contact</span>

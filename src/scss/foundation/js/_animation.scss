@@ -1,26 +1,54 @@
-.js-text-anime-up {
-  display: inline-block;
-  visibility: hidden;
-  overflow: hidden;
+@use "../../foundation" as *;
 
-  .char {
+.js-text-anime-up {
+  $text-anime-up: &;
+
+  &__main {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s var(--ease-out-quart);
+
+    // transition-delay: 0.5s;
+
+    // &::before {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   content: "";
+    //   background-color: #e5e5e5;
+    //   transform-origin: right center;
+    //   transition: transform 0.5s var(--ease-out-quart);
+    //   transition-delay: 1s;
+    // }
+  }
+
+  &__sub {
+    overflow: hidden;
+  }
+
+  &__sub-txt {
     display: inline-block;
     transform: translateY(100%);
+    transition: transform 1s var(--ease-out-quart);
+    transition-delay: 1.2s;
   }
 
   &.is-active {
-    .char {
-      animation: animeUpCharReveal 0.4s var(--ease-out-quart) forwards;
+    #{$text-anime-up}__main {
+      transform: scaleX(1);
+
+      // &::before {
+      //   transform: scaleX(0);
+      // }
     }
-  }
-}
 
-@keyframes animeUpCharReveal {
-  0% {
-    transform: translateY(100%);
-  }
-
-  100% {
-    transform: translateY(0);
+    #{$text-anime-up}__sub-txt {
+      transform: translateY(0);
+    }
   }
 }
