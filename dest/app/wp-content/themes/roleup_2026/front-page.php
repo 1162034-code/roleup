@@ -3,7 +3,7 @@
   <!-- Opening -->
   <?php $opening_variant = apply_filters('roleup_opening_variant', 'a'); ?>
   <div class="p-opening js-opening p-opening--variant-<?php echo esc_attr($opening_variant); ?>" data-opening-variant="<?php echo esc_attr($opening_variant); ?>" aria-hidden="false">
-    <!-- Variant B: GORA KADAN風 背景 -->
+    <!-- Variant B: 背景 -->
     <div class="p-opening__bg" aria-hidden="true"></div>
     <div class="p-opening__overlay" aria-hidden="true"></div>
     <div class="p-opening__inner">
@@ -38,7 +38,7 @@
     <div class="home-mv__bg"></div>
     <div class="home-mv__content">
       <div class="js-text-anime-up">
-        <h1 class="home-mv__ttl js-text-anime-up__main"><span class="u-br-sp">Value,</span>Structured.</h1>
+        <h1 class="home-mv__ttl js-text-anime-up__main" data-char-split><span class="u-br-sp">Value,</span>Structured.</h1>
         <span class="home-mv__sttl js-text-anime-up__sub">
           <span class="js-text-anime-up__sub-txt"><span class="u-br-sp">意思決定に耐える、</span>M&Aの設計と実行。</span>
         </span>
@@ -92,7 +92,7 @@
     <div class="home-about__inner c-container">
       <div class="home-about__heading">
         <h2 class="p-ttl-a js-text-anime-up">
-          <span class="p-ttl-a__en js-text-anime-up__main">About</span>
+          <span class="p-ttl-a__en js-text-anime-up__main" data-char-split>About</span>
           <span class="p-ttl-a__ja js-text-anime-up__sub">
             <span class="js-text-anime-up__sub-txt">私たちについて</span>
           </span>
@@ -116,7 +116,7 @@
     <div class="home-service__inner c-container">
       <div class="home-service__header">
         <h2 class="p-ttl-a -dark js-text-anime-up">
-          <span class="p-ttl-a__en js-text-anime-up__main">Service</span>
+          <span class="p-ttl-a__en js-text-anime-up__main" data-char-split>Service</span>
           <span class="p-ttl-a__ja js-text-anime-up__sub">
             <span class="js-text-anime-up__sub-txt">事業内容</span>
           </span>
@@ -184,7 +184,7 @@
     <div class="home-group__inner c-container">
       <div class="home-group__left">
         <h2 class="p-ttl-a js-text-anime-up">
-          <span class="p-ttl-a__en js-text-anime-up__main">Group</span>
+          <span class="p-ttl-a__en js-text-anime-up__main" data-char-split>Group</span>
           <span class="p-ttl-a__ja js-text-anime-up__sub">
             <span class="js-text-anime-up__sub-txt">グループ会社</span>
           </span>
@@ -217,7 +217,7 @@
     <div class="home-performance__inner c-container">
       <div class="home-performance__head">
         <h2 class="p-ttl-a -dark js-text-anime-up">
-          <span class="p-ttl-a__en js-text-anime-up__main">Performance</span>
+          <span class="p-ttl-a__en js-text-anime-up__main" data-char-split>Performance</span>
           <span class="p-ttl-a__ja js-text-anime-up__sub">
             <span class="js-text-anime-up__sub-txt">実績</span>
           </span>
@@ -258,7 +258,7 @@
     <div class="home-global__overlay js-parallax-bg" aria-hidden="true"></div>
     <div class="home-global__inner c-container">
       <h2 class="p-ttl-a -dark js-text-anime-up">
-        <span class="p-ttl-a__en js-text-anime-up__main">Global Network</span>
+        <span class="p-ttl-a__en js-text-anime-up__main" data-char-split>Global Network</span>
         <span class="p-ttl-a__ja js-text-anime-up__sub">
           <span class="js-text-anime-up__sub-txt">グローバルネットワーク</span>
         </span>
@@ -279,7 +279,7 @@
     <div class="home-news__inner c-container">
       <div class="home-news__header">
         <h2 class="p-ttl-a js-text-anime-up">
-          <span class="p-ttl-a__en js-text-anime-up__main">News</span>
+          <span class="p-ttl-a__en js-text-anime-up__main" data-char-split>News</span>
           <span class="p-ttl-a__ja js-text-anime-up__sub">
             <span class="js-text-anime-up__sub-txt">お知らせ</span>
           </span>

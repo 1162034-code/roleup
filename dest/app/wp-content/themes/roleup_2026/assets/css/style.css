@@ -551,9 +551,13 @@ a {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.5s var(--ease-out-quart);
+}
+.js-text-anime-up__char {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out-quart);
+  transition-delay: calc(var(--char-index, 0) * 0.05s);
 }
 .js-text-anime-up__sub {
   overflow: hidden;
@@ -564,8 +568,8 @@ a {
   transition: transform 1s var(--ease-out-quart);
   transition-delay: 1.2s;
 }
-.js-text-anime-up.is-active .js-text-anime-up__main {
-  transform: scaleX(1);
+.js-text-anime-up.is-active .js-text-anime-up__char {
+  opacity: 1;
 }
 .js-text-anime-up.is-active .js-text-anime-up__sub-txt {
   transform: translateY(0);

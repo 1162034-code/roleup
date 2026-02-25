@@ -10,6 +10,7 @@ import { initResizeTransition } from './module/resizeTransition.js';
 import { addActive, toggleActive, removeActiveOnScrollUp } from './module/handleIntersection.js';
 import { initParallax } from './module/parallax.js';
 import { navDropdown } from './module/nav-dropdown.js';
+import { initTextAnimeChar } from './module/text-anime-char.js';
 
 (function () {
   // ------------------------------------------------------------------
@@ -63,6 +64,12 @@ import { navDropdown } from './module/nav-dropdown.js';
     animationDuration: 400, // アニメーション時間をカスタマイズ（ミリ秒）(default: 400)
     animationEasing: 'ease-in-out', // イージング関数をカスタマイズ(default: 'ease-in-out')
   });
+
+  // ------------------------------------------------------------------
+  // ** テキストアニメーション（文字単位） **
+  // DOM準備完了時に文字分割を実行
+  // ------------------------------------------------------------------
+  initTextAnimeChar();
 
   // ------------------------------------------------------------------
   // ** オープニング（フロントページのみ）・スクロールアニメーション **

@@ -1288,7 +1288,7 @@
     display: grid;
     padding-block: rem(90) rem(100);
 
-    @include mq(pc) {
+    @media (1120px <= width) {
       grid-template:
         "head .. body" 1fr
         ".... .. body" rem(40)
@@ -1302,7 +1302,7 @@
   }
 
   &__head {
-    @include mq(pc) {
+    @media (1120px <= width) {
       grid-area: head;
       width: min(100%, rem(500));
     }
@@ -1312,14 +1312,14 @@
     justify-self: center;
     width: 100%;
 
-    @include mq(pc) {
+    @media (1120px <= width) {
       grid-area: body;
       place-self: end end;
       width: min(100%, rem(534));
       margin-top: 0;
     }
 
-    @include mq(pc, max) {
+    @media (width <= 1119px) {
       margin-top: rem(40);
     }
 
@@ -1341,7 +1341,7 @@
   &__btn-wrap {
     margin-top: rem(40);
 
-    @include mq(pc) {
+    @media (1120px <= width) {
       grid-area: btn;
       margin-top: 0;
     }

@@ -7,24 +7,14 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    transform: scaleX(0);
     transform-origin: left center;
-    transition: transform 0.5s var(--ease-out-quart);
+  }
 
-    // transition-delay: 0.5s;
-
-    // &::before {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   content: "";
-    //   background-color: #e5e5e5;
-    //   transform-origin: right center;
-    //   transition: transform 0.5s var(--ease-out-quart);
-    //   transition-delay: 1s;
-    // }
+  &__char {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out-quart);
+    transition-delay: calc(var(--char-index, 0) * 0.05s);
   }
 
   &__sub {
@@ -39,12 +29,8 @@
   }
 
   &.is-active {
-    #{$text-anime-up}__main {
-      transform: scaleX(1);
-
-      // &::before {
-      //   transform: scaleX(0);
-      // }
+    #{$text-anime-up}__char {
+      opacity: 1;
     }
 
     #{$text-anime-up}__sub-txt {
