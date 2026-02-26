@@ -10,6 +10,11 @@ function custom_enqueue_styles() {
 	if ( is_front_page() ) {
 		wp_enqueue_style( 'style-home', get_theme_file_uri( 'assets/css/page/home/index.css' ), array('style-theme') );
 	}
+
+	// Aboutページ専用スタイル
+	if ( is_page( 'about' ) ) {
+		wp_enqueue_style( 'style-about', get_theme_file_uri( 'assets/css/page/about/index.css' ), array('style-theme') );
+	}
 }
 
 /* スクリプト読み込み */
