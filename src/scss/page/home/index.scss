@@ -743,6 +743,25 @@
     flex: 1;
     align-content: center;
     line-height: 1.5;
+
+    @media (any-hover: hover) {
+      .home-mv__news-ttl {
+        span {
+          position: relative;
+          background: linear-gradient(#fff, #fff) 100% 100%/0 1px no-repeat;
+          transition: background-size 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+      }
+
+      &:hover {
+        .home-mv__news-ttl {
+          span {
+            background-position: 0 100%;
+            background-size: 100% 1px;
+          }
+        }
+      }
+    }
   }
 
   &__news-date {
@@ -761,21 +780,6 @@
 
     @include mq(tab) {
       -webkit-line-clamp: 1;
-    }
-
-    @media (any-hover: hover) {
-      span {
-        position: relative;
-        background: linear-gradient(#fff, #fff) 100% 100%/0 1px no-repeat;
-        transition: background-size 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
-      }
-
-      &:hover {
-        span {
-          background-position: 0 100%;
-          background-size: 100% 1px;
-        }
-      }
     }
   }
 

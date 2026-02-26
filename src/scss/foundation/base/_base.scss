@@ -16,8 +16,8 @@ body {
 
   &.is-nav-body-locked,
   &.is-modal-body-locked {
-    padding-inline-end: var(--scrollbar-width, 0);
-    overflow: hidden;
+    // padding-inline-end: var(--scrollbar-width, 0);
+    // overflow: hidden;
   }
 
   &.is-resizing * {

@@ -1,36 +1,54 @@
 /**
  * オープニングアニメーション
- * フロントページ読み込み時に表示し、完了後にフェードアウト
+ * フォント・画像読み込み完了後にフェードインし、表示時間後にフェードアウト
  */
 const DURATION_MS = 1500; // 表示時間（ミリ秒）
 const FADE_OUT_DURATION_MS = 100; // フェードアウト時間（CSSと合わせる）
+
+/**
+ * フォントと画像の読み込み完了を待つ
+ */
+const waitForResources = () => {
+  const fontsReady = document.fonts?.ready
+    ? document.fonts.ready
+    : Promise.resolve();
+  const loadComplete =
+    document.readyState === 'complete'
+      ? Promise.resolve()
+      : new Promise((resolve) => window.addEventListener('load', resolve));
+
+  return Promise.all([fontsReady, loadComplete]);
+};
 
 const initOpening = () => {
   const opening = document.querySelector('.js-opening');
   if (!opening) return Promise.resolve();
 
-  return new Promise((resolve) => {
-    const hideOpening = () => {
-      opening.classList.add('is-hidden');
-      opening.setAttribute('aria-hidden', 'true');
+  return waitForResources().then(() => {
+    return new Promise((resolve) => {
+      // フォント・画像読み込み完了後、フェードイン開始
+      const html = document.documentElement;
+      if (html.classList.contains('is-loading')) {
+        html.classList.remove('is-loading');
+      }
 
-      // フェードアウト完了後に resolve
-      setTimeout(() => {
-        resolve();
-      }, FADE_OUT_DURATION_MS);
-    };
+      const hideOpening = () => {
+        opening.classList.add('is-hidden');
+        opening.setAttribute('aria-hidden', 'true');
 
-    // 指定時間後にフェードアウト
-    const timer = setTimeout(hideOpening, DURATION_MS);
+        setTimeout(() => resolve(), FADE_OUT_DURATION_MS);
+      };
 
-    // ユーザーがクリック/タッチした場合は即座にスキップ
-    const skipOpening = () => {
-      clearTimeout(timer);
-      hideOpening();
-    };
+      const timer = setTimeout(hideOpening, DURATION_MS);
 
-    opening.style.pointerEvents = 'auto'; // クリック可能にする
-    opening.addEventListener('click', skipOpening, { once: true });
+      const skipOpening = () => {
+        clearTimeout(timer);
+        hideOpening();
+      };
+
+      opening.style.pointerEvents = 'auto';
+      opening.addEventListener('click', skipOpening, { once: true });
+    });
   });
 };
 

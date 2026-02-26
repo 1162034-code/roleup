@@ -155,10 +155,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body.is-nav-body-locked, body.is-modal-body-locked {
-  padding-inline-end: var(--scrollbar-width, 0);
-  overflow: hidden;
-}
 body.is-resizing * {
   transition: none !important;
 }

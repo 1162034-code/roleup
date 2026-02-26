@@ -49,12 +49,23 @@ $nav_items = [
 $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リンクのみ
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?><?php echo is_front_page() ? ' class="has-opening is-loading"' : ''; ?>>
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width">
   <meta name="format-detection" content="telephone=no">
+  <?php if (is_front_page()) : ?>
+  <style>
+    /* オープニング用クリティカルCSS: フォント・画像読み込み完了まで非表示 */
+    html.has-opening.is-loading {
+      opacity: 0;
+    }
+    html.has-opening {
+      transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+  </style>
+  <?php endif; ?>
   <?php wp_head(); ?>
 </head>
 
