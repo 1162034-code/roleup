@@ -77,7 +77,7 @@ import { initTextAnimeChar } from './module/text-anime-char.js';
   // ------------------------------------------------------------------
   const runOpeningAndAnimations = () => {
     initOpening().then(() => {
-      addActive('.js-text-anime-up', '-5px', null, 'is-active');
+      addActive('.js-text-anime-up', '-10%', null, 'is-active');
       addActive('.js-fade-in', '-25%', null, 'is-active');
     });
   };

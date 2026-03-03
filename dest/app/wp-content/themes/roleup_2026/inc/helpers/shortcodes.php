@@ -19,3 +19,9 @@ if (! defined('ABSPATH')) exit;
     return esc_url(home_url());
   }
   add_shortcode('home_url', 'my_custom_home_url_shortcode');
+
+  // パンくずリストを出力するショートコード
+  function my_custom_breadcrumb_shortcode() {
+    return get_template_part('template-parts/breadcrumb');
+  }
+  add_shortcode('breadcrumb', 'my_custom_breadcrumb_shortcode');

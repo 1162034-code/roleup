@@ -20,23 +20,27 @@ $home_url = esc_url(home_url('/'));
 $home_title = esc_html(get_bloginfo('name'));
 
 // Helper function to safely get post type object
-function get_safe_post_type_object($post_type)
-{
-  $obj = get_post_type_object($post_type);
-  return $obj ?: (object)['label' => ucfirst($post_type), 'has_archive' => false];
+if (!function_exists('get_safe_post_type_object')) {
+  function get_safe_post_type_object($post_type)
+  {
+    $obj = get_post_type_object($post_type);
+    return $obj ?: (object)['label' => ucfirst($post_type), 'has_archive' => false];
+  }
 }
 
 // Helper function to safely get taxonomy object
-function get_safe_taxonomy($taxonomy)
-{
-  $obj = get_taxonomy($taxonomy);
-  return $obj ?: (object)['object_type' => [], 'label' => ucfirst($taxonomy)];
+if (!function_exists('get_safe_taxonomy')) {
+  function get_safe_taxonomy($taxonomy)
+  {
+    $obj = get_taxonomy($taxonomy);
+    return $obj ?: (object)['object_type' => [], 'label' => ucfirst($taxonomy)];
+  }
 }
 
 // Add home item
 $breadcrumb_items[] = [
   'url' => $home_url,
-  'title' => 'HOME',
+  'title' => 'ホーム',
   'position' => $position++,
   'current' => false,
   'class' => 'c-txt-uppercase'
@@ -338,12 +342,12 @@ if (is_home()) {
 if (!empty($breadcrumb_items)):
 ?>
   <nav class="p-breadcrumb" aria-label="パンくず">
-		<ol class="c-container--full">
+		<ol class="p-breadcrumb__list">
 			<?php foreach ($breadcrumb_items as $item): ?>
 				<?php
 				$li_attr = $item['current'] ? ' aria-current="page"' : '';
 				?>
-				<li<?php echo $li_attr; ?>>
+				<li class="p-breadcrumb__item"<?php echo $li_attr; ?>>
 					<?php if (!empty($item['url']) && !$item['current']): ?>
 						<?php
 						$link_class = isset($item['class']) ? $item['class'] : '';

@@ -172,13 +172,13 @@
     inset: -10%;
     z-index: 0;
     display: block;
-    background: url("../../../img/home/mv_bg_sp.webp") no-repeat center center /
-      cover;
-    animation: openingKenBurns 3.5s var(--ease-out-sine) 0s forwards;
+    background: url("../../../img/common/fixed_bg_sp.webp") no-repeat center
+      center / cover;
+    animation: openingKenBurns 2.5s var(--ease-out-sine) 0s forwards;
 
     @include mq(tab) {
-      background: url("../../../img/home/mv_bg.webp") no-repeat center center /
-        cover;
+      background: url("../../../img/common/fixed_bg.webp") no-repeat center
+        center / cover;
     }
   }
 
@@ -193,7 +193,7 @@
       rgb(0 0 0 / 50%) 50%,
       rgb(0 0 0 / 70%) 100%
     );
-    animation: openingOverlayFade 3.5s var(--ease-out-sine) 0.5s forwards;
+    animation: openingOverlayFade 2.5s var(--ease-out-sine) 0.5s forwards;
   }
 
   .p-opening__inner {
@@ -376,8 +376,8 @@
     inset: -5%;
     z-index: 0;
     display: block;
-    background: url("../../../img/home/mv_bg.webp") no-repeat center center /
-      cover;
+    background: url("../../../img/common/fixed_bg.webp") no-repeat center
+      center / cover;
   }
 
   /* 下部グラデーションオーバーレイ */
@@ -557,22 +557,6 @@
 
   @include mq(tab) {
     height: rem(832);
-  }
-
-  &__bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: url("../../../img/home/mv_bg_sp.webp") no-repeat center top /
-      100%;
-
-    @include mq(tab) {
-      background: url("../../../img/home/mv_bg.webp") no-repeat center top /
-        100%;
-    }
   }
 
   &__content {
@@ -1620,156 +1604,5 @@
     @include mq(pc) {
       line-height: 1.6;
     }
-  }
-}
-
-/* ========================================
-  Get in Touch
-======================================== */
-.home-touch {
-  &__link {
-    display: block;
-    min-height: rem(168);
-    background-color: rgba(#202020, 0.9);
-    border-top: 1px solid transparent;
-
-    @include mq(tab) {
-      min-height: rem(300);
-    }
-
-    @media (hover: hover) {
-      transition: 0.5s;
-      transition-property: background-color, border-color;
-
-      .home-touch__ttl-txt-gradient {
-        transition: 0.5s;
-        transition-property: color;
-      }
-
-      .home-touch__contact {
-        &::before {
-          transition: 0.5s;
-          transition-property: background, border-color, transform;
-        }
-
-        &::after {
-          opacity: 0;
-          transition: 0.5s;
-          transition-property: opacity, transform;
-        }
-      }
-
-      &:hover {
-        background-color: #f2f2f2;
-        border-color: #b4b4b4;
-
-        .home-touch__ttl-txt-gradient {
-          opacity: 1;
-        }
-
-        .home-touch__contact {
-          &::before {
-            border-color: #f2f2f2;
-            transform: scale(0.86);
-          }
-
-          &::after {
-            opacity: 1;
-            transform: scale(0.86);
-          }
-        }
-      }
-    }
-  }
-
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: inherit;
-    padding-block: rem(47);
-
-    @include mq(tab) {
-      padding-block: rem(75);
-    }
-  }
-
-  &__ttl {
-    position: relative;
-    font-family: var(--ff-garamond);
-    font-size: rem(40);
-    font-weight: 400;
-    line-height: 1.1;
-    color: #e6e6e6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    @include mq(tab) {
-      font-size: rem(90);
-    }
-  }
-
-  &__ttl-txt,
-  &__ttl-txt-gradient {
-    > span {
-      margin-left: -0.1em;
-    }
-  }
-
-  &__ttl-txt-gradient {
-    position: absolute;
-    inset: 0;
-    content: "";
-    background: var(--gradient-text-light);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0;
-  }
-
-  &__contact {
-    position: relative;
-    display: grid;
-    place-content: center;
-    width: rem(74);
-    height: rem(74);
-    font-family: var(--ff-garamond);
-    color: #fff;
-
-    @include mq(tab) {
-      width: rem(150);
-      height: rem(150);
-      font-size: rem(28);
-    }
-
-    &::before {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      content: "";
-      background: transparent;
-      border: 1px solid #777;
-      border-radius: 50%;
-      transition: 0.5s;
-      transition-property: border-color, transform;
-    }
-
-    &::after {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      content: "";
-      background: linear-gradient(to right, #785e3e, #e7c8a3);
-      border-radius: 50%;
-      opacity: 1;
-      transition: 0.5s;
-      transition-property: opacity, transform;
-    }
-  }
-
-  &__contact-txt {
-    position: relative;
-    z-index: 2;
   }
 }

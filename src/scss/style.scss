@@ -47,6 +47,11 @@
 @use "object/project/tab";
 @use "object/project/ttl";
 @use "object/project/content" as *;
+@use "object/project/contact";
+@use "object/project/page";
+@use "object/project/fixed-bg";
+@use "object/project/breadcrumb";
+@use "object/project/table";
 
 /* Utility ------------ */
 @use "object/utility/bg-color";

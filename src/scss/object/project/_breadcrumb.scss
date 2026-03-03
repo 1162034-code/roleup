@@ -1,0 +1,46 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  breadcrumb
+======================================== */
+.p-breadcrumb {
+  font-family: var(--ff-gothic);
+  font-size: rem(12);
+  font-weight: 500;
+
+  @include mq(tab) {
+    font-size: rem(14);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10);
+    justify-content: flex-end;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      &::after {
+        margin-left: rem(5);
+        content: "/";
+      }
+    }
+
+    a {
+      color: #af7026;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 8px;
+
+      @media (hover: hover) {
+        transition: 0.5s;
+        transition-property: text-underline-offset;
+
+        &:hover {
+          text-underline-offset: 12px;
+        }
+      }
+    }
+  }
+}

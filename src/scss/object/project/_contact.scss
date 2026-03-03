@@ -1,0 +1,154 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  contact
+======================================== */
+.p-contact {
+  $this: &;
+
+  &__link {
+    display: block;
+    min-height: rem(168);
+    background-color: rgba(#202020, 0.9);
+    border-top: 1px solid transparent;
+
+    @include mq(tab) {
+      min-height: rem(300);
+    }
+
+    @media (hover: hover) {
+      transition: 0.5s;
+      transition-property: background-color, border-color;
+
+      #{$this}__ttl-txt-gradient {
+        transition: 0.5s;
+        transition-property: color;
+      }
+
+      #{$this}__contact {
+        &::before {
+          transition: 0.5s;
+          transition-property: background, border-color, transform;
+        }
+
+        &::after {
+          opacity: 0;
+          transition: 0.5s;
+          transition-property: opacity, transform;
+        }
+      }
+
+      &:hover {
+        background-color: #f2f2f2;
+        border-color: #b4b4b4;
+
+        #{$this}__ttl-txt-gradient {
+          opacity: 1;
+        }
+
+        #{$this}__contact {
+          &::before {
+            border-color: #f2f2f2;
+            transform: scale(0.86);
+          }
+
+          &::after {
+            opacity: 1;
+            transform: scale(0.86);
+          }
+        }
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: inherit;
+    padding-block: rem(47);
+
+    @include mq(tab) {
+      padding-block: rem(75);
+    }
+  }
+
+  &__ttl {
+    position: relative;
+    font-family: var(--ff-garamond);
+    font-size: rem(40);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #e6e6e6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @include mq(tab) {
+      font-size: rem(90);
+    }
+  }
+
+  &__ttl-txt,
+  &__ttl-txt-gradient {
+    > span {
+      margin-left: -0.1em;
+    }
+  }
+
+  &__ttl-txt-gradient {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: var(--gradient-text-light);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+  }
+
+  &__contact {
+    position: relative;
+    display: grid;
+    place-content: center;
+    width: rem(74);
+    height: rem(74);
+    font-family: var(--ff-garamond);
+    color: #fff;
+
+    @include mq(tab) {
+      width: rem(150);
+      height: rem(150);
+      font-size: rem(28);
+    }
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: transparent;
+      border: 1px solid #777;
+      border-radius: 50%;
+      transition: 0.5s;
+      transition-property: border-color, transform;
+    }
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: linear-gradient(to right, #785e3e, #e7c8a3);
+      border-radius: 50%;
+      opacity: 1;
+      transition: 0.5s;
+      transition-property: opacity, transform;
+    }
+  }
+
+  &__contact-txt {
+    position: relative;
+    z-index: 2;
+  }
+}

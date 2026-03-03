@@ -1,3 +1,17 @@
+      <!-- Get in Touch -->
+      <section class="p-contact">
+        <a href="<?php echo esc_url(home_url()); ?>/contact/" class="p-contact__link">
+          <div class="p-contact__inner c-container">
+            <h2 class="p-contact__ttl">
+              <span class="p-contact__ttl-txt">Get in <span>Touch</span></span>
+              <span class="p-contact__ttl-txt-gradient" aria-hidden="true">Get in <span>Touch</span></span>
+            </h2>
+            <p class="p-contact__contact">
+              <span class="p-contact__contact-txt">Contact</span>
+            </p>
+          </div>
+        </a>
+      </section>
     </main>
 
     <footer class="l-footer">

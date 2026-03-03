@@ -455,3 +455,54 @@
     }
   }
 }
+
+.p-nav-page {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(18) rem(15);
+
+    @include mq(tab) {
+      gap: rem(24);
+    }
+  }
+
+  &__item {
+    flex: 0 0 rem(160);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: rem(160);
+    padding: rem(10);
+    font-family: var(--ff-gothic);
+    font-size: rem(16);
+    line-height: 1.8;
+    color: var(--main-text-color);
+    text-decoration: none;
+    border-bottom: 1px solid #d8d8d8;
+    transition: border-color 0.3s;
+
+    &::after {
+      display: inline-block;
+      flex-shrink: 0;
+      width: rem(10);
+      height: rem(5);
+      content: "";
+      background: url("../img/common/icon/arrow_b_brown.webp") no-repeat
+        center / contain;
+    }
+
+    &.-active {
+      border-bottom-color: var(--color-gold-dark);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-bottom-color: var(--color-gold-dark);
+      }
+    }
+  }
+}

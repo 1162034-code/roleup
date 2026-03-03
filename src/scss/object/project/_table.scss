@@ -1,0 +1,43 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  table
+======================================== */
+.p-table-a {
+  width: 100%;
+  font-family: var(--ff-gothic);
+  border-collapse: collapse;
+
+  tr {
+    @include mq(tab, max) {
+      display: grid;
+      gap: rem(10);
+      padding-block: rem(20);
+      border-bottom: 1px solid #d8d8d8;
+    }
+
+    th,
+    td {
+      text-align: left;
+
+      @include mq(tab) {
+        padding-block: rem(50);
+        border-bottom: 1px solid #d8d8d8;
+      }
+    }
+
+    th {
+      font-size: rem(18);
+      font-weight: 400;
+      vertical-align: top;
+
+      @include mq(tab) {
+        width: 20%;
+      }
+    }
+
+    td {
+      font-size: rem(16);
+    }
+  }
+}

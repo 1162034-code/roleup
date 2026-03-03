@@ -1,0 +1,486 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  about
+======================================== */
+
+/* ----------------------------------------
+  President（代表挨拶）
+---------------------------------------- */
+.about-president {
+  &__inner {
+    padding-block: rem(40) rem(100);
+
+    @include mq(tab) {
+      padding-block: rem(70) rem(150);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+    margin-top: rem(35);
+
+    @include mq(pc) {
+      flex-direction: row;
+      gap: rem(70);
+      align-items: flex-start;
+      margin-top: rem(65);
+    }
+  }
+
+  &__txt-wrap {
+    @include mq(pc) {
+      width: min(100%, rem(655));
+      margin-inline: auto 0;
+    }
+  }
+
+  &__lead {
+    font-family: var(--ff-mincho);
+    font-size: rem(20);
+    font-weight: 700;
+    line-height: 1.8;
+    color: var(--main-text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @include mq(tab) {
+      font-size: rem(28);
+    }
+  }
+
+  &__txt {
+    margin-top: rem(20);
+    font-family: var(--ff-gothic);
+
+    @include mq(tab) {
+      margin-top: rem(30);
+      text-align: justify;
+    }
+  }
+
+  &__profile {
+    margin-top: rem(42);
+
+    @include mq(tab) {
+      margin-top: rem(55);
+    }
+  }
+
+  &__position {
+    font-size: rem(14);
+  }
+
+  &__name {
+    font-size: rem(20);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  &__media {
+    flex-shrink: 0;
+    width: min(100%, rem(380));
+    margin-inline: auto;
+  }
+
+  &__img {
+    overflow: hidden;
+    background-color: #e0d9cf;
+    box-shadow: rem(16) rem(17) rem(17) rgb(0 0 0 / 6%);
+
+    @include mq(tab) {
+      aspect-ratio: 380 / 507;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+/* ----------------------------------------
+  Philosophy（経営理念）
+---------------------------------------- */
+.about-philosophy {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-dark);
+
+  &__overlay {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    background: url("../../../img/page/about/philosophy_bg_sp.webp") no-repeat
+      center top / cover;
+    will-change: transform;
+
+    @include mq(tab) {
+      background: url("../../../img/page/about/philosophy_bg.webp") no-repeat
+        center top / cover;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    padding-block: rem(90) rem(100);
+
+    @include mq(tab) {
+      padding-block: rem(140) rem(150);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+    margin-top: rem(28);
+
+    @include mq(pc) {
+      flex-direction: row;
+      gap: rem(100);
+      align-items: flex-start;
+      margin-top: rem(56);
+    }
+  }
+
+  &__catch {
+    font-family: var(--ff-mincho);
+    font-size: rem(28);
+    color: #fff;
+
+    @include mq(tab) {
+      font-size: rem(40);
+    }
+  }
+
+  &__items {
+    flex: 1;
+  }
+
+  &__item {
+    position: relative;
+    padding-bottom: rem(29);
+    border-bottom: 1px solid #797979;
+
+    &:nth-child(n + 2) {
+      margin-top: rem(22);
+
+      @include mq(tab) {
+        margin-top: rem(42);
+      }
+    }
+
+    @include mq(tab) {
+      padding-left: rem(85);
+    }
+  }
+
+  &__item-num {
+    display: inline-block;
+    font-family: var(--ff-garamond);
+    font-size: rem(12);
+    line-height: 1;
+    background: linear-gradient(120deg, #785e3e 7.86%, #e7c8a3 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include mq(tab) {
+      position: absolute;
+      top: rem(8);
+      left: 0;
+    }
+  }
+
+  &__item-ttl {
+    font-family: var(--ff-mincho);
+    font-size: rem(22);
+    line-height: 1.8;
+    color: #fff;
+
+    @include mq(tab, max) {
+      margin-top: rem(-5);
+    }
+  }
+
+  &__item-txt {
+    padding-left: rem(5);
+    margin-top: rem(10);
+    font-family: var(--ff-gothic);
+    color: #fff;
+
+    @include mq(tab) {
+      padding-left: rem(15);
+      margin-top: rem(6);
+    }
+  }
+}
+
+/* ----------------------------------------
+  Company（会社概要）
+---------------------------------------- */
+.about-company {
+  background-color: rgb(255 255 255 / 60%);
+
+  &__inner {
+    padding-block: rem(90) rem(100);
+
+    @include mq(tab) {
+      padding-block: rem(145) rem(160);
+    }
+  }
+
+  &__table {
+    margin-top: rem(15);
+
+    @include mq(tab) {
+      margin-top: rem(20);
+    }
+  }
+
+  &__map {
+    width: 100%;
+    height: rem(220);
+    margin-top: rem(20);
+    overflow: hidden;
+    background-color: #d9d9d9;
+
+    @include mq(tab) {
+      height: rem(278);
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* ----------------------------------------
+  Member（メンバー紹介）
+---------------------------------------- */
+.about-member {
+  position: relative;
+  overflow: hidden;
+  background: url("../../../img/common/logo_03.webp") no-repeat top #{rem(-20)}
+    right #{rem(-145)} / #{rem(410)};
+  background-color: #f5f5f5;
+
+  @include mq(tab) {
+    background-position: top #{rem(30)} right #{rem(20)};
+    background-size: #{rem(627)};
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    padding-block: rem(97) rem(100);
+
+    @include mq(tab) {
+      padding-block: rem(135) rem(150);
+    }
+  }
+
+  &__lead {
+    margin-top: rem(40);
+
+    @include mq(tab) {
+      margin-top: rem(45);
+    }
+  }
+
+  &__group {
+    margin-top: rem(47);
+
+    @include mq(tab) {
+      margin-top: rem(75);
+    }
+
+    & + & {
+      margin-top: rem(65);
+
+      @include mq(tab) {
+        margin-top: rem(105);
+      }
+    }
+  }
+
+  &__group-ttl {
+    display: flex;
+    gap: rem(8);
+    align-items: center;
+    margin-bottom: rem(30);
+    font-family: var(--ff-mincho);
+    font-size: rem(18);
+    line-height: 1;
+    color: #000;
+
+    @include mq(tab) {
+      font-size: rem(24);
+    }
+
+    &::before {
+      display: block;
+      width: rem(24);
+      height: rem(1);
+      content: "";
+      background: linear-gradient(119.59deg, #785e3e 7.86%, #e7c8a3 100%);
+    }
+
+    @include mq(tab) {
+      margin-bottom: rem(38);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(24) rem(15);
+
+    @include mq(tab) {
+      grid-template-columns: repeat(auto-fill, minmax(rem(274), 1fr));
+      gap: rem(32);
+    }
+
+    // &.-four {
+    //   @include mq(tab) {
+    //     grid-template-columns: repeat(auto-fill, minmax(rem(274), 1fr));
+    //   }
+    // }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__card-btn {
+    position: relative;
+    display: grid;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    &::after {
+      position: absolute;
+      right: rem(3);
+      bottom: 0;
+      width: rem(14);
+      height: rem(4);
+      content: "";
+      background: url("../../../img/common/icon/arrow_solid_r_black.webp")
+        no-repeat center / contain;
+
+      @include mq(tab) {
+        right: 0;
+        bottom: rem(4);
+        width: rem(24);
+        height: rem(7);
+      }
+    }
+  }
+
+  &__card-img {
+    aspect-ratio: 274 / 365;
+    overflow: hidden;
+    background-color: #e0d9cf;
+    box-shadow: rem(10) rem(14) rem(14) rgb(0 0 0 / 10%);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-out-quart);
+
+      @media (any-hover: hover) {
+        .about-member__card:hover & {
+          transform: scale(1.04);
+        }
+      }
+    }
+  }
+
+  &__card-info {
+    display: grid;
+    margin-top: rem(7);
+
+    @include mq(tab) {
+      margin-top: rem(17);
+    }
+  }
+
+  &__card-position {
+    font-size: rem(12);
+    line-height: 1;
+
+    @include mq(tab) {
+      font-size: rem(14);
+    }
+  }
+
+  &__card-name {
+    font-size: rem(16);
+
+    @include mq(tab) {
+      margin-top: rem(7);
+      font-size: rem(20);
+    }
+  }
+
+  &__card-name-en {
+    font-family: var(--ff-garamond);
+    font-size: rem(10);
+    line-height: 1;
+    background: linear-gradient(161.68deg, #785e3e 7.86%, #e7c8a3 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include mq(tab) {
+      font-size: rem(14);
+    }
+  }
+
+  &.-modal {
+    overflow: auto;
+    background: none;
+
+    .about-member__card-img {
+      aspect-ratio: 283 / 188;
+      box-shadow: none;
+    }
+
+    .about-member__card-info {
+      margin-top: rem(33);
+    }
+
+    .about-member__card-position {
+      font-size: rem(14);
+    }
+
+    .about-member__card-name {
+      font-size: rem(24);
+    }
+
+    .about-member__card-name-en {
+      margin-left: rem(10);
+      font-size: rem(14);
+    }
+
+    .about-member__card-txt {
+      padding-top: rem(20);
+      margin-top: rem(20);
+      font-size: rem(14);
+      border-top: 1px solid #d8d8d8;
+    }
+  }
+}

@@ -138,12 +138,12 @@
   inset: -10%;
   z-index: 0;
   display: block;
-  background: url("../../../img/home/mv_bg_sp.webp") no-repeat center center/cover;
-  animation: openingKenBurns 3.5s var(--ease-out-sine) 0s forwards;
+  background: url("../../../img/common/fixed_bg_sp.webp") no-repeat center center/cover;
+  animation: openingKenBurns 2.5s var(--ease-out-sine) 0s forwards;
 }
 @media screen and (min-width: 769px) {
   .p-opening--variant-b .p-opening__bg {
-    background: url("../../../img/home/mv_bg.webp") no-repeat center center/cover;
+    background: url("../../../img/common/fixed_bg.webp") no-repeat center center/cover;
   }
 }
 .p-opening--variant-b .p-opening__overlay {
@@ -152,7 +152,7 @@
   z-index: 1;
   display: block;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
-  animation: openingOverlayFade 3.5s var(--ease-out-sine) 0.5s forwards;
+  animation: openingOverlayFade 2.5s var(--ease-out-sine) 0.5s forwards;
 }
 .p-opening--variant-b .p-opening__inner {
   opacity: 1;
@@ -301,7 +301,7 @@
   inset: -5%;
   z-index: 0;
   display: block;
-  background: url("../../../img/home/mv_bg.webp") no-repeat center center/cover;
+  background: url("../../../img/common/fixed_bg.webp") no-repeat center center/cover;
 }
 .p-opening--variant-d {
   /* 下部グラデーションオーバーレイ */
@@ -474,20 +474,6 @@
 @media screen and (min-width: 769px) {
   .home-mv {
     height: 52rem;
-  }
-}
-.home-mv__bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: url("../../../img/home/mv_bg_sp.webp") no-repeat center top/100%;
-}
-@media screen and (min-width: 769px) {
-  .home-mv__bg {
-    background: url("../../../img/home/mv_bg.webp") no-repeat center top/100%;
   }
 }
 .home-mv__content {
@@ -1552,136 +1538,4 @@
   .home-news__ttl {
     line-height: 1.6;
   }
-}
-
-/* ========================================
-  Get in Touch
-======================================== */
-.home-touch__link {
-  display: block;
-  min-height: 10.5rem;
-  background-color: rgba(32, 32, 32, 0.9);
-  border-top: 1px solid transparent;
-}
-@media screen and (min-width: 769px) {
-  .home-touch__link {
-    min-height: 18.75rem;
-  }
-}
-@media (hover: hover) {
-  .home-touch__link {
-    transition: 0.5s;
-    transition-property: background-color, border-color;
-  }
-  .home-touch__link .home-touch__ttl-txt-gradient {
-    transition: 0.5s;
-    transition-property: color;
-  }
-  .home-touch__link .home-touch__contact::before {
-    transition: 0.5s;
-    transition-property: background, border-color, transform;
-  }
-  .home-touch__link .home-touch__contact::after {
-    opacity: 0;
-    transition: 0.5s;
-    transition-property: opacity, transform;
-  }
-  .home-touch__link:hover {
-    background-color: #f2f2f2;
-    border-color: #b4b4b4;
-  }
-  .home-touch__link:hover .home-touch__ttl-txt-gradient {
-    opacity: 1;
-  }
-  .home-touch__link:hover .home-touch__contact::before {
-    border-color: #f2f2f2;
-    transform: scale(0.86);
-  }
-  .home-touch__link:hover .home-touch__contact::after {
-    opacity: 1;
-    transform: scale(0.86);
-  }
-}
-.home-touch__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: inherit;
-  padding-block: 2.9375rem;
-}
-@media screen and (min-width: 769px) {
-  .home-touch__inner {
-    padding-block: 4.6875rem;
-  }
-}
-.home-touch__ttl {
-  position: relative;
-  font-family: var(--ff-garamond);
-  font-size: 2.5rem;
-  font-weight: 400;
-  line-height: 1.1;
-  color: #e6e6e6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-@media screen and (min-width: 769px) {
-  .home-touch__ttl {
-    font-size: 5.625rem;
-  }
-}
-.home-touch__ttl-txt > span, .home-touch__ttl-txt-gradient > span {
-  margin-left: -0.1em;
-}
-.home-touch__ttl-txt-gradient {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background: var(--gradient-text-light);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0;
-}
-.home-touch__contact {
-  position: relative;
-  display: grid;
-  place-content: center;
-  width: 4.625rem;
-  height: 4.625rem;
-  font-family: var(--ff-garamond);
-  color: #fff;
-}
-@media screen and (min-width: 769px) {
-  .home-touch__contact {
-    width: 9.375rem;
-    height: 9.375rem;
-    font-size: 1.75rem;
-  }
-}
-.home-touch__contact::before {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  background: transparent;
-  border: 1px solid #777;
-  border-radius: 50%;
-  transition: 0.5s;
-  transition-property: border-color, transform;
-}
-.home-touch__contact::after {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  background: linear-gradient(to right, #785e3e, #e7c8a3);
-  border-radius: 50%;
-  opacity: 1;
-  transition: 0.5s;
-  transition-property: opacity, transform;
-}
-.home-touch__contact-txt {
-  position: relative;
-  z-index: 2;
 }

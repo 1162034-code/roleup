@@ -113,7 +113,7 @@ $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リン�
                   <li class="p-nav__item">
                     <?php if ($show_dropdown) : ?>
                       <div class="p-nav__link-hover" tabindex="0">
-                        <span class="p-nav__link"><?php echo esc_html($item['label']); ?></span>
+                        <a href="<?php echo esc_url($item['url']); ?>" class="p-nav__link"><?php echo esc_html($item['label']); ?></a>
                         <button type="button" class="p-nav__toggle-btn js-dropdown-btn">
                           <?php echo esc_html($item['label']); ?>
                         </button>
@@ -146,3 +146,4 @@ $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リン�
     </header>
 
     <main class="l-main">
+      <div class="p-fixed-bg"></div>

@@ -1,0 +1,52 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  page-header
+======================================== */
+.p-page-header {
+  &__inner {
+    display: grid;
+    padding-top: calc(var(--header-h) - rem(10));
+    padding-bottom: rem(60);
+
+    @include mq(tab) {
+      padding-top: calc(var(--header-h) + rem(90));
+      padding-bottom: rem(80);
+    }
+  }
+
+  &__line {
+    width: rem(64);
+    height: rem(1);
+    margin-block: rem(30);
+    margin-left: 0;
+    background-color: #797979;
+
+    @include mq(tab) {
+      margin-block: rem(37);
+    }
+  }
+
+  &__caption {
+    font-family: var(--ff-gothic);
+  }
+
+  &__nav {
+    margin-top: rem(57);
+
+    @include mq(tab) {
+      margin-top: rem(70);
+    }
+  }
+
+  &__breadcrumb {
+    @include mq(tab) {
+      margin-top: rem(30);
+    }
+
+    @include mq(tab, max) {
+      grid-row: 1;
+      margin-bottom: rem(60);
+    }
+  }
+}
