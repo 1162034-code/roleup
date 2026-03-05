@@ -4,6 +4,11 @@ if (! defined('ABSPATH')) exit;
 /* スタイル読み込み */
 add_action( 'wp_enqueue_scripts', 'custom_enqueue_styles' );
 function custom_enqueue_styles() {
+	// SimpleBar専用スタイル
+	if ( is_page( 'about' ) ) {
+    wp_enqueue_style( 'style-simplebar', get_theme_file_uri( 'assets/css/vendor/simplebar.css' ), array() );
+	}
+
 	wp_enqueue_style( 'style-theme', get_theme_file_uri( 'assets/css/style.css' ) );
 
 	// フロントページ専用スタイル
@@ -11,15 +16,19 @@ function custom_enqueue_styles() {
 		wp_enqueue_style( 'style-home', get_theme_file_uri( 'assets/css/page/home/index.css' ), array('style-theme') );
 	}
 
-	// Aboutページ専用スタイル
-	if ( is_page( 'about' ) ) {
-		wp_enqueue_style( 'style-about', get_theme_file_uri( 'assets/css/page/about/index.css' ), array('style-theme') );
-	}
+  // Aboutページ専用スタイル
+  if ( is_page( 'about' ) ) {
+    wp_enqueue_style( 'style-about', get_theme_file_uri( 'assets/css/page/about/index.css' ), array('style-theme') );
+  }
 }
 
 /* スクリプト読み込み */
 add_action( 'wp_enqueue_scripts', 'custom_wp_enqueue_scripts' );
 function custom_wp_enqueue_scripts() {
+  if ( is_page( 'about' ) ) {
+    wp_enqueue_script( 'script-simplebar', get_theme_file_uri( 'assets/js/vendor/simplebar.min.js' ), array(), false, true );
+  }
+
 	wp_enqueue_script( 'script-common', get_theme_file_uri( 'assets/js/common.js' ), array(), false, true );
 }
 

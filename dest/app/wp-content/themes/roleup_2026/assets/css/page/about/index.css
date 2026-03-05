@@ -427,12 +427,10 @@
   }
 }
 .about-member.-modal {
-  overflow: auto;
   background: none;
 }
 .about-member.-modal .about-member__card-img {
   aspect-ratio: 283/188;
-  box-shadow: none;
 }
 .about-member.-modal .about-member__card-info {
   margin-top: 2.0625rem;

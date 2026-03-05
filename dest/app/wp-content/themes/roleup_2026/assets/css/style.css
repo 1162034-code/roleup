@@ -674,6 +674,15 @@ address {
 /* ========================================
   main（共通）
 ======================================== */
+.l-main__inner {
+  padding-top: calc(var(--header-h) - 0.625rem);
+}
+@media screen and (min-width: 769px) {
+  .l-main__inner {
+    padding-top: calc(var(--header-h) + 1.875rem);
+  }
+}
+
 /* ========================================
   footer（共通）
 ======================================== */
@@ -1709,8 +1718,10 @@ address {
   position: fixed;
   width: 90%;
   max-width: 37.5rem;
-  padding: 2.5rem 2.5rem 2rem 1.5rem;
-  background-color: white;
+  height: min(100vh - 5rem, 41.25rem);
+  padding-block: 2.5rem;
+  padding-inline: 1.5rem 2.5rem;
+  background-color: #fff;
   border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   opacity: 0;
@@ -1737,9 +1748,19 @@ address {
   opacity: 1;
   transition: background-color 0.3s ease, opacity 0.3s ease;
 }
+.p-modal .simplebar-vertical {
+  top: 2.5rem;
+  right: 1rem;
+  width: 0.6875rem;
+  height: calc(100% - 3.125rem);
+  background-color: #d9d9d9;
+}
+.p-modal .simplebar-scrollbar::before {
+  background-color: #97531a;
+}
 
 .p-modal-close {
-  position: absolute;
+  position: fixed;
   top: 0.4375rem;
   right: 0.4375rem;
   display: grid;
@@ -2593,14 +2614,11 @@ address {
   page-header
 ======================================== */
 .p-page-header__inner {
-  display: grid;
-  padding-top: calc(var(--header-h) - 0.625rem);
-  padding-bottom: 3.75rem;
+  padding-block: 3.75rem;
 }
 @media screen and (min-width: 769px) {
   .p-page-header__inner {
-    padding-top: calc(var(--header-h) + 5.625rem);
-    padding-bottom: 5rem;
+    padding-block: 3.125rem 5rem;
   }
 }
 .p-page-header__line {
@@ -2624,17 +2642,6 @@ address {
 @media screen and (min-width: 769px) {
   .p-page-header__nav {
     margin-top: 4.375rem;
-  }
-}
-@media screen and (min-width: 769px) {
-  .p-page-header__breadcrumb {
-    margin-top: 1.875rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .p-page-header__breadcrumb {
-    grid-row: 1;
-    margin-bottom: 3.75rem;
   }
 }
 

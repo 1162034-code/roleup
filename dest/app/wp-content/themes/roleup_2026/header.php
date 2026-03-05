@@ -147,3 +147,8 @@ $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リン�
 
     <main class="l-main">
       <div class="p-fixed-bg"></div>
+
+      <?php if(!is_front_page()): ?>
+      <div class="l-main__inner">
+        <?php get_template_part('template-parts/breadcrumb'); ?>
+      <?php endif; ?>

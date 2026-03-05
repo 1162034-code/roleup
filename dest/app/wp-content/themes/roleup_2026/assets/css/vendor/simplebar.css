@@ -1,0 +1,217 @@
+[data-simplebar] {
+  position: relative;
+  flex-flow: column wrap;
+  place-content: flex-start flex-start;
+  align-items: flex-start;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE, Edge */
+  -ms-overflow-style: none;
+}
+
+.simplebar-wrapper {
+  width: inherit;
+  max-width: inherit;
+  height: inherit;
+  max-height: inherit;
+  overflow: hidden;
+}
+
+.simplebar-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: auto !important;
+  height: auto !important;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  direction: inherit;
+}
+
+.simplebar-offset {
+  position: absolute;
+  inset: 0;
+  box-sizing: inherit !important;
+  padding: 0;
+  margin: 0;
+  resize: none !important;
+  direction: inherit !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.simplebar-content-wrapper {
+  position: relative;
+  box-sizing: border-box !important;
+  display: block;
+  width: auto;
+  max-width: 100%; /* Not required for horizontal scroll to trigger */
+  height: 100%; /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */
+  max-height: 100%; /* Needed for vertical scroll to trigger */
+  overflow: auto;
+  scrollbar-width: none;
+  direction: inherit;
+  -ms-overflow-style: none;
+}
+
+.simplebar-content-wrapper::-webkit-scrollbar,
+.simplebar-hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.simplebar-content::before,
+.simplebar-content::after {
+  display: table;
+  content: " ";
+}
+
+.simplebar-placeholder {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  pointer-events: none;
+}
+
+.simplebar-height-auto-observer-wrapper {
+  position: relative;
+  z-index: -1;
+  float: left;
+  box-sizing: inherit !important;
+  flex-grow: inherit;
+  flex-shrink: 0;
+  flex-basis: 0;
+  width: 100%;
+  max-width: 1px;
+  height: 100%;
+  max-height: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.simplebar-height-auto-observer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  box-sizing: inherit;
+  display: block;
+  width: 1000%;
+  min-width: 1px;
+  height: 1000%;
+  min-height: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.simplebar-track {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+[data-simplebar].simplebar-dragging {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-content {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-track {
+  pointer-events: all;
+}
+
+.simplebar-scrollbar {
+  position: absolute;
+  right: 0;
+  left: 0;
+  min-height: 10px;
+}
+
+.simplebar-scrollbar::before {
+  position: absolute;
+  right: 2px;
+  left: 2px;
+  content: "";
+  background: black;
+  border-radius: 7px;
+  opacity: 0;
+  transition: opacity 0.2s 0.5s linear;
+}
+
+.simplebar-scrollbar.simplebar-visible::before {
+  opacity: 0.5;
+  transition-delay: 0s;
+  transition-duration: 0s;
+}
+
+.simplebar-track.simplebar-vertical {
+  top: 0;
+  width: 11px;
+}
+
+.simplebar-scrollbar::before {
+  inset: 2px;
+}
+
+.simplebar-track.simplebar-horizontal {
+  left: 0;
+  height: 11px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  inset: 0 auto 0 0;
+  width: auto;
+  min-width: 10px;
+  min-height: 0;
+}
+
+/* Rtl support */
+[data-simplebar-direction="rtl"] .simplebar-track.simplebar-vertical {
+  right: auto;
+  left: 0;
+}
+
+.simplebar-dummy-scrollbar-size {
+  position: fixed;
+  visibility: hidden;
+  width: 500px;
+  height: 500px;
+  overflow: scroll hidden;
+  opacity: 0;
+  direction: rtl;
+  -ms-overflow-style: scrollbar !important;
+}
+
+.simplebar-dummy-scrollbar-size > div {
+  width: 200%;
+  height: 200%;
+  margin: 10px 0;
+}
+
+.simplebar-hide-scrollbar {
+  position: fixed;
+  left: 0;
+  visibility: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

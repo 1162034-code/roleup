@@ -1,5 +1,9 @@
-      <!-- Get in Touch -->
-      <section class="p-contact">
+      <?php if(!is_front_page()): ?>
+      </div>
+      <?php endif; ?>
+
+       <!-- Get in Touch -->
+       <section class="p-contact">
         <a href="<?php echo esc_url(home_url()); ?>/contact/" class="p-contact__link">
           <div class="p-contact__inner c-container">
             <h2 class="p-contact__ttl">

@@ -5,13 +5,10 @@
 ======================================== */
 .p-page-header {
   &__inner {
-    display: grid;
-    padding-top: calc(var(--header-h) - rem(10));
-    padding-bottom: rem(60);
+    padding-block: rem(60);
 
     @include mq(tab) {
-      padding-top: calc(var(--header-h) + rem(90));
-      padding-bottom: rem(80);
+      padding-block: rem(50) rem(80);
     }
   }
 
@@ -36,17 +33,6 @@
 
     @include mq(tab) {
       margin-top: rem(70);
-    }
-  }
-
-  &__breadcrumb {
-    @include mq(tab) {
-      margin-top: rem(30);
-    }
-
-    @include mq(tab, max) {
-      grid-row: 1;
-      margin-bottom: rem(60);
     }
   }
 }

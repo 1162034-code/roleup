@@ -3,4 +3,12 @@
 /* ========================================
   main（共通）
 ======================================== */
-// .l-main {}
+.l-main {
+  &__inner {
+    padding-top: calc(var(--header-h) - rem(10));
+
+    @include mq(tab) {
+      padding-top: calc(var(--header-h) + rem(30));
+    }
+  }
+}

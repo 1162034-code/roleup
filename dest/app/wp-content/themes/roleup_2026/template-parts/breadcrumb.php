@@ -341,7 +341,7 @@ if (is_home()) {
 // Output breadcrumb if we have items
 if (!empty($breadcrumb_items)):
 ?>
-  <nav class="p-breadcrumb" aria-label="パンくず">
+  <nav class="p-breadcrumb c-container" aria-label="パンくず">
 		<ol class="p-breadcrumb__list">
 			<?php foreach ($breadcrumb_items as $item): ?>
 				<?php

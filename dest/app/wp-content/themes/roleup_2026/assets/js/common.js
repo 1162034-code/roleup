@@ -86,6 +86,26 @@ import { initTextAnimeChar } from './module/text-anime-char.js';
   } else {
     window.addEventListener('load', runOpeningAndAnimations);
   }
+
+  // ------------------------------------------------------------------
+  // ** SimpleBar **
+  // ------------------------------------------------------------------
+  const initSimpleBar = () => {
+    const targets = document.querySelectorAll('.js-simplebar');
+    targets.forEach((target) => {
+      if (!target) return;
+
+      new SimpleBar(target, {
+        autoHide: false,
+        forceVisible: true,
+      });
+    });
+  };
+
+  window.addEventListener('load', () => {
+    initSimpleBar();
+  });
+
   // ------------------------------------------------------------------
   // ** パララックス（フロントページのみ） **
   // ------------------------------------------------------------------
