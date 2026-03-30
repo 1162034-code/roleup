@@ -4,6 +4,8 @@
   breadcrumb
 ======================================== */
 .p-breadcrumb {
+  --container-w: #{rem(1360)};
+
   font-family: var(--ff-gothic);
   font-size: rem(12);
   font-weight: 500;

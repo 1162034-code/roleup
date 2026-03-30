@@ -49,11 +49,23 @@
 
   &.-lg {
     #{$ttl-a}__en {
-      font-size: rem(100);
+      font-size: rem(72);
+
+      @include mq(tab) {
+        font-size: rem(100);
+      }
     }
 
     #{$ttl-a}__ja {
       font-size: rem(20);
+
+      .group & {
+        margin-top: rem(10);
+
+        @include mq(tab) {
+          margin-top: rem(15);
+        }
+      }
     }
   }
 }

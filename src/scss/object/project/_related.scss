@@ -1,0 +1,109 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  related
+======================================== */
+
+.p-related {
+  &__inner {
+    padding-block: rem(80) rem(100);
+
+    @include mq(pc) {
+      display: flex;
+      flex-direction: row;
+      gap: rem(56);
+      align-items: flex-start;
+      padding-block: rem(160) rem(150);
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: rem(18);
+    width: 100%;
+    margin-top: rem(37);
+
+    @include mq(tab) {
+      flex-direction: row;
+      gap: rem(24);
+      width: min(100%, rem(728));
+      margin-inline: auto;
+      margin-top: rem(50);
+    }
+  }
+
+  &__card {
+    flex: 1;
+  }
+
+  &__card-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: rem(224);
+    padding: rem(30) rem(20);
+    overflow: hidden;
+    color: #fff;
+    border-radius: rem(4);
+    transition: opacity 0.3s;
+
+    @include mq(tab) {
+      min-height: rem(350);
+      padding: rem(40) rem(30);
+    }
+
+    &.-service {
+      background: url("../img/common/related_bg_service.webp") no-repeat
+        center / cover;
+    }
+
+    &.-performance {
+      background: url("../img/common/related_bg_performance.webp") no-repeat
+        center / cover;
+    }
+  }
+
+  &__card-category {
+    position: relative;
+    z-index: 1;
+    font-family: var(--ff-garamond);
+    font-size: rem(14);
+    line-height: 1;
+    background: linear-gradient(
+      108deg,
+      rgb(117 103 91) 0%,
+      rgb(231 200 163) 26%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__card-body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    color: #fff;
+  }
+
+  &__card-ttl {
+    font-family: var(--ff-mincho);
+    font-size: rem(21);
+    font-weight: 400;
+    line-height: 1.8;
+
+    @include mq(tab) {
+      font-size: rem(22);
+    }
+  }
+
+  &__card-desc {
+    font-family: var(--ff-gothic);
+    font-size: rem(16);
+    line-height: 1.8;
+    letter-spacing: -0.04em;
+  }
+}

@@ -49,27 +49,46 @@ $nav_items = [
 $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リンクのみ
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?><?php echo is_front_page() ? ' class="has-opening is-loading"' : ''; ?>>
+<html <?php language_attributes(); ?>>
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width">
   <meta name="format-detection" content="telephone=no">
-  <?php if (is_front_page()) : ?>
-  <style>
-    /* オープニング用クリティカルCSS: フォント・画像読み込み完了まで非表示 */
-    html.has-opening.is-loading {
-      opacity: 0;
-    }
-    html.has-opening {
-      transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-  </style>
-  <?php endif; ?>
   <?php wp_head(); ?>
 </head>
 
-<body>
+<body class="<?php
+  global $post;
+  if (is_front_page()) {
+    echo 'home';
+  } elseif (is_category()) {
+    echo get_query_var('category_name');
+  } elseif (is_tag()) {
+    echo get_query_var('tag');
+  } elseif (is_page()) {
+    echo $post->post_name;
+  } else {
+    $post_types = ['news'];
+    $matched = false;
+    foreach ($post_types as $post_type) {
+      if (is_singular($post_type) || is_post_type_archive($post_type)) {
+        echo $post_type;
+        $matched = true;
+        break;
+      }
+    }
+    if (!$matched) {
+      if (is_singular()) {
+        echo get_post_type();
+      } elseif (is_post_type_archive()) {
+        echo get_post_type();
+      } else {
+        echo '';
+      }
+    }
+  }
+?>">
   <div class="l-wrapper">
     <header class="l-header">
       <div class="l-header__inner">

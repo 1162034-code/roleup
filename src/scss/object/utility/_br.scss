@@ -5,6 +5,12 @@
 }
 
 .u-br-pc {
+  @include mq(pc) {
+    display: block;
+  }
+}
+
+.u-br-tab {
   @include mq(tab) {
     display: block;
   }

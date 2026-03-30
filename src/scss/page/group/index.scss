@@ -1,0 +1,299 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  group
+======================================== */
+
+/* ----------------------------------------
+  Overview（グループ概要）
+---------------------------------------- */
+.group-overview {
+  position: relative;
+  overflow: hidden;
+
+  &__bg-txt {
+    display: none;
+
+    @include mq(tab) {
+      position: absolute;
+      bottom: rem(-50);
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @include mq(pc) {
+      bottom: rem(43);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: rem(60);
+    padding-block: rem(20) rem(100);
+
+    @include mq(pc) {
+      flex-direction: row;
+      gap: rem(20);
+      align-items: center;
+      padding-block: rem(95) rem(210);
+    }
+  }
+
+  &__diagram {
+    flex: 1 1 auto;
+    text-align: center;
+
+    @include mq(pc) {
+      order: 1;
+    }
+  }
+
+  &__body {
+    @include mq(tab) {
+      width: fit-content;
+      margin-inline: auto;
+    }
+
+    @include mq(pc) {
+      flex: 0 0 rem(530);
+      order: 2;
+    }
+  }
+
+  &__txt {
+    font-size: rem(16);
+    line-height: 1.8;
+
+    @include mq(pc) {
+      font-size: rem(20);
+      line-height: 2;
+    }
+  }
+
+  &__links {
+    display: grid;
+    gap: rem(20);
+    margin-top: rem(23);
+
+    @include mq(tab) {
+      margin-top: rem(40);
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    width: min(100%, rem(287));
+    padding-block: rem(7);
+    padding-left: rem(5);
+    font-size: rem(18);
+    font-weight: 600;
+    border-bottom: 1px solid #000;
+
+    &::after {
+      position: absolute;
+      inset-block: 0;
+      right: 0;
+      display: block;
+      width: rem(24);
+      height: rem(7);
+      margin-block: auto;
+      content: "";
+      background: url("../../../img/common/icon/arrow_solid_r_black.webp")
+        no-repeat center / contain;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+/* ----------------------------------------
+  Synergy（グループ連携の強み）
+---------------------------------------- */
+.group-synergy {
+  position: relative;
+  background: url("../../../img/page/group/bg_01_sp.webp") no-repeat center /
+    cover;
+
+  @include mq(tab) {
+    background-image: url("../../../img/page/group/bg_01.webp");
+  }
+
+  &__inner {
+    display: flex;
+    gap: rem(40);
+    padding-block: rem(90) rem(200);
+
+    @include mq(tab) {
+      flex-direction: row;
+      gap: rem(80);
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-block: rem(145) rem(210);
+    }
+
+    @media (width <= 1250px) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+
+    @include mq(tab) {
+      flex: 0 0 auto;
+      gap: rem(50);
+      width: min(100%, rem(448));
+    }
+  }
+
+  &__desc {
+    font-family: var(--ff-mincho);
+    font-size: rem(16);
+    line-height: 1.8;
+    color: #fff;
+  }
+
+  &__phases {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+
+    @media (1251px <= width) {
+      flex: 0 0 rem(644);
+      padding-top: rem(8);
+    }
+  }
+
+  &__phase {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+    padding: rem(33) rem(33) rem(36);
+    background-color: rgba(#fff, 0.16);
+    border-radius: rem(4);
+
+    @include mq(tab) {
+      padding: rem(35) rem(32);
+    }
+
+    & + & {
+      margin-top: rem(24);
+
+      &::before {
+        position: absolute;
+        inset-inline: 0;
+        top: rem(-24);
+        display: block;
+        width: rem(1);
+        height: rem(24);
+        margin-inline: auto;
+        content: "";
+        background-color: #c2b6a5;
+      }
+    }
+  }
+
+  &__phase-num {
+    font-family: var(--ff-garamond);
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: 1;
+    background: linear-gradient(
+      117deg,
+      rgb(117 103 91) 0%,
+      rgb(231 200 163) 22%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__phase-body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+
+    @include mq(tab) {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  &__phase-ttl {
+    font-family: var(--ff-mincho);
+    font-size: rem(22);
+    font-weight: 600;
+    line-height: 1.8;
+    color: #fff;
+  }
+
+  &__phase-company {
+    font-family: var(--ff-gothic);
+    font-size: rem(16);
+    line-height: 1.2;
+    color: #fff;
+
+    @include mq(tab) {
+      text-align: right;
+    }
+  }
+}
+
+/* ----------------------------------------
+  CTA（お問い合わせバナー）
+---------------------------------------- */
+.group-cta {
+  margin-top: rem(-135);
+
+  @include mq(tab) {
+    margin-top: rem(-110);
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    align-items: center;
+    min-height: rem(227);
+    padding: rem(30);
+    background: url("../../../img/page/group/bg_02.webp") no-repeat center /
+      cover;
+    background-color: rgb(0 0 0 / 85%);
+    border-radius: rem(4);
+    box-shadow: 0 14px 16px rgb(0 0 0 / 14%);
+
+    @include mq(tab) {
+      --container-w: #{rem(1194)};
+
+      flex-direction: row;
+      gap: rem(48);
+      justify-content: space-between;
+      min-height: rem(208);
+      padding: rem(20) rem(90);
+    }
+  }
+
+  &__txt {
+    font-size: rem(16);
+    line-height: 1.8;
+    color: #fff;
+    text-align: center;
+
+    @include mq(tab) {
+      font-size: rem(18);
+      text-align: left;
+    }
+  }
+}

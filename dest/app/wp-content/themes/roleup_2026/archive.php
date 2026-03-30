@@ -1,10 +1,15 @@
 <?php get_header();?>
-  <div class="p-page-header">
+  <section class="p-page-header">
     <div class="p-page-header__inner c-container">
-      <h1 class="p-page-header__ttl">お知らせ</h1>
-      <p class="p-page-header__en">News</p>
+      <div class="p-ttl-a -lg js-text-anime-up">
+        <h1 class="p-ttl-a__en js-text-anime-up__main" data-char-split>News</h1>
+        <p class="p-ttl-a__ja js-text-anime-up__sub">
+          <span class="js-text-anime-up__sub-txt">お知らせ</span>
+        </p>
+      </div>
+      <hr class="p-page-header__line js-fade-in">
     </div>
-  </div>
+  </section>
   <div class="p-page-content">
     <div class="p-page-content__inner c-container-xs">
       <div class="p-news">

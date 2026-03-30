@@ -20,6 +20,11 @@ function custom_enqueue_styles() {
   if ( is_page( 'about' ) ) {
     wp_enqueue_style( 'style-about', get_theme_file_uri( 'assets/css/page/about/index.css' ), array('style-theme') );
   }
+
+  // グループ会社ページ専用スタイル
+  if ( is_page( 'group' ) ) {
+    wp_enqueue_style( 'style-group', get_theme_file_uri( 'assets/css/page/group/index.css' ), array('style-theme') );
+  }
 }
 
 /* スクリプト読み込み */
