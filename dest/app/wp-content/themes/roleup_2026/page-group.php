@@ -94,9 +94,9 @@
   </section>
 
   <!-- CTA: お問い合わせ -->
-  <div class="group-cta js-fade-in">
-    <div class="group-cta__inner c-container">
-      <p class="group-cta__txt"><span class="u-br">税務・監査に関するご相談は、</span><span class="u-br-sp">まずはお気軽に</span>お問い合わせください。</p>
+  <div class="p-contact-b js-fade-in">
+    <div class="p-contact-b__inner c-container">
+      <p class="p-contact-b__txt"><span class="u-br">税務・監査に関するご相談は、</span><span class="u-br-sp">まずはお気軽に</span>お問い合わせください。</p>
       <a href="<?php echo esc_url(home_url()); ?>/contact/" class="c-btn-gradient-gold c-btn-size-default c-btn-arrow-right">
         <span class="c-btn__txt">お問い合わせはこちら</span>
       </a>

@@ -16,6 +16,20 @@
   width: calc(100vw - var(--scrollbar-width));
   max-width: 100vw;
   overflow: hidden;
+
+  &.-performance {
+    --loop-txt-width: 220px;
+    --loop-gap: 23px;
+
+    @include mq(tab) {
+      --loop-txt-width: 300px;
+      --loop-gap: 24px;
+    }
+
+    .p-content-loop-txt__items {
+      animation: loop-left 30s linear infinite;
+    }
+  }
 }
 
 .p-content-loop-txt__items {

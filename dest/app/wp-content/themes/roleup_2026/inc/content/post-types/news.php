@@ -4,16 +4,16 @@ if (! defined('ABSPATH')) exit;
 function news_custom_post_type()
 {
   $labels = array(
-    'name'         => 'NEWS',
-    'singular_name'       => 'NEWS',
-    'add_new_item'        => '新しいNEWSを追加',
+    'name'         => 'お知らせ',
+    'singular_name'       => 'お知らせ',
+    'add_new_item'        => '新しいお知らせを追加',
     'add_new'             => '新規追加',
-    'edit_item'           => 'NEWSを編集',
-    'new_item'            => '新しいNEWS',
-    'view_item'           => 'NEWSを表示',
-    'not_found'           => 'NEWSはありません',
-    'not_found_in_trash'  => 'ゴミ箱にNEWSはありません',
-    'search_items' => 'NEWSを検索'
+    'edit_item'           => 'お知らせを編集',
+    'new_item'            => '新しいお知らせ',
+    'view_item'           => 'お知らせを表示',
+    'not_found'           => 'お知らせはありません',
+    'not_found_in_trash'  => 'ゴミ箱にお知らせはありません',
+    'search_items' => 'お知らせを検索'
   );
   $args = array(
     'labels'        => $labels,

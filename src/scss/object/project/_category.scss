@@ -1,0 +1,25 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  category
+======================================== */
+.p-category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(16);
+}
+
+.p-category {
+  display: block;
+  padding: rem(2) rem(10);
+  font-size: rem(14);
+  font-weight: 600;
+  line-height: 1.2;
+  border: 1px solid #b09e88;
+  border-radius: 15px;
+
+  &.is-current {
+    color: #fff;
+    background-color: #b09e88;
+  }
+}

@@ -53,6 +53,11 @@
 @use "object/project/breadcrumb";
 @use "object/project/table";
 @use "object/project/related";
+@use "object/project/archive";
+@use "object/project/category";
+@use "object/project/pagination";
+@use "object/project/form";
+@use "object/project/access";
 
 /* Utility ------------ */
 @use "object/utility/bg-color";
@@ -64,3 +69,4 @@
 @use "object/utility/text-align";
 @use "object/utility/text-transform";
 @use "object/utility/br";
+@use "object/utility/font-family";

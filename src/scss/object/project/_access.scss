@@ -1,0 +1,57 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  access
+======================================== */
+.p-access {
+  margin-top: rem(80);
+
+  @include mq(tab) {
+    margin-top: rem(100);
+  }
+
+  &__inner {
+    display: grid;
+    gap: rem(40);
+    width: min(100%, rem(1015));
+    margin-inline: auto;
+
+    @include mq(pc) {
+      grid-template-columns: 52% 1fr;
+      gap: rem(87);
+    }
+  }
+
+  &__info {
+    font-family: var(--ff-gothic);
+
+    @include mq(pc) {
+      grid-row: 1;
+      grid-column: 2;
+    }
+  }
+
+  &__map {
+    @include mq(pc) {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    @include mq(tab, max) {
+      height: rem(223);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__txt {
+    margin-top: rem(36);
+
+    @include mq(tab) {
+      margin-top: rem(50);
+    }
+  }
+}

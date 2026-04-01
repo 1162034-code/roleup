@@ -25,6 +25,11 @@ function custom_enqueue_styles() {
   if ( is_page( 'group' ) ) {
     wp_enqueue_style( 'style-group', get_theme_file_uri( 'assets/css/page/group/index.css' ), array('style-theme') );
   }
+
+  // Performanceページ専用スタイル
+  if ( is_page( 'performance' ) ) {
+    wp_enqueue_style( 'style-performance', get_theme_file_uri( 'assets/css/page/performance/index.css' ), array('style-theme') );
+  }
 }
 
 /* スクリプト読み込み */

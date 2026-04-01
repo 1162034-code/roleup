@@ -1,4 +1,10 @@
-<?php get_header();?>
+<?php
+get_header();
+
+$is_news_archive = is_post_type_archive('news');
+$is_news_tax = is_tax('news_category');
+$show_news_category_nav = $is_news_archive || $is_news_tax;
+?>
   <section class="p-page-header">
     <div class="p-page-header__inner c-container">
       <div class="p-ttl-a -lg js-text-anime-up">
@@ -11,21 +17,67 @@
     </div>
   </section>
   <div class="p-page-content">
-    <div class="p-page-content__inner c-container-xs">
-      <div class="p-news">
+    <div class="p-page-content__inner c-container">
+      <?php if ($show_news_category_nav) : ?>
+      <nav aria-label="お知らせカテゴリー">
+        <ul class="p-category-list">
+          <li>
+            <a class="p-category<?php echo $is_news_archive && ! $is_news_tax ? ' is-current' : ''; ?>" href="<?php echo esc_url(get_post_type_archive_link('news')); ?>">すべて</a>
+          </li>
+          <?php
+          $news_categories = get_terms(array(
+            'taxonomy' => 'news_category',
+            'hide_empty' => false,
+            'orderby' => 'name',
+            'order' => 'ASC',
+          ));
+          if (! is_wp_error($news_categories) && ! empty($news_categories)) :
+            foreach ($news_categories as $news_cat) :
+              $term_link = get_term_link($news_cat);
+              if (is_wp_error($term_link)) {
+                continue;
+              }
+              $is_current = $is_news_tax && get_queried_object_id() === (int) $news_cat->term_id;
+              ?>
+          <li>
+            <a class="p-category<?php echo $is_current ? ' is-current' : ''; ?>" href="<?php echo esc_url($term_link); ?>"><?php echo esc_html($news_cat->name); ?></a>
+          </li>
+              <?php
+            endforeach;
+          endif;
+          ?>
+        </ul>
+      </nav>
+      <?php endif; ?>
+      <div class="p-archive">
         <?php if (have_posts()) : ?>
-        <ul class="p-news__list js-fade-in">
+        <ul class="p-archive__list">
           <?php while (have_posts()) : the_post(); ?>
-          <li class="p-news__item">
-            <a href="<?php the_permalink(); ?>" class="p-news__link">
-              <time class="p-news__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
-              <p class="p-news__ttl"><span><?php the_title(); ?></span></p>
+          <li class="p-archive__item">
+            <a href="<?php the_permalink(); ?>" class="p-archive__link">
+              <time class="p-archive__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+              <div>
+                <?php
+                $news_terms = get_the_terms(get_the_ID(), 'news_category');
+                if ($news_terms && ! is_wp_error($news_terms)) :
+                  ?>
+                <div class="p-archive__categories">
+                  <?php foreach ($news_terms as $news_term) : ?>
+                  <span class="p-archive__category"><?php echo esc_html($news_term->name); ?></span>
+                  <?php endforeach; ?>
+                </div>
+                  <?php
+                endif;
+                ?>
+                <p class="p-archive__ttl"><?php the_title(); ?></p>
+              </div>
             </a>
           </li>
           <?php endwhile; ?>
         </ul>
+        <?php get_template_part('template-parts/pagination'); ?>
         <?php else : ?>
-        <p class="u-ta-center">新着情報がありません。</p>
+        <p class="p-archive__no-posts">お知らせがありません。</p>
         <?php endif; ?>
       </div>
     </div>

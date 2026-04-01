@@ -43,16 +43,17 @@ $format .= $GLOBALS['wp_rewrite']->using_permalinks()
   : '?paged=%#%';
 
 // Pagination arguments
+// end_size=1, mid_size=1 → ページ番号は最大5個程度（先頭・末尾各1 + 現在±1 + 現在）＋「…」で省略
 $pagination_args = [
   'base' => $base_url,
   'format' => $format,
   'current' => max(1, $paged),
   'total' => $wp_query->max_num_pages,
-  'prev_text' => '<span>前へ</span>',
-  'next_text' => '<span>次へ</span>',
+  'prev_text' => '<span>prev</span>',
+  'next_text' => '<span>next</span>',
   'type' => 'array',
-  'end_size' => 2,
-  'mid_size' => 2,
+  'end_size' => 1,
+  'mid_size' => 1,
   'show_all' => false,
   'add_args' => array_map('urlencode', $query_args),
 ];
@@ -63,13 +64,13 @@ $pagination_links = paginate_links($pagination_args);
 if (!empty($pagination_links)):
 ?>
   <!-- pagination -->
-  <nav class="p-pagination" aria-label="投稿ナビゲーション">
+  <nav class="p-pagination" aria-label="ページネーション">
     <ul class="p-pagination__numbers">
       <?php foreach ($pagination_links as $link): ?>
         <?php
-        // Determine link type and classes
-        $is_prev = (strpos($link, 'prev') !== false || strpos($link, '前へ') !== false);
-        $is_next = (strpos($link, 'next') !== false || strpos($link, '次へ') !== false);
+        // Determine link type and classes（WP の paginate_links 出力に準拠）
+        $is_prev = (stripos($link, 'prev') !== false);
+        $is_next = (stripos($link, 'next') !== false);
         $is_current = (strpos($link, 'current') !== false || strpos($link, 'aria-current') !== false);
         $is_dots = (strpos($link, 'dots') !== false);
 
@@ -90,6 +91,9 @@ if (!empty($pagination_links)):
         }
         if ($is_current) {
           $link_classes[] = 'current';
+        }
+        if ($is_dots) {
+          $link_classes[] = 'dots';
         }
 
         // Replace or add class attribute

@@ -54,6 +54,12 @@
       @include mq(tab) {
         font-size: rem(100);
       }
+
+      .performance & {
+        @include mq(tab, max) {
+          letter-spacing: -0.028em;
+        }
+      }
     }
 
     #{$ttl-a}__ja {
@@ -67,5 +73,17 @@
         }
       }
     }
+  }
+}
+
+.p-ttl-b {
+  margin-bottom: rem(8);
+  font-family: var(--ff-mincho);
+  font-size: rem(24);
+  font-weight: 700;
+
+  @include mq(tab) {
+    margin-bottom: rem(5);
+    font-size: rem(28);
   }
 }

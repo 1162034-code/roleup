@@ -1,0 +1,24 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  font-family
+======================================== */
+.u-ff-garamond {
+  font-family: var(--ff-garamond);
+}
+
+.u-ff-mincho {
+  font-family: var(--ff-mincho);
+}
+
+.u-ff-noto-serif {
+  font-family: var(--ff-noto-serif);
+}
+
+.u-ff-gothic {
+  font-family: var(--ff-gothic);
+}
+
+.u-ff-jost {
+  font-family: var(--ff-jost);
+}

@@ -1,0 +1,131 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  pagination
+======================================== */
+
+.p-pagination {
+  --item-size: #{rem(29)};
+
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: rem(77);
+
+  @include mq(tab) {
+    --item-size: #{rem(38)};
+
+    margin-top: rem(93);
+  }
+
+  &__numbers {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 5px;
+    align-items: center;
+    justify-content: center;
+
+    a,
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-garamond);
+      font-size: rem(18);
+      font-weight: 500;
+      color: var(--main);
+      text-decoration: none;
+      border-radius: 6px;
+
+      @media (any-hover: hover) {
+        transition: 0.3s;
+        transition-property: color, background;
+
+        &:hover {
+          color: #fff;
+          background: var(--color-gold-dark);
+        }
+      }
+    }
+
+    .numbers,
+    .current {
+      width: var(--item-size);
+      height: var(--item-size);
+    }
+
+    .dots {
+      width: max-content;
+    }
+
+    .current {
+      color: #fff;
+      background: var(--color-gold-dark);
+    }
+
+    .numbers-arrow__prev,
+    .numbers-arrow__next {
+      position: absolute;
+      font-size: rem(20);
+    }
+
+    .numbers-arrow__prev {
+      left: calc((var(--item-size) * 1.45) * -1);
+
+      @include mq(tab) {
+        left: calc((var(--item-size) * 1.95) * -1);
+      }
+    }
+
+    .numbers-arrow__next {
+      right: calc((var(--item-size) * 1.45) * -1);
+
+      @include mq(tab) {
+        right: calc((var(--item-size) * 1.95) * -1);
+      }
+    }
+
+    .prev,
+    .next {
+      position: relative;
+      width: var(--item-size);
+      height: var(--item-size);
+      white-space: nowrap;
+      background: var(--gray06);
+      border: 1px solid var(--gray05);
+      border: none;
+
+      &::before {
+        position: absolute;
+        display: block;
+        width: rem(24);
+        height: rem(7);
+        content: "";
+        background: url("../img/common/icon/arrow_solid_r_black.webp") no-repeat
+          center / contain;
+      }
+
+      &:hover {
+        &::before {
+          @media (any-hover: hover) {
+            border-top-color: var(--base);
+            border-right-color: var(--base);
+          }
+        }
+      }
+    }
+
+    .prev {
+      &::before {
+        left: rem(-37);
+        transform: scale(-1, 1);
+      }
+    }
+
+    .next {
+      &::before {
+        right: rem(-37);
+      }
+    }
+  }
+}

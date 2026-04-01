@@ -1,0 +1,326 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  performance
+======================================== */
+
+/* ----------------------------------------
+  Logos（クライアントロゴ）
+---------------------------------------- */
+.performance-logos {
+  &__placeholder {
+    width: rem(220);
+    height: rem(60);
+    background-color: #d9d9d9;
+    border-radius: rem(4);
+
+    @include mq(tab) {
+      width: rem(300);
+      height: rem(80);
+    }
+  }
+}
+
+/* ----------------------------------------
+  League Table（リーグテーブルランキング）
+---------------------------------------- */
+.performance-league {
+  margin-top: rem(80);
+  background: url("../../../img/page/performance/bg_sp.webp") no-repeat center /
+    cover;
+
+  @include mq(tab) {
+    margin-top: rem(175);
+    background-image: url("../../../img/page/performance/bg.webp");
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: rem(470) 1fr;
+    gap: rem(40);
+    padding-block: rem(90) rem(190);
+
+    @media (width <= 1130px) {
+      grid-template-columns: 1fr;
+    }
+
+    @include mq(tab) {
+      gap: rem(85);
+      padding-block: rem(140) rem(210);
+    }
+  }
+
+  &__desc {
+    margin-top: rem(25);
+    color: #fff;
+
+    @include mq(tab) {
+      margin-top: rem(52);
+    }
+  }
+
+  &__about {
+    position: relative;
+    width: min(100%, rem(452));
+    padding: rem(25);
+    margin-top: rem(48);
+    background-color: #0f0f0f;
+
+    @media (width <= 1130px) {
+      width: 100%;
+    }
+
+    @include mq(tab) {
+      padding: rem(28) rem(24);
+      margin-top: rem(22);
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: rem(15);
+      height: rem(15);
+      content: "";
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      border-top: 1px solid #d1b994;
+      border-left: 1px solid #d1b994;
+    }
+
+    &::after {
+      right: 0;
+      bottom: 0;
+      border-right: 1px solid #d1b994;
+      border-bottom: 1px solid #d1b994;
+    }
+  }
+
+  &__about-ttl {
+    font-weight: 600;
+    line-height: 1;
+    color: #d1b994;
+
+    @include mq(tab) {
+      font-size: rem(15);
+    }
+  }
+
+  &__about-txt {
+    margin-top: rem(14);
+    font-family: var(--ff-gothic);
+    font-size: rem(14);
+    color: #fff;
+  }
+
+  &__right {
+    @include mq(pc) {
+      padding-top: rem(15);
+    }
+  }
+
+  &__review-label {
+    padding: rem(14);
+    font-family: var(--ff-gothic);
+    font-size: rem(17);
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    background-color: #0f0f0f;
+  }
+
+  &__ranks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: rem(15);
+    border-right: 1px solid #797979;
+    border-left: 1px solid #797979;
+
+    @include mq(tab) {
+      margin-top: rem(30);
+    }
+  }
+
+  &__rank {
+    flex: 1 1 auto;
+    text-align: center;
+
+    &:last-child {
+      border-left: 1px solid #797979;
+    }
+  }
+
+  &__rank-label {
+    font-size: rem(11);
+    font-weight: 600;
+    color: #d1b994;
+
+    @include mq(tab) {
+      font-size: rem(21);
+    }
+  }
+
+  &__rank-num {
+    font-size: rem(21);
+    font-weight: 400;
+    color: #fff;
+
+    @include mq(tab) {
+      font-size: rem(38);
+    }
+  }
+
+  &__rank-val {
+    font-family: var(--ff-garamond);
+    font-size: rem(80);
+    line-height: 1;
+    color: #fff;
+
+    @include mq(tab) {
+      margin-right: rem(6);
+      font-size: rem(150);
+    }
+  }
+
+  &__rank-en {
+    margin-top: rem(5);
+    font-family: var(--ff-garamond);
+    font-size: rem(9);
+    color: #b2b2b2;
+
+    @include mq(tab) {
+      margin-top: rem(10);
+      font-size: rem(17);
+    }
+  }
+
+  &__rank-note {
+    margin-top: rem(10);
+    font-family: var(--ff-gothic);
+    font-size: rem(14);
+    color: #fff;
+
+    @include mq(tab) {
+      margin-top: rem(40);
+    }
+  }
+
+  &__history {
+    margin-top: rem(47);
+
+    @include mq(tab) {
+      margin-top: rem(58);
+    }
+  }
+
+  &__history-ttl {
+    font-family: var(--ff-gothic);
+    color: #fff;
+    text-align: center;
+  }
+
+  &__history-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(13);
+    margin-top: rem(15);
+
+    @include mq(tab) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: rem(12);
+    }
+  }
+
+  &__history-item {
+    padding: rem(13) rem(10);
+    color: #fff;
+    text-align: center;
+    background-color: rgba(#fff, 0.16);
+    border-radius: 4px;
+  }
+
+  &__history-quarter {
+    font-family: var(--ff-gothic);
+    font-size: rem(14);
+    font-weight: 500;
+  }
+
+  &__history-rank {
+    margin-top: rem(2);
+    font-weight: 400;
+    line-height: 1;
+
+    @include mq(tab) {
+      margin-top: rem(7);
+    }
+  }
+
+  &__history-val {
+    font-family: var(--ff-garamond);
+    font-size: rem(60);
+    font-weight: 500;
+  }
+
+  &__history-type {
+    margin-top: rem(3);
+    font-family: var(--ff-gothic);
+    font-size: rem(12);
+
+    @include mq(tab) {
+      margin-top: rem(10);
+    }
+  }
+}
+
+/* ----------------------------------------
+  CTA（お問い合わせバナー）
+---------------------------------------- */
+.performance-cta {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    align-items: center;
+    min-height: rem(227);
+    padding: rem(50) rem(30);
+    background: url("../../../img/page/performance/cta_bg.webp") no-repeat
+      center / cover;
+    background-color: rgb(0 0 0 / 85%);
+    border-radius: rem(4);
+    box-shadow: 0 14px 16px rgb(0 0 0 / 14%);
+
+    @include mq(tab) {
+      --container-w: #{rem(1194)};
+
+      flex-direction: row;
+      gap: rem(48);
+      justify-content: space-between;
+      min-height: rem(208);
+      padding: rem(20) rem(90);
+    }
+  }
+
+  &__txt {
+    font-family: var(--ff-mincho);
+    font-size: rem(18);
+    line-height: 1.8;
+    color: #fff;
+    text-align: center;
+
+    @include mq(tab) {
+      font-size: rem(22);
+      text-align: left;
+    }
+  }
+}
+
+/* ----------------------------------------
+  Related（関連ページ）追加スタイル
+---------------------------------------- */
+.p-related__card-link.-group {
+  background: url("../../../img/common/related_bg_service.webp") no-repeat
+    center / cover;
+}

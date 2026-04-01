@@ -6,6 +6,8 @@
 
 .p-related {
   &__inner {
+    display: grid;
+    gap: rem(37);
     padding-block: rem(80) rem(100);
 
     @include mq(pc) {
@@ -13,6 +15,7 @@
       flex-direction: row;
       gap: rem(56);
       align-items: flex-start;
+      justify-content: space-between;
       padding-block: rem(160) rem(150);
     }
   }
@@ -22,14 +25,11 @@
     flex-direction: column;
     gap: rem(18);
     width: 100%;
-    margin-top: rem(37);
 
     @include mq(tab) {
       flex-direction: row;
       gap: rem(24);
       width: min(100%, rem(728));
-      margin-inline: auto;
-      margin-top: rem(50);
     }
   }
 
