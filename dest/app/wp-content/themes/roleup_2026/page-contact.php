@@ -13,8 +13,8 @@
         <p>お電話からのお問い合わせについては以下の番号よりお待ちしております。</p>
       </div>
       <div class="p-page-header__info js-fade-in">
-        <p class="p-page-header__tel"><span class="p-page-header__tel-label u-txt-uppercase">tel</span>03<span class="hyphen">-</span>0000<span class="hyphen">-</span>0000</p>
-        <p class="p-page-header__time">受付時間：平日 9:00〜18:00</p>
+        <p class="p-page-header__tel"><span class="p-page-header__tel-label u-txt-uppercase">tel</span>03<span class="hyphen">-</span>6826<span class="hyphen">-</span>2170</p>
+        <p class="p-page-header__time">受付時間：平日 9:00〜17:30</p>
       </div>
     </div>
   </section>

@@ -115,11 +115,11 @@ if (! defined('ABSPATH')) exit;
   /**
    * 【管理画面】投稿メニューを非表示
    */
-  function remove_menus () {
-    global $menu;
-    remove_menu_page( 'edit.php' );
-  }
-  add_action('admin_menu', 'remove_menus');
+  // function remove_menus () {
+  //   global $menu;
+  //   remove_menu_page( 'edit.php' );
+  // }
+  // add_action('admin_menu', 'remove_menus');
 
   /**
    * contact form 7 バリデーションチェック

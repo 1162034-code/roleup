@@ -151,11 +151,11 @@
           </a>
         </li>
         <li class="p-related__card js-fade-in">
-          <a href="<?php echo esc_url(home_url()); ?>/performance/" class="p-related__card-link -performance">
-            <p class="p-related__card-category">Performance</p>
+          <a href="<?php echo esc_url(home_url()); ?>/group/" class="p-related__card-link -group">
+            <p class="p-related__card-category">Group</p>
             <div class="p-related__card-body">
-              <h3 class="p-related__card-ttl">実績</h3>
-              <p class="p-related__card-desc">第三者データで証明された、M&A支援実績をご紹介します。</p>
+              <h3 class="p-related__card-ttl">グループ会社</h3>
+              <p class="p-related__card-desc">税務・監査の専門法人と連携し、M＆Aの検討から統合後まで支援します。</p>
             </div>
           </a>
         </li>

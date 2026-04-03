@@ -63,6 +63,11 @@
       background: url("../img/common/related_bg_performance.webp") no-repeat
         center / cover;
     }
+
+    &.-group {
+      background: url("../img/common/related_bg_group.webp") no-repeat center /
+        cover;
+    }
   }
 
   &__card-category {
