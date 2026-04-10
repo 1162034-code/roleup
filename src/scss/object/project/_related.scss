@@ -54,6 +54,15 @@
       padding: rem(40) rem(30);
     }
 
+    @media (hover: hover) {
+      transition: 0.3s;
+      transition-property: opacity;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
     &.-service {
       background: url("../img/common/related_bg_service.webp") no-repeat
         center / cover;

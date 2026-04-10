@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "mcp__figma__get_design_context"
+      "mcp__figma__get_design_context",
+      "Bash(perl -i -pe 's|<li class=\"global-partner__country\"><span class=\"global-partner__country-en\">\\([^<]+\\)</span><span class=\"global-partner__country-ja\">[^<]+</span></li>|<li class=\"global-partner__country\">$1</li>|g' page-global-network.php)"
     ]
   },
   "enableAllProjectMcpServers": true,

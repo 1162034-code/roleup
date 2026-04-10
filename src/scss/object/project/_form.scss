@@ -5,6 +5,7 @@
 ======================================== */
 fieldset {
   padding: 0;
+  margin: 0;
   border: none;
 }
 
@@ -85,16 +86,18 @@ fieldset {
     width: 100%;
     height: rem(46);
     padding: 0.5em 1em;
+    font-family: var(--ff-gothic);
     font-size: rem(14);
     background-color: #fff;
     border: 1px solid #cdcdcd;
-    border-radius: 4px;
+    border-radius: rem(4);
   }
 
   textarea {
     width: 100%;
     height: rem(240);
     padding: 0.5em 1em;
+    font-family: var(--ff-gothic);
     resize: vertical;
     border: 1px solid #cdd6dd;
   }
@@ -141,14 +144,99 @@ fieldset {
 }
 
 .p-form__privacy-policy {
-  width: fit-content;
-  margin-inline: auto;
-  margin-top: rem(55);
+  margin-top: rem(100);
 }
 
-.p-form__checkbox {
+.p-form__policy-content {
+  max-height: rem(400);
+  padding: rem(30);
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  font-family: var(--ff-gothic);
+  border: 1px solid #cdcdcd;
+
+  section {
+    counter-reset: ttl-counter;
+
+    & + section {
+      margin-top: rem(80);
+    }
+
+    h2 {
+      margin-bottom: 1em;
+      font-size: rem(26);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    h3 {
+      margin-block: 2em 1em;
+      font-size: rem(20);
+      font-weight: 500;
+      counter-increment: ttl-counter;
+
+      &::before {
+        margin-right: 0.5em;
+        content: counter(ttl-counter) "." attr(title);
+      }
+    }
+
+    h4 {
+      margin-block: 1em 0;
+      font-size: rem(18);
+      font-weight: 500;
+    }
+
+    ol,
+    ul {
+      padding-left: 1.4em;
+      margin-bottom: rem(12);
+
+      li + li {
+        margin-top: rem(4);
+      }
+    }
+
+    ol {
+      counter-reset: my-counter;
+
+      li {
+        position: relative;
+        padding-left: 1.4em;
+
+        &::before {
+          position: absolute;
+          top: calc(1lh - 0.45em);
+          left: 0;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.3em;
+          height: 1.3em;
+          font-size: 0.8em;
+          line-height: 1;
+          content: counter(my-counter);
+          counter-increment: my-counter;
+          border: 1px solid;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .p-form__policy-address {
+    margin: rem(12) 0;
+    font-style: normal;
+    line-height: 1.6;
+  }
+}
+
+.p-form__policy-checkbox {
   display: grid;
-  margin-right: -1em;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: rem(30);
   font-family: var(--ff-gothic);
   font-size: rem(16);
   font-weight: 500;
@@ -233,6 +321,62 @@ fieldset {
 }
 
 // contact form 7
+.wpcf7-radio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(10) rem(20);
+  margin-top: rem(10);
+  font-family: var(--ff-gothic);
+
+  label {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: rem(5);
+    align-items: center;
+
+    input[type="radio"] {
+      position: relative;
+      top: 0.05em;
+      width: 1em;
+      height: 1em;
+      margin: 0;
+      appearance: none;
+      background-color: #fff;
+      border: 1px solid #999899;
+      border-radius: 50%;
+      transition: 0.3s;
+
+      &::before {
+        transition: 0.3s;
+      }
+
+      &:checked {
+        background-color: #fff;
+
+        &::before {
+          position: absolute;
+          inset-block: 0;
+          inset-inline: 0;
+          display: block;
+          width: 0.625em;
+          height: 0.625em;
+          margin: auto;
+          content: "";
+          background-color: var(--color-gold-dark);
+          border-radius: 50%;
+        }
+      }
+    }
+
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+    }
+  }
+}
+
 .wpcf7-list-item {
   margin: 0 !important;
 }
@@ -246,4 +390,8 @@ fieldset {
 
 .wpcf7-file {
   font-size: 18px;
+}
+
+.wpcf7-not-valid-tip {
+  font-family: var(--ff-gothic);
 }

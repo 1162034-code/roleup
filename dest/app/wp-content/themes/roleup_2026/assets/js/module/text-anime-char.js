@@ -9,6 +9,7 @@ export function initTextAnimeChar() {
 
   elements.forEach((element) => {
     splitTextToChars(element);
+    element.closest('.js-text-anime-up')?.classList.add('is-ready');
   });
 }
 

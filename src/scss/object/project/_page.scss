@@ -36,6 +36,14 @@
     font-family: var(--ff-gothic);
   }
 
+  &__nav {
+    margin-top: rem(40);
+
+    @include mq(tab) {
+      margin-top: rem(68);
+    }
+  }
+
   &__info {
     margin-top: rem(7);
 

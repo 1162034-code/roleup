@@ -12,8 +12,6 @@
   overflow: hidden;
 
   &__bg-txt {
-    display: none;
-
     @include mq(tab) {
       position: absolute;
       bottom: rem(-50);
@@ -24,7 +22,7 @@
     }
 
     @include mq(pc) {
-      bottom: rem(43);
+      bottom: 0;
     }
   }
 
@@ -119,12 +117,6 @@
 ---------------------------------------- */
 .group-synergy {
   position: relative;
-  background: url("../../../img/page/group/bg_01_sp.webp") no-repeat center /
-    cover;
-
-  @include mq(tab) {
-    background-image: url("../../../img/page/group/bg_01.webp");
-  }
 
   &__inner {
     display: flex;
@@ -136,7 +128,7 @@
       gap: rem(80);
       align-items: flex-start;
       justify-content: space-between;
-      padding-block: rem(145) rem(210);
+      padding-block: rem(100) rem(210);
     }
 
     @media (width <= 1250px) {
@@ -154,13 +146,6 @@
       gap: rem(50);
       width: min(100%, rem(448));
     }
-  }
-
-  &__desc {
-    font-family: var(--ff-mincho);
-    font-size: rem(16);
-    line-height: 1.8;
-    color: #fff;
   }
 
   &__phases {
@@ -181,7 +166,8 @@
     flex-direction: column;
     gap: rem(15);
     padding: rem(33) rem(33) rem(36);
-    background-color: rgba(#fff, 0.16);
+    background-color: #fff;
+    border: 1px solid #777;
     border-radius: rem(4);
 
     @include mq(tab) {
@@ -232,18 +218,13 @@
   }
 
   &__phase-ttl {
-    font-family: var(--ff-mincho);
     font-size: rem(22);
     font-weight: 600;
-    line-height: 1.8;
-    color: #fff;
   }
 
   &__phase-company {
     font-family: var(--ff-gothic);
-    font-size: rem(16);
     line-height: 1.2;
-    color: #fff;
 
     @include mq(tab) {
       text-align: right;

@@ -42,29 +42,69 @@ if (! defined('ABSPATH')) exit;
   add_action('after_setup_theme', 'theme_setup');
 
   /**
-   * カラーパレットを追加
+   * カラーパレットを追加（WordPress標準カラー）
    */
   function add_color_palette() {
     add_theme_support( 'editor-color-palette', [
       [
-        'name' => 'Orange',
-        'slug' => 'orange',
-        'color' => '#ec6d54',
+        'name'  => 'Black',
+        'slug'  => 'black',
+        'color' => '#000000',
       ],
       [
-        'name' => 'Green',
-        'slug' => 'green',
-        'color' => '#00934c',
+        'name'  => 'Cyan bluish gray',
+        'slug'  => 'cyan-bluish-gray',
+        'color' => '#abb8c3',
       ],
       [
-        'name' => 'Blue',
-        'slug' => 'blue',
-        'color' => '#3896ce',
+        'name'  => 'White',
+        'slug'  => 'white',
+        'color' => '#ffffff',
       ],
       [
-        'name' => 'Yellow',
-        'slug' => 'yellow',
-        'color' => '#eec22c',
+        'name'  => 'Pale pink',
+        'slug'  => 'pale-pink',
+        'color' => '#f78da7',
+      ],
+      [
+        'name'  => 'Vivid red',
+        'slug'  => 'vivid-red',
+        'color' => '#cf2e2e',
+      ],
+      [
+        'name'  => 'Luminous vivid orange',
+        'slug'  => 'luminous-vivid-orange',
+        'color' => '#ff6900',
+      ],
+      [
+        'name'  => 'Luminous vivid amber',
+        'slug'  => 'luminous-vivid-amber',
+        'color' => '#fcb900',
+      ],
+      [
+        'name'  => 'Light green cyan',
+        'slug'  => 'light-green-cyan',
+        'color' => '#7bdcb5',
+      ],
+      [
+        'name'  => 'Vivid green cyan',
+        'slug'  => 'vivid-green-cyan',
+        'color' => '#00d084',
+      ],
+      [
+        'name'  => 'Pale cyan blue',
+        'slug'  => 'pale-cyan-blue',
+        'color' => '#8ed1fc',
+      ],
+      [
+        'name'  => 'Vivid cyan blue',
+        'slug'  => 'vivid-cyan-blue',
+        'color' => '#0693e3',
+      ],
+      [
+        'name'  => 'Vivid purple',
+        'slug'  => 'vivid-purple',
+        'color' => '#9b51e0',
       ],
     ] );
   }
@@ -115,68 +155,68 @@ if (! defined('ABSPATH')) exit;
   /**
    * 【管理画面】投稿メニューを非表示
    */
-  // function remove_menus () {
-  //   global $menu;
-  //   remove_menu_page( 'edit.php' );
-  // }
-  // add_action('admin_menu', 'remove_menus');
+  function remove_menus () {
+    global $menu;
+    remove_menu_page( 'edit.php' );
+  }
+  add_action('admin_menu', 'remove_menus');
 
   /**
    * contact form 7 バリデーションチェック
    */
-	// add_filter('wpcf7_validate_email', 'custom_email_validation_filter', 20, 2);
-	// add_filter('wpcf7_validate_email*', 'custom_email_validation_filter', 20, 2);
-	// function custom_email_validation_filter($result, $tag) {
-	// 	$name = $tag['name'];
-	// 	if ($name == 'your-email') {
-	// 		$value = isset($_POST[$name]) ? trim($_POST[$name]) : "";
-	// 		if (! is_email($value)) {
-	// 			$result->invalidate($tag, "正しいメールアドレスを入力してください。");
-	// 		}
-	// 	} elseif ($name == 'your-email-confirm') {
-	// 		$value = isset($_POST[$name]) ? trim($_POST[$name]) : "";
-	// 		$original_email = isset($_POST['your-email']) ? trim($_POST['your-email']) : "";
+	add_filter('wpcf7_validate_email', 'custom_email_validation_filter', 20, 2);
+	add_filter('wpcf7_validate_email*', 'custom_email_validation_filter', 20, 2);
+	function custom_email_validation_filter($result, $tag) {
+		$name = $tag['name'];
+		if ($name == 'your-email') {
+			$value = isset($_POST[$name]) ? trim($_POST[$name]) : "";
+			if (! is_email($value)) {
+				$result->invalidate($tag, "正しいメールアドレスを入力してください。");
+			}
+		} elseif ($name == 'your-email-confirm') {
+			$value = isset($_POST[$name]) ? trim($_POST[$name]) : "";
+			$original_email = isset($_POST['your-email']) ? trim($_POST['your-email']) : "";
 
-	// 		// メールアドレス形式チェック
-	// 		if (! is_email($value)) {
-	// 			$result->invalidate($tag, "正しいメールアドレスを入力してください。");
-	// 		}
-	// 		// 一致チェック
-	// 		elseif ($value !== $original_email) {
-	// 			$result->invalidate($tag, "メールアドレスが一致しません。");
-	// 		}
-	// 	}
-	// 	return $result;
-	// }
+			// メールアドレス形式チェック
+			if (! is_email($value)) {
+				$result->invalidate($tag, "正しいメールアドレスを入力してください。");
+			}
+			// 一致チェック
+			elseif ($value !== $original_email) {
+				$result->invalidate($tag, "メールアドレスが一致しません。");
+			}
+		}
+		return $result;
+	}
 
-	// add_filter('wpcf7_validate_tel', 'custom_phone_validation_filter', 20, 2);
-	// add_filter('wpcf7_validate_tel*', 'custom_phone_validation_filter', 20, 2);
+	add_filter('wpcf7_validate_tel', 'custom_phone_validation_filter', 20, 2);
+	add_filter('wpcf7_validate_tel*', 'custom_phone_validation_filter', 20, 2);
 
-	// function custom_phone_validation_filter($result, $tag) {
-	// 	$name = $tag['name'];
-	// 	if ($name == 'your-tel') {
-	// 		$value = isset($_POST[$name]) ? trim($_POST[$name]) : "";
-	// 		$pattern = '/^\d{2,4}-?\d{2,4}-?\d{4}$/';
-	// 		if (!preg_match($pattern, $value)) {
-	// 			$result->invalidate($tag, "正しい電話番号を入力してください。(例: 03-1234-5678 または 0312345678)");
-	// 		}
-	// 	}
-	// 	return $result;
-	// }
+	function custom_phone_validation_filter($result, $tag) {
+		$name = $tag['name'];
+		if ($name == 'your-tel') {
+			$value = isset($_POST[$name]) ? trim($_POST[$name]) : "";
+			$pattern = '/^\d{2,4}-?\d{2,4}-?\d{4}$/';
+			if (!preg_match($pattern, $value)) {
+				$result->invalidate($tag, "正しい電話番号を入力してください。(例: 03-1234-5678 または 0312345678)");
+			}
+		}
+		return $result;
+	}
 
-	// add_filter('wpcf7_validate_text', 'custom_text_validation_filter', 20, 2);
-	// add_filter('wpcf7_validate_text*', 'custom_text_validation_filter', 20, 2);
+	add_filter('wpcf7_validate_text', 'custom_text_validation_filter', 20, 2);
+	add_filter('wpcf7_validate_text*', 'custom_text_validation_filter', 20, 2);
 
-	// function custom_text_validation_filter($result, $tag) {
-	// 	$name = $tag['name'];
-	// 	if ($name == 'your-kana') {
-	// 		$value = isset($_POST[$name]) ? trim($_POST[$name]) : "";
+	function custom_text_validation_filter($result, $tag) {
+		$name = $tag['name'];
+		if ($name == 'your-kana') {
+			$value = isset($_POST[$name]) ? trim($_POST[$name]) : "";
 
-	// 		// カタカナチェック（全角カタカナとスペースのみ許可）
-	// 		$pattern = '/^[ァ-ヾ\s]+$/u';
-	// 		if (!preg_match($pattern, $value)) {
-	// 			$result->invalidate($tag, "フリガナは全角カタカナで入力してください。");
-	// 		}
-	// 	}
-	// 	return $result;
-	// }
+			// カタカナチェック（全角カタカナとスペースのみ許可）
+			$pattern = '/^[ァ-ヾ\s]+$/u';
+			if (!preg_match($pattern, $value)) {
+				$result->invalidate($tag, "フリガナは全角カタカナで入力してください。");
+			}
+		}
+		return $result;
+	}

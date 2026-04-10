@@ -30,6 +30,16 @@ function custom_enqueue_styles() {
   if ( is_page( 'performance' ) ) {
     wp_enqueue_style( 'style-performance', get_theme_file_uri( 'assets/css/page/performance/index.css' ), array('style-theme') );
   }
+
+  // Serviceページ専用スタイル
+  if ( is_page( 'service' ) ) {
+    wp_enqueue_style( 'style-service', get_theme_file_uri( 'assets/css/page/service/index.css' ), array('style-theme') );
+  }
+
+  // グローバルネットワークページ専用スタイル
+  if ( is_page( 'global-network' ) ) {
+    wp_enqueue_style( 'style-global-network', get_theme_file_uri( 'assets/css/page/global/index.css' ), array('style-theme') );
+  }
 }
 
 /* スクリプト読み込み */
@@ -40,6 +50,10 @@ function custom_wp_enqueue_scripts() {
   }
 
 	wp_enqueue_script( 'script-common', get_theme_file_uri( 'assets/js/common.js' ), array(), false, true );
+
+  if ( is_page( 'contact' ) ) {
+    wp_enqueue_script( 'script-group', get_theme_file_uri( 'assets/js/form.js' ), array(), false, true );
+  }
 }
 
 add_filter('script_loader_tag', 'add_type_attribute', 10, 3);

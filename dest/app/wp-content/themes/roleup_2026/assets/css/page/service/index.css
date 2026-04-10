@@ -1,0 +1,281 @@
+@charset "UTF-8";
+/* ========================================
+  service
+======================================== */
+/* ----------------------------------------
+  Service Item（各サービスセクション）
+---------------------------------------- */
+.service-item {
+  margin-top: 1.25rem;
+}
+@media screen and (min-width: 769px) {
+  .service-item {
+    margin-top: 6.25rem;
+  }
+}
+.service-item + .service-item {
+  margin-top: 4.5rem;
+}
+@media screen and (min-width: 1025px) {
+  .service-item + .service-item {
+    margin-top: 10rem;
+  }
+}
+.service-item__inner {
+  display: grid;
+  gap: 0.625rem 0;
+  align-items: start;
+}
+@media screen and (min-width: 1025px) {
+  .service-item__inner {
+    grid-template-columns: 1fr 36%;
+    gap: 1.5rem 6.875rem;
+  }
+}
+.service-item__num-wrap {
+  display: inline-grid;
+  grid-template-rows: max-content;
+  grid-template-columns: max-content;
+  place-items: center start;
+  line-height: 0;
+}
+@media screen and (min-width: 1025px) {
+  .service-item__num-wrap {
+    grid-column: span 2;
+  }
+}
+.service-item__num {
+  display: block;
+  grid-area: 1/1;
+  padding-left: 0.9375rem;
+  font-family: var(--ff-garamond);
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1;
+  background: linear-gradient(100deg, #785e3e 8%, #e7c8a3 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media screen and (min-width: 769px) {
+  .service-item__num {
+    font-size: 4.375rem;
+  }
+}
+.service-item__label {
+  display: flex;
+  grid-area: 1/1;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-garamond);
+  font-size: 0.875rem;
+  line-height: 1;
+  background: linear-gradient(115deg, #785e3e 8%, #e7c8a3 100%);
+  background-clip: text;
+  writing-mode: vertical-rl;
+  -webkit-text-fill-color: transparent;
+}
+@media screen and (min-width: 769px) {
+  .service-item__label {
+    font-size: 1rem;
+  }
+}
+.service-item__ttl {
+  font-family: var(--ff-mincho);
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #111;
+}
+@media screen and (min-width: 769px) {
+  .service-item__ttl {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+}
+.service-item__desc {
+  margin-top: 1rem;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+}
+@media screen and (min-width: 769px) {
+  .service-item__desc {
+    margin-top: 2.5rem;
+    font-size: 1.125rem;
+  }
+}
+.service-item__line {
+  width: 4rem;
+  height: 1px;
+  margin-inline: 0;
+  margin-top: 1.875rem;
+  background: #797979;
+}
+@media screen and (min-width: 769px) {
+  .service-item__line {
+    margin-top: 3rem;
+  }
+}
+.service-item__features {
+  display: grid;
+  gap: 0.625rem;
+  margin-top: 1.875rem;
+}
+@media screen and (min-width: 769px) {
+  .service-item__features {
+    gap: 1.125rem;
+    margin-top: 3rem;
+  }
+}
+.service-item__features li {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  gap: 0.875rem;
+  font-family: var(--ff-gothic);
+}
+.service-item__features li::before {
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+  content: "";
+  background: url("../../../img/common/icon/check.webp") no-repeat center/contain;
+}
+.service-item__img {
+  margin-top: 1.4375rem;
+  box-shadow: 20px 26px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.service-item__img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ----------------------------------------
+  Service Process（M&A支援の流れ）
+---------------------------------------- */
+.service-process {
+  position: relative;
+  margin-top: 5.625rem;
+  overflow: hidden;
+  background: url("../../../img/page/service/process_bg_sp.webp") no-repeat center/cover;
+}
+@media screen and (min-width: 769px) {
+  .service-process {
+    margin-top: 10rem;
+    background-image: url("../../../img/page/service/process_bg.webp");
+  }
+}
+.service-process__inner {
+  padding-block: 5.625rem 12.1875rem;
+}
+@media screen and (min-width: 769px) {
+  .service-process__inner {
+    padding-block: 8.75rem 13.125rem;
+  }
+}
+.service-process__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+@media screen and (min-width: 1025px) {
+  .service-process__header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+.service-process__desc {
+  font-family: var(--ff-mincho);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: #fff;
+}
+@media screen and (min-width: 769px) {
+  .service-process__desc {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .service-process__desc {
+    padding-top: 4.375rem;
+    text-align: right;
+  }
+}
+.service-process__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 769px) {
+  .service-process__steps {
+    flex-direction: row;
+    align-items: stretch;
+    margin-top: 3.75rem;
+  }
+}
+.service-process__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 2.0625rem;
+  background-color: rgba(255, 255, 255, 0.16);
+  border: 1px solid #414141;
+  border-radius: 0.25rem;
+}
+@media screen and (min-width: 769px) {
+  .service-process__step {
+    flex: 1 1 0;
+    padding: 2rem;
+  }
+}
+.service-process__step + .service-process__step::before {
+  position: absolute;
+  inset-block: 0;
+  left: -1.5625rem;
+  display: block;
+  width: 1.5rem;
+  height: 1px;
+  margin-block: auto;
+  content: "";
+  background: #c2b6a5;
+}
+.service-process__step-num {
+  font-family: var(--ff-garamond);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  background: linear-gradient(110deg, rgb(117, 103, 91) 1%, rgb(231, 200, 163) 22%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.service-process__step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.0625rem;
+}
+@media screen and (min-width: 769px) {
+  .service-process__step-body {
+    margin-top: 2rem;
+  }
+}
+.service-process__step-ttl {
+  font-family: var(--ff-mincho);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+@media screen and (min-width: 769px) {
+  .service-process__step-ttl {
+    font-size: 1.375rem;
+  }
+}
+.service-process__step-desc {
+  font-family: var(--ff-gothic);
+  color: #fff;
+  text-align: justify;
+}

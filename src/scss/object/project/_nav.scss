@@ -465,31 +465,40 @@
     @include mq(tab) {
       gap: rem(24);
     }
-  }
 
-  &__item {
-    flex: 0 0 rem(160);
+    > li {
+      flex: 0 0 calc(50% - rem(24));
+
+      @include mq(tab) {
+        flex: 0 0 auto;
+      }
+    }
   }
 
   &__link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: rem(160);
-    padding: rem(10);
+    position: relative;
+    display: block;
+    padding: rem(10) rem(30) rem(10) rem(10);
     font-family: var(--ff-gothic);
-    font-size: rem(16);
+    font-size: rem(14);
     line-height: 1.8;
     color: var(--main-text-color);
     text-decoration: none;
     border-bottom: 1px solid #d8d8d8;
     transition: border-color 0.3s;
 
+    @include mq(tab) {
+      min-width: rem(160);
+    }
+
     &::after {
-      display: inline-block;
-      flex-shrink: 0;
+      position: absolute;
+      inset-block: 0;
+      right: rem(10);
+      display: block;
       width: rem(10);
       height: rem(5);
+      margin-block: auto;
       content: "";
       background: url("../img/common/icon/arrow_b_brown.webp") no-repeat
         center / contain;
@@ -502,6 +511,112 @@
     @media (any-hover: hover) {
       &:hover {
         border-bottom-color: var(--color-gold-dark);
+      }
+    }
+  }
+}
+
+.p-nav-article {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: rem(95);
+
+  &__prev,
+  &__next,
+  &__all {
+    display: block;
+    font-weight: 500;
+  }
+
+  &__all {
+    font-size: rem(18);
+    text-decoration: underline;
+    text-underline-offset: rem(14);
+
+    @media (hover: hover) {
+      transition: 0.3s;
+      transition-property: text-underline-offset, color;
+
+      &:hover {
+        color: var(--color-gold-dark);
+        text-underline-offset: rem(16);
+      }
+    }
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    font-family: var(--ff-garamond);
+    font-size: rem(20);
+
+    &::before {
+      position: absolute;
+      inset-block: 0;
+      display: block;
+      width: rem(24);
+      height: rem(7);
+      margin-block: auto;
+      content: "";
+      background: url("../img/common/icon/arrow_solid_r_black.webp") no-repeat
+        center / contain;
+    }
+
+    @media (hover: hover) {
+      transition: 0.3s;
+      transition-property: color;
+
+      &::before {
+        transition: 0.3s;
+        transition-property: transform;
+      }
+
+      &:hover {
+        color: var(--color-gold-dark);
+      }
+    }
+  }
+
+  &__prev {
+    left: rem(-75);
+
+    @include mq(tab) {
+      left: rem(-115);
+    }
+
+    &::before {
+      left: rem(-38);
+      transform: scaleX(-1);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        &::before {
+          transform: scaleX(-1) translateX(rem(4));
+        }
+      }
+    }
+  }
+
+  &__next {
+    right: rem(-75);
+
+    @include mq(tab) {
+      right: rem(-115);
+    }
+
+    &::before {
+      right: rem(-38);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        &::before {
+          transform: translateX(rem(4));
+        }
       }
     }
   }

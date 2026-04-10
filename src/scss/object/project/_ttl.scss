@@ -26,6 +26,7 @@
   }
 
   &__ja {
+    padding-left: 0.2em;
     font-family: var(--ff-noto-serif);
     font-size: rem(14);
     font-weight: 400;
@@ -60,6 +61,13 @@
           letter-spacing: -0.028em;
         }
       }
+
+      .tax &,
+      .audit & {
+        @include mq(tab, max) {
+          font-size: rem(69);
+        }
+      }
     }
 
     #{$ttl-a}__ja {
@@ -70,6 +78,13 @@
 
         @include mq(tab) {
           margin-top: rem(15);
+        }
+      }
+
+      .tax &,
+      .audit & {
+        @include mq(tab, max) {
+          margin-top: rem(14);
         }
       }
     }

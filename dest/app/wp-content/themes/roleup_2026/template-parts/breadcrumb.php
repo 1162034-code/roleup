@@ -28,6 +28,17 @@ if (!function_exists('get_safe_post_type_object')) {
   }
 }
 
+// Helper function to truncate long titles with ellipsis
+if (!function_exists('truncate_breadcrumb_title')) {
+  function truncate_breadcrumb_title($title, $length = 38)
+  {
+    if (mb_strlen($title) > $length) {
+      return mb_substr($title, 0, $length) . '…';
+    }
+    return $title;
+  }
+}
+
 // Helper function to safely get taxonomy object
 if (!function_exists('get_safe_taxonomy')) {
   function get_safe_taxonomy($taxonomy)
@@ -352,9 +363,9 @@ if (!empty($breadcrumb_items)):
 						<?php
 						$link_class = isset($item['class']) ? $item['class'] : '';
 						?>
-						<a class="<?php echo esc_attr($link_class); ?>" href="<?php echo $item['url']; ?>"><?php echo $item['title']; ?></a>
+						<a class="<?php echo esc_attr($link_class); ?>" href="<?php echo $item['url']; ?>" title="<?php echo $item['title']; ?>"><?php echo truncate_breadcrumb_title($item['title']); ?></a>
 					<?php else: ?>
-						<?php echo $item['title']; ?>
+						<span title="<?php echo $item['title']; ?>"><?php echo truncate_breadcrumb_title($item['title']); ?></span>
 					<?php endif; ?>
 				</li>
 			<?php endforeach; ?>

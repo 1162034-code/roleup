@@ -1,0 +1,263 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  global
+======================================== */
+
+/* ----------------------------------------
+  Network（ネットワーク）
+---------------------------------------- */
+.global-partner {
+  position: relative;
+  @include mq(tab) {
+    background: #f5f5f5 url("../../../img/page/global-network/partner_bg.webp")
+      no-repeat left top / 100%;
+  }
+
+  &__inner {
+    padding-block: rem(80) rem(100);
+
+    @include mq(tab) {
+      padding-block: rem(150);
+    }
+  }
+
+  &__desc {
+    @include mq(tab) {
+      margin-top: rem(45);
+    }
+  }
+
+  &__regions {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(50);
+
+    @include mq(tab) {
+      margin-top: rem(70);
+    }
+  }
+
+  &__region {
+    border-top: 1px solid rgb(255 255 255 / 20%);
+
+    &:last-child {
+      border-bottom: 1px solid rgb(255 255 255 / 20%);
+    }
+  }
+
+  &__accordion-head {
+    display: flex;
+    gap: rem(16);
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(24) 0;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    @include mq(tab) {
+      padding: rem(32) 0;
+    }
+  }
+
+  &__accordion-ttl {
+    flex: 1;
+    font-family: var(--ff-mincho);
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+
+    @include mq(tab) {
+      font-size: rem(20);
+    }
+  }
+
+  &__accordion-count {
+    font-family: var(--ff-garamond);
+    font-size: rem(12);
+    font-weight: 400;
+    line-height: 1;
+    color: rgb(255 255 255 / 60%);
+  }
+
+  &__accordion-icon {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    width: rem(24);
+    height: rem(24);
+    transition: transform 0.3s ease;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "";
+      background-color: #fff;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      width: rem(12);
+      height: 1px;
+    }
+
+    &::after {
+      width: 1px;
+      height: rem(12);
+    }
+  }
+
+  &__countries {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(12) rem(16);
+    padding-bottom: rem(32);
+
+    @include mq(tab) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(16) rem(24);
+      padding-bottom: rem(48);
+    }
+
+    @include mq(pc) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__country {
+    display: flex;
+    flex-direction: column;
+    gap: rem(2);
+  }
+
+  &__country-en {
+    font-family: var(--ff-garamond);
+    font-size: rem(11);
+    font-weight: 400;
+    line-height: 1.4;
+    color: rgb(255 255 255 / 50%);
+  }
+
+  &__country-ja {
+    font-family: var(--ff-gothic);
+    font-size: rem(13);
+    font-weight: 400;
+    line-height: 1.4;
+    color: #fff;
+
+    @include mq(tab) {
+      font-size: rem(14);
+    }
+  }
+}
+
+// アコーディオン open 時にアイコンを回転
+.global-network__accordion[open] .global-network__accordion-icon {
+  transform: rotate(45deg);
+}
+
+/* ----------------------------------------
+  Cross-border（クロスボーダーM&A）
+---------------------------------------- */
+.global-crossborder {
+  position: relative;
+  overflow: hidden;
+  background-color: #111;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: rem(48);
+    padding-block: rem(80);
+
+    @include mq(pc) {
+      flex-direction: row;
+      gap: rem(80);
+      align-items: flex-start;
+      padding-block: rem(140);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: rem(24);
+  }
+
+  &__desc {
+    font-family: var(--ff-mincho);
+    font-size: rem(15);
+    font-weight: 400;
+    line-height: 2;
+    color: #fff;
+    text-align: justify;
+
+    @include mq(tab) {
+      font-size: rem(16);
+    }
+  }
+
+  &__note {
+    font-family: var(--ff-gothic);
+    font-size: rem(12);
+    line-height: 1.8;
+    color: rgb(255 255 255 / 60%);
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+
+    @include mq(pc) {
+      flex-shrink: 0;
+      width: rem(430);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+    padding: rem(24) rem(28);
+    background-color: rgb(255 255 255 / 8%);
+    border: 1px solid rgb(255 255 255 / 16%);
+    border-radius: rem(4);
+
+    @include mq(tab) {
+      padding: rem(28) rem(32);
+    }
+  }
+
+  &__card-ttl {
+    font-family: var(--ff-mincho);
+    font-size: rem(16);
+    font-weight: 600;
+    line-height: 1.4;
+    color: #fff;
+
+    @include mq(tab) {
+      font-size: rem(18);
+    }
+  }
+
+  &__card-desc {
+    font-family: var(--ff-gothic);
+    font-size: rem(13);
+    line-height: 1.8;
+    color: rgb(255 255 255 / 80%);
+    text-align: justify;
+
+    @include mq(tab) {
+      font-size: rem(14);
+    }
+  }
+}

@@ -12,7 +12,7 @@ export function imageWebpPlugin(options = {}) {
     srcDir,
     destDir,
     watch: watchMode = false,
-    quality = 80,
+    quality = 100,
     maxWidth = 1920,
     maxHeight = 1920,
   } = options;
@@ -30,7 +30,7 @@ export function imageWebpPlugin(options = {}) {
   async function convertToWebP(inputPath, outputPath) {
     try {
       const ext = extname(inputPath).toLowerCase();
-      
+
       // SVGはそのままコピー
       if (ext === '.svg') {
         await copyFile(inputPath, outputPath);
@@ -120,7 +120,7 @@ export function imageWebpPlugin(options = {}) {
   async function processFile(filePath, skipCheck = false) {
     const relativePath = relative(srcDir, filePath);
     const ext = extname(filePath).toLowerCase();
-    
+
     if (!supportedFormats.includes(ext)) {
       console.log(`ℹ️  Skipping unsupported format: ${ext}`);
       return;
@@ -143,7 +143,7 @@ export function imageWebpPlugin(options = {}) {
         const { stat } = await import('fs/promises');
         const inputStats = await stat(filePath);
         const outputExists = existsSync(outputPath);
-        
+
         if (outputExists) {
           const outputStats = await stat(outputPath);
           // 入力ファイルが出力ファイルより新しい場合のみ再処理
@@ -176,16 +176,16 @@ export function imageWebpPlugin(options = {}) {
 
     try {
       const entries = await readdir(dir, { withFileTypes: true });
-      
+
       for (const entry of entries) {
         const fullPath = resolve(dir, entry.name);
-        
+
         if (entry.isDirectory()) {
           // ディレクトリの場合は再帰的にスキャン
           await scanForNewFiles(fullPath);
         } else if (entry.isFile()) {
           const ext = extname(entry.name).toLowerCase();
-          
+
           if (supportedFormats.includes(ext)) {
             // まだ処理されていないファイルを処理
             if (!processedFiles.has(fullPath)) {
@@ -258,10 +258,10 @@ export function imageWebpPlugin(options = {}) {
       // 開発サーバー起動時にウォッチャーを開始
       if (watchMode && existsSync(srcDir)) {
         console.log(`\n🔍 Setting up image file watcher...`);
-        
+
         // ウォッチャーパターン（相対パス、srcDirを基準）
         const watchPattern = '**/*.{jpg,jpeg,png,webp,gif,svg}';
-        
+
         watcher = watch(watchPattern, {
           cwd: srcDir, // 作業ディレクトリをsrcDirに設定
           ignored: [/node_modules/, /\.git/, /\.DS_Store/],
@@ -282,7 +282,7 @@ export function imageWebpPlugin(options = {}) {
             console.log(`✅ Image watcher is ready and monitoring files`);
             console.log(`   Watching pattern: ${watchPattern}`);
             console.log(`   CWD: ${srcDir}`);
-            
+
             // 定期的にディレクトリをスキャンして新しいファイルを検出（5秒ごと）
             scanInterval = setInterval(() => {
               scanForNewFiles();
@@ -295,32 +295,32 @@ export function imageWebpPlugin(options = {}) {
           .on('add', async (path, stats) => {
             // pathは相対パス（srcDir基準）なので、絶対パスに変換
             const absolutePath = resolve(srcDir, path);
-            
+
             console.log(`\n🔔 [DEBUG] add event fired for: ${path}`);
             console.log(`   Absolute path: ${absolutePath}`);
             if (stats) {
               console.log(`   File size: ${stats.size} bytes`);
             }
-            
+
             // ファイルが完全に書き込まれるまで待機（最大2秒）
             let retries = 20;
             while (!existsSync(absolutePath) && retries > 0) {
               await new Promise(resolve => setTimeout(resolve, 100));
               retries--;
             }
-            
+
             // ファイルが存在するか確認
             if (!existsSync(absolutePath)) {
               console.log(`⚠️  File not found after waiting: ${relative(srcDir, absolutePath)}`);
               return;
             }
-            
+
             const ext = extname(absolutePath).toLowerCase();
             if (!supportedFormats.includes(ext)) {
               console.log(`ℹ️  Unsupported file format: ${ext}`);
               return;
             }
-            
+
             console.log(`\n📸 New image detected: ${relative(srcDir, absolutePath)}`);
             try {
               await processFile(absolutePath);
@@ -338,13 +338,13 @@ export function imageWebpPlugin(options = {}) {
           .on('change', async (path) => {
             // pathは相対パス（srcDir基準）なので、絶対パスに変換
             const absolutePath = resolve(srcDir, path);
-            
+
             // ファイルが存在するか確認
             if (!existsSync(absolutePath)) {
               console.log(`ℹ️  File not found (may have been deleted): ${relative(srcDir, absolutePath)}`);
               return;
             }
-            
+
             console.log(`\n📸 Image changed: ${relative(srcDir, absolutePath)}`);
             try {
               await processFile(absolutePath);
@@ -359,19 +359,19 @@ export function imageWebpPlugin(options = {}) {
             const absolutePath = resolve(srcDir, path);
             const ext = extname(absolutePath).toLowerCase();
             const relativePath = relative(srcDir, absolutePath);
-            
+
             console.log(`\n🗑️  Image deleted: ${relative(srcDir, absolutePath)}`);
-            
+
             // SVGファイルが削除された場合は、出力先のファイルは削除しない（WebPのみ運用のため）
             if (ext === '.svg') {
               console.log(`ℹ️  SVG file deleted - output file will not be removed (WebP only workflow)`);
               server.ws.send({ type: 'full-reload' });
               return;
             }
-            
+
             // その他の画像ファイルが削除された場合は、対応するWebPファイルも削除
             const outputPath = resolve(destDir, relativePath).replace(ext, '.webp');
-            
+
             if (existsSync(outputPath)) {
               try {
                 const { unlink } = await import('fs/promises');
@@ -383,7 +383,7 @@ export function imageWebpPlugin(options = {}) {
             } else {
               console.log(`ℹ️  Output file not found (may have been already deleted): ${relative(destDir, outputPath)}`);
             }
-            
+
             server.ws.send({ type: 'full-reload' });
           });
 

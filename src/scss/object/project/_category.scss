@@ -16,7 +16,7 @@
   font-weight: 600;
   line-height: 1.2;
   border: 1px solid #b09e88;
-  border-radius: 15px;
+  border-radius: rem(15);
 
   &.is-current {
     color: #fff;

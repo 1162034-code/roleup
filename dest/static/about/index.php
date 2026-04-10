@@ -8,10 +8,9 @@
       </p>
     </div>
     <hr class="p-page-header__line js-fade-in">
-    <p class="p-page-header__caption js-fade-in">
-      <span class="u-br-sp">価値の伴走者として、</span>企業の成長と承継を支える。<br>
-      ROLEUPの理念とチームをご紹介します。
-    </p>
+    <div class="p-page-header__caption js-fade-in">
+      <p>人と企業に深く向き合い、未来につながる高い価値を創り続けます。</p>
+    </div>
 
     <div class="p-page-header__nav">
       <div class="p-nav-page js-fade-in">
@@ -24,9 +23,6 @@
           </li>
           <li>
             <a class="p-nav-page__link" href="#company">会社概要</a>
-          </li>
-          <li>
-            <a class="p-nav-page__link" href="#member">メンバー紹介</a>
           </li>
         </ul>
       </div>
@@ -46,14 +42,14 @@
     <div class="about-president__body">
       <div class="about-president__txt-wrap js-fade-in">
         <h3 class="about-president__lead">
-          価値は、偶然では決まらない。<br>
-          設計で、決まる。
+        日本経済を、もう一度強くする。<br>
+        その挑戦の隣に、私たちはいる。
         </h3>
         <div class="about-president__txt">
-          <p>私たち<span class="u-txt-uppercase">Roleup</span>は、中小企業の事業承継とM&Aを支援するプロフェッショナルファームとして、2018年に創業いたしました。</p>
-          <p>日本には、優れた技術や独自のサービスを持ちながら、後継者不在や経営課題に直面している企業が数多く存在します。そうした企業の価値を正しく評価し、次の成長へとつなげていくこと。それが私たちの使命です。</p>
-          <p>M&Aは単なる「売買」ではありません。企業の歴史、従業員の想い、取引先との関係性——そのすべてを理解した上で、最適な形を設計していく作業です。だからこそ私たちは、表面的な仲介ではなく、深い分析と丁寧な対話を重ね、意思決定に耐えうる提案を行います。</p>
-          <p>「価値の伴走者」として、検討から実行、そして統合後まで。一気通貫で企業の成長をサポートしてまいります。</p>
+          <p>私たち<span class="u-txt-uppercase">Roleup</span>は、企業価値向上を通じて日本経済の再興に挑む「主役の参謀」として、2022年に創業いたしました。</p>
+          <p>日本には、優れた技術や独自のサービス、強い志を持ちながら、本来の力を十分に発揮しきれていない企業が数多く存在します。そうした企業の可能性を解き放ち、挑戦を前に進め、次の成長へとつなげていくこと。それが私たちの使命です。</p>
+          <p>企業価値向上は、数字や戦略だけで実現するものではありません。</p>
+          <p>経営者の覚悟、従業員の想い、取引先や株主との関係性――そのすべてに人に深く向き合い、意思決定の隣で考え抜くことではじめて実現できるものです。だからこそ私たちは、表面的な助言ではなく、深い分析と丁寧な対話を重ね、企業の未来をともに描き、変革をともに前へ進める存在であり続けます。</p>
         </div>
         <div class="about-president__profile">
           <p class="about-president__position">代表取締役社長</p>
@@ -83,22 +79,19 @@
       </span>
     </h2>
     <div class="about-philosophy__body">
-      <p class="about-philosophy__catch js-fade-in"><span class="u-br">価値を設計し、</span>成長を伴走する。</p>
+      <p class="about-philosophy__catch js-fade-in"><span class="u-br">価値ある変革を、</span>人と共に。</p>
       <ul class="about-philosophy__items js-fade-in">
         <li class="about-philosophy__item">
-          <p class="about-philosophy__item-num">VALUE 01</p>
-          <h3 class="about-philosophy__item-ttl">本質を見抜く</h3>
-          <p class="about-philosophy__item-txt">数字の裏にある「本当の強さ」を見極め、企業の真の価値を明らかにします。</p>
+          <p class="about-philosophy__item-num">MISSION</p>
+          <h3 class="about-philosophy__item-ttl">挑戦する企業と、日本経済の未来をつくる</h3>
         </li>
         <li class="about-philosophy__item">
-          <p class="about-philosophy__item-num">VALUE 02</p>
-          <h3 class="about-philosophy__item-ttl">意思決定を支える</h3>
-          <p class="about-philosophy__item-txt">論点を整理し、迷いを意思決定に変える。クライアントの判断を支えます。</p>
+          <p class="about-philosophy__item-num">VISION</p>
+          <h3 class="about-philosophy__item-ttl">日本経済を再興する「主役の参謀」になる</h3>
         </li>
         <li class="about-philosophy__item">
-          <p class="about-philosophy__item-num">VALUE 03</p>
-          <h3 class="about-philosophy__item-ttl">統合まで描き切る</h3>
-          <p class="about-philosophy__item-txt">契約の瞬間だけでなく、統合後の成長まで見据えた支援を行います。</p>
+          <p class="about-philosophy__item-num">VALUE</p>
+          <h3 class="about-philosophy__item-ttl">人に深く、価値を高く</h3>
         </li>
       </ul>
     </div>
@@ -122,7 +115,7 @@
         </tr>
         <tr>
           <th>設立</th>
-          <td>2018年4月</td>
+          <td>2022年9月</td>
         </tr>
         <tr>
           <th>代表者</th>
@@ -132,12 +125,11 @@
           <th>所在地</th>
           <td>
             <address>
-              〒100-6328<br>
-              東京都千代田区丸の内2丁目4−1<br>
-              丸の内ビルディング28階事業内容M&Aアドバイザリー
+            〒100-6328<br>
+            東京都千代田区丸の内2丁目4-1 丸の内ビルディング28階
             </address>
             <div class="about-company__map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6481.67197494238!2d139.7612277766698!3d35.68104027258747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bf992c34823%3A0x21ed577a75a4b0d1!2z5Li444Gu5YaF44OT44Or44OH44Kj44Oz44Kw!5e0!3m2!1sja!2sjp!4v1772374457360!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8353213612972!2d139.76124277652414!3d35.681056672587275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bf9e8d6b29b%3A0xa8d84cae0020b705!2z44CSMTAwLTAwMDUg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65Li444Gu5YaF77yS5LiB55uu77yU4oiS77yRIOS4uOOBruWGheODk-ODq-ODh-OCo-ODs-OCsCAyOOmajg!5e0!3m2!1sja!2sjp!4v1775596876884!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </td>
         </tr>
@@ -149,14 +141,15 @@
             企業価値評価<br>
             PMI支援<br>
             税務サービス<br>
-            監査サービス
+            監査・AUP
           </td>
         </tr>
         <tr>
           <th>グループ会社</th>
           <td>
             <span class="u-txt-uppercase">Roleup</span>税理士法人<br>
-            <span class="u-txt-uppercase">Roleup</span>監査法人
+            <span class="u-txt-uppercase">Roleup</span>監査法人<br>
+            <span class="u-txt-uppercase">Roleup</span>行政書士事務所
           </td>
         </tr>
       </table>

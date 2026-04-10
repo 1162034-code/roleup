@@ -4,9 +4,9 @@
   <section class="home-mv">
     <div class="home-mv__content">
       <div class="js-text-anime-up">
-        <h1 class="home-mv__ttl js-text-anime-up__main" data-char-split><span class="u-br-sp">Value,</span>Structured.</h1>
+        <h1 class="home-mv__ttl js-text-anime-up__main" data-char-split><span class="u-br">Rooted&nbsp;in&nbsp;People,</span>Innovating&nbsp;Value.</h1>
         <span class="home-mv__sttl js-text-anime-up__sub">
-          <span class="js-text-anime-up__sub-txt"><span class="u-br-sp">意思決定に耐える、</span>M&Aの設計と実行。</span>
+          <span class="js-text-anime-up__sub-txt">価値ある変革を、人と共に。</span>
         </span>
       </div>
     </div>
@@ -66,12 +66,10 @@
       </div>
       <div class="home-about__body">
         <p class="home-about__txt">
-          <span class="u-br-tab"><span class="u-txt-uppercase">Roleup</span> Partnersは、M&Aを通じて</span>
-          <span class="u-br-tab">企業の本質的な価値を見極め、</span>
-          次の成長へ導くアドバイザリーファームです。
+          <span class="u-br-tab"><span class="u-txt-uppercase">Roleup</span>は、経営の意思決定に深く向き合い、</span><span class="u-br-tab">企業価値向上と次世代を築く企業成長に</span>伴走するアドバイザリーファームです。
         </p>
         <div class="home-about__btn-wrap">
-          <a href="#" class="c-btn-view-more">Vew More</a>
+          <a href="<?php echo home_url(); ?>/about/" class="c-btn-view-more">Vew More</a>
         </div>
       </div>
     </div>
@@ -88,14 +86,14 @@
           </span>
         </h2>
         <p class="home-service__desc">
-          中小企業の事業承継と成長を、資本と経営の両面から支援。<br>
-          M&Aの実行だけでなく、検討・分析・統合後までを一気通貫で伴走します。
+        挑戦する企業の成長を、資本と経営の両面から支援。<br>
+        M&Aの実行だけでなく、構想段階から統合後の経営支援まで、意思決定の隣で伴走します。
         </p>
       </div>
       <ul class="home-service__grid">
         <!-- Card 1 -->
         <li class="home-service__card js-fade-in">
-          <a href="" class="home-service__card-link">
+          <a href="<?php echo home_url(); ?>/service/#ma" class="home-service__card-link">
             <p class="home-service__card-category">M&A Advisory</p>
             <h3 class="home-service__card-ttl"><span class="u-br-sp">M&A</span>アドバイザリー</h3>
             <p class="home-service__card-desc">M&A戦略の策定およびディール実行支援。</p>
@@ -103,7 +101,7 @@
         </li>
         <!-- Card 2 -->
         <li class="home-service__card js-fade-in">
-          <a href="" class="home-service__card-link">
+          <a href="<?php echo home_url(); ?>/service/#duedeligence" class="home-service__card-link">
             <p class="home-service__card-category">Due Diligence</p>
             <h3 class="home-service__card-ttl">デューデリジェンス</h3>
             <p class="home-service__card-desc">重要論点の抽出と取引条件への反映。</p>
@@ -111,7 +109,7 @@
         </li>
         <!-- Card 3 -->
         <li class="home-service__card js-fade-in">
-          <a href="" class="home-service__card-link">
+          <a href="<?php echo home_url(); ?>/service/#valuation" class="home-service__card-link">
             <p class="home-service__card-category">Valuation</p>
             <h3 class="home-service__card-ttl">企業価値評価</h3>
             <p class="home-service__card-desc">企業価値評価の実施および評価レンジの提示。</p>
@@ -119,7 +117,7 @@
         </li>
         <!-- Card 4 -->
         <li class="home-service__card js-fade-in">
-          <a href="" class="home-service__card-link">
+          <a href="<?php echo home_url(); ?>/service/#pmi" class="home-service__card-link">
             <p class="home-service__card-category">PMI Support</p>
             <h3 class="home-service__card-ttl">PMI支援</h3>
             <p class="home-service__card-desc">PMI方針・統合計画の策定および統合実行支援。</p>
@@ -127,18 +125,18 @@
         </li>
         <!-- Card 5 -->
         <li class="home-service__card js-fade-in">
-          <a href="" class="home-service__card-link">
+          <a href="<?php echo home_url(); ?>/service/#tax" class="home-service__card-link">
             <p class="home-service__card-category">Tax Service</p>
             <h3 class="home-service__card-ttl">税務サービス</h3>
-            <p class="home-service__card-desc">税務ストラクチャリングの策定および税務リスク低減支援。</p>
+            <p class="home-service__card-desc">税務顧問・申告、税務ストラクチャリングサポートの実行。</p>
           </a>
         </li>
         <!-- Card 6 -->
         <li class="home-service__card js-fade-in">
-          <a href="" class="home-service__card-link">
+          <a href="<?php echo home_url(); ?>/service/#audit" class="home-service__card-link">
             <p class="home-service__card-category">Audit Service</p>
-            <h3 class="home-service__card-ttl">監査サービス</h3>
-            <p class="home-service__card-desc">監査計画の策定および監査業務の実施。</p>
+            <h3 class="home-service__card-ttl">監査・AUP</h3>
+            <p class="home-service__card-desc">法定監査およびAUP業務の実施。</p>
           </a>
         </li>
       </ul>
@@ -155,22 +153,25 @@
             <span class="js-text-anime-up__sub-txt">グループ会社</span>
           </span>
         </h2>
-        <p class="home-group__txt">M&Aを、実行だけで終わらせない。<br><span class="u-txt-uppercase">Roleup</span>グループは、税務・監査の専門法人と連携し、検討から実行、統合後までの意思決定を支えます。</p>
+        <div class="home-group__txt">
+          <p class="u-mt-1lh">専門性を横断し、本質に深く向き合う。</p>
+          <p><span class="u-br-pc">グループの知見を結集し、価値創出と意思決定を</span>一体で支えます。</p>
+        </div>
         <div class="home-group__btn-wrap">
-          <a href="#" class="c-btn-view-more">Vew More</a>
+          <a href="<?php echo home_url(); ?>/group/" class="c-btn-view-more">Vew More</a>
         </div>
       </div>
       <ul class="home-group__cards">
         <li class="home-group__card js-fade-in">
-          <a href="#" class="home-group__card-content -card1">
+          <a href="<?php echo home_url(); ?>/group/tax/" class="home-group__card-content -card1">
             <h3 class="home-group__card-ttl"><span class="u-txt-uppercase">Roleup</span>税理士法人</h3>
-            <p class="home-group__card-desc">事業承継・M&Aに強い税務パートナー。<br>法人税務／相続税務から、税務DD・ストラクチャリング・PMI税務まで一気通貫で支援します。</p>
+            <p class="home-group__card-desc">事業承継・M&A・国際税務に強い税務パートナー。<br>法人・相続税務から、税務DD・海外取引のリスク分析・ストラクチャリング・PMI税務まで一気通貫で支援します。</p>
           </a>
         </li>
         <li class="home-group__card js-fade-in">
-          <a href="#" class="home-group__card-content -card2">
+          <a href="<?php echo home_url(); ?>/group/audit/" class="home-group__card-content -card2">
             <h3 class="home-group__card-ttl"><span class="u-txt-uppercase">Roleup</span>監査法人</h3>
-            <p class="home-group__card-desc">LBOローンで求められる会計監査を専門に担う監査法人。<br>PEファンド・プリンシパル投資家のニーズを踏まえ、M&Aにおける監査要件に対応します。</p>
+            <p class="home-group__card-desc">M&A業界において求められる会計監査を専門に担う監査法人。<br>銀行・PEファンド・プリンシパル投資家のニーズを踏まえ、監査対応を実施します。</p>
           </a>
         </li>
       </ul>
@@ -188,14 +189,14 @@
             <span class="js-text-anime-up__sub-txt">実績</span>
           </span>
         </h2>
-        <p class="home-performance__txt"><span class="u-br">第三者データで証明された、M&A支援実績</span>まずは状況整理からご相談ください</p>
+        <p class="home-performance__txt"><span class="u-br-pc">多様なニーズに対して一気通貫の支援を通じた、</span>信頼できる確かな実績。</p>
       </div>
       <div class="home-performance__body js-fade-in">
         <ul class="home-performance__stats">
           <li class="home-performance__stat">
             <h3 class="home-performance__stat-label">公表案件</h3>
             <p class="home-performance__stat-value">
-              <span class="home-performance__stat-num">22</span>
+              <span class="home-performance__stat-num">12</span>
               <span class="home-performance__stat-unit">位</span>
             </p>
             <p class="home-performance__stat-sublabel">Announced Deals</p>
@@ -203,7 +204,7 @@
           <li class="home-performance__stat">
             <h3 class="home-performance__stat-label">完了案件</h3>
             <p class="home-performance__stat-value">
-              <span class="home-performance__stat-num">24</span>
+              <span class="home-performance__stat-num">13</span>
               <span class="home-performance__stat-unit">位</span>
             </p>
             <p class="home-performance__stat-sublabel">Completed Deals</p>
@@ -212,7 +213,7 @@
         <p class="home-performance__note">※ ランキングはLSEG（London Stock Exchange Group）が公表する日本M&Aレビューに基づく</p>
       </div>
       <div class="home-performance__btn-wrap">
-        <a href="#contact" class="c-btn-gradient-gold c-btn-size-default c-btn-arrow-right">
+        <a href="<?php echo home_url(); ?>/contact/" class="c-btn-gradient-gold c-btn-size-default c-btn-arrow-right">
           <span class="c-btn__txt">お問い合わせはこちら</span>
         </a>
       </div>
@@ -229,11 +230,11 @@
           <span class="js-text-anime-up__sub-txt">グローバルネットワーク</span>
         </span>
       </h2>
-      <p class="home-global__txt">
-        <span class="u-br">世界90か国以上に広がる</span>
-        <span class="u-br">グローバルファームネットワーク PrimeGlobal と連携。</span>
-        <span class="u-br">ローカルに根ざしながら、</span>グローバル水準の視点で意思決定を支えます。
-      </p>
+      <div class="home-global__txt">
+        <p>世界各国のネットワークと連携し、ローカルに深く入り込む。</p>
+        <p>グローバル水準の知見で、企業の意思決定と価値創出を支えます。</p>
+
+      </div>
       <div class="home-global__img">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_prime_global.webp" width="270" height="55" alt="Prime Global">
       </div>

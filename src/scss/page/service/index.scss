@@ -1,0 +1,295 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  service
+======================================== */
+
+/* ----------------------------------------
+  Service Item（各サービスセクション）
+---------------------------------------- */
+.service-item {
+  margin-top: rem(20);
+
+  @include mq(tab) {
+    margin-top: rem(100);
+  }
+
+  & + & {
+    margin-top: rem(72);
+
+    @include mq(pc) {
+      margin-top: rem(160);
+    }
+  }
+
+  &__inner {
+    display: grid;
+    gap: rem(10) 0;
+    align-items: start;
+
+    @include mq(pc) {
+      grid-template-columns: 1fr 36%;
+      gap: rem(24) rem(110);
+    }
+  }
+
+  &__num-wrap {
+    display: inline-grid;
+    grid-template-rows: max-content;
+    grid-template-columns: max-content;
+    place-items: center start;
+    line-height: 0;
+
+    @include mq(pc) {
+      grid-column: span 2;
+    }
+  }
+
+  &__num {
+    display: block;
+    grid-area: 1 / 1;
+    padding-left: rem(15);
+    font-family: var(--ff-garamond);
+    font-size: rem(56);
+    font-weight: 400;
+    line-height: 1;
+    background: linear-gradient(100deg, #785e3e 8%, #e7c8a3 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include mq(tab) {
+      font-size: rem(70);
+    }
+  }
+
+  &__label {
+    display: flex;
+    grid-area: 1 / 1;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-garamond);
+    font-size: rem(14);
+    line-height: 1;
+    background: linear-gradient(115deg, #785e3e 8%, #e7c8a3 100%);
+    background-clip: text;
+    writing-mode: vertical-rl;
+    -webkit-text-fill-color: transparent;
+
+    @include mq(tab) {
+      font-size: rem(16);
+    }
+  }
+
+  &__ttl {
+    font-family: var(--ff-mincho);
+    font-size: rem(28);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #111;
+
+    @include mq(tab) {
+      font-size: rem(40);
+      line-height: 1;
+    }
+  }
+
+  &__desc {
+    margin-top: rem(16);
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+
+    @include mq(tab) {
+      margin-top: rem(40);
+      font-size: rem(18);
+    }
+  }
+
+  &__line {
+    width: rem(64);
+    height: 1px;
+    margin-inline: 0;
+    margin-top: rem(30);
+    background: #797979;
+
+    @include mq(tab) {
+      margin-top: rem(48);
+    }
+  }
+
+  &__features {
+    display: grid;
+    gap: rem(10);
+    margin-top: rem(30);
+
+    @include mq(tab) {
+      gap: rem(18);
+      margin-top: rem(48);
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: rem(28) 1fr;
+      gap: rem(14);
+      font-family: var(--ff-gothic);
+
+      &::before {
+        display: block;
+        width: rem(28);
+        height: rem(28);
+        content: "";
+        background: url("../../../img/common/icon/check.webp") no-repeat
+          center / contain;
+      }
+    }
+  }
+
+  &__img {
+    margin-top: rem(23);
+    box-shadow: 20px 26px 20px 0 rgb(0 0 0 / 10%);
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+/* ----------------------------------------
+  Service Process（M&A支援の流れ）
+---------------------------------------- */
+.service-process {
+  position: relative;
+  margin-top: rem(90);
+  overflow: hidden;
+  background: url("../../../img/page/service/process_bg_sp.webp") no-repeat
+    center / cover;
+
+  @include mq(tab) {
+    margin-top: rem(160);
+    background-image: url("../../../img/page/service/process_bg.webp");
+  }
+
+  &__inner {
+    padding-block: rem(90) rem(195);
+
+    @include mq(tab) {
+      padding-block: rem(140) rem(210);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+
+    @include mq(pc) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
+  &__desc {
+    font-family: var(--ff-mincho);
+    font-size: rem(15);
+    line-height: 1.8;
+    color: #fff;
+
+    @include mq(tab) {
+      font-size: rem(16);
+    }
+
+    @include mq(pc) {
+      padding-top: rem(70);
+      text-align: right;
+    }
+  }
+
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    margin-top: rem(40);
+
+    @include mq(tab) {
+      flex-direction: row;
+      align-items: stretch;
+      margin-top: rem(60);
+    }
+  }
+
+  &__step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: rem(32) rem(33);
+    background-color: rgba(#fff, 0.16);
+    border: 1px solid #414141;
+    border-radius: rem(4);
+
+    @include mq(tab) {
+      flex: 1 1 0;
+      padding: rem(32);
+    }
+
+    & + & {
+      &::before {
+        position: absolute;
+        inset-block: 0;
+        left: rem(-25);
+        display: block;
+        width: rem(24);
+        height: 1px;
+        margin-block: auto;
+        content: "";
+        background: #c2b6a5;
+      }
+    }
+  }
+
+  &__step-num {
+    font-family: var(--ff-garamond);
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: 1;
+    background: linear-gradient(
+      110deg,
+      rgb(117 103 91) 1%,
+      rgb(231 200 163) 22%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__step-body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+    margin-top: rem(17);
+
+    @include mq(tab) {
+      margin-top: rem(32);
+    }
+  }
+
+  &__step-ttl {
+    font-family: var(--ff-mincho);
+    font-size: rem(20);
+    font-weight: 600;
+    line-height: 1.4;
+    color: #fff;
+    letter-spacing: 0.1em;
+
+    @include mq(tab) {
+      font-size: rem(22);
+    }
+  }
+
+  &__step-desc {
+    font-family: var(--ff-gothic);
+    color: #fff;
+    text-align: justify;
+  }
+}

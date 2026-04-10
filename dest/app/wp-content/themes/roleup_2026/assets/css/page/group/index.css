@@ -9,9 +9,6 @@
   position: relative;
   overflow: hidden;
 }
-.group-overview__bg-txt {
-  display: none;
-}
 @media screen and (min-width: 769px) {
   .group-overview__bg-txt {
     position: absolute;
@@ -24,7 +21,7 @@
 }
 @media screen and (min-width: 1025px) {
   .group-overview__bg-txt {
-    bottom: 2.6875rem;
+    bottom: 0;
   }
 }
 .group-overview__inner {
@@ -114,12 +111,6 @@
 ---------------------------------------- */
 .group-synergy {
   position: relative;
-  background: url("../../../img/page/group/bg_01_sp.webp") no-repeat center/cover;
-}
-@media screen and (min-width: 769px) {
-  .group-synergy {
-    background-image: url("../../../img/page/group/bg_01.webp");
-  }
 }
 .group-synergy__inner {
   display: flex;
@@ -132,7 +123,7 @@
     gap: 5rem;
     align-items: flex-start;
     justify-content: space-between;
-    padding-block: 9.0625rem 13.125rem;
+    padding-block: 6.25rem 13.125rem;
   }
 }
 @media (width <= 1250px) {
@@ -152,12 +143,6 @@
     width: min(100%, 28rem);
   }
 }
-.group-synergy__desc {
-  font-family: var(--ff-mincho);
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #fff;
-}
 .group-synergy__phases {
   display: flex;
   flex: 1;
@@ -176,7 +161,8 @@
   flex-direction: column;
   gap: 0.9375rem;
   padding: 2.0625rem 2.0625rem 2.25rem;
-  background-color: rgba(255, 255, 255, 0.16);
+  background-color: #fff;
+  border: 1px solid #777;
   border-radius: 0.25rem;
 }
 @media screen and (min-width: 769px) {
@@ -220,17 +206,12 @@
   }
 }
 .group-synergy__phase-ttl {
-  font-family: var(--ff-mincho);
   font-size: 1.375rem;
   font-weight: 600;
-  line-height: 1.8;
-  color: #fff;
 }
 .group-synergy__phase-company {
   font-family: var(--ff-gothic);
-  font-size: 1rem;
   line-height: 1.2;
-  color: #fff;
 }
 @media screen and (min-width: 769px) {
   .group-synergy__phase-company {

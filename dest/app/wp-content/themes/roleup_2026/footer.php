@@ -2,8 +2,8 @@
       </div>
       <?php endif; ?>
 
-       <!-- Get in Touch -->
-       <section class="p-contact">
+      <!-- Get in Touch -->
+      <section class="p-contact">
         <a href="<?php echo esc_url(home_url()); ?>/contact/" class="p-contact__link">
           <div class="p-contact__inner c-container">
             <h2 class="p-contact__ttl">
@@ -55,11 +55,13 @@
                   <span>会社概要</span>
                 </a>
               </li>
+              <?php /*
               <li class="l-footer__nav-item">
                 <a href="<?php echo home_url(); ?>/about/#member">
                   <span>メンバー紹介</span>
                 </a>
               </li>
+              */ ?>
             </ul>
           </div>
           <div class="l-footer__nav-col">
@@ -92,7 +94,7 @@
               </li>
               <li class="l-footer__nav-item">
                 <a href="<?php echo home_url(); ?>/service/#audit">
-                  <span>監査サービス</span>
+                  <span>監査・AUP</span>
                 </a>
               </li>
             </ul>
@@ -101,13 +103,18 @@
             <p class="l-footer__nav-heading">Group Companies</p>
             <ul class="l-footer__nav-list">
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/group/#tax">
+                <a href="<?php echo home_url(); ?>/group/tax/">
                   <span><span class="u-txt-uppercase">Roleup</span>税理士法人</span>
                 </a>
               </li>
               <li class="l-footer__nav-item">
-                <a href="<?php echo home_url(); ?>/group/#audit">
+                <a href="<?php echo home_url(); ?>/group/audit/">
                   <span><span class="u-txt-uppercase">Roleup</span>監査法人</span>
+                </a>
+              </li>
+              <li class="l-footer__nav-item">
+                <a class="no-link">
+                  <span><span class="u-txt-uppercase">Roleup</span>行政書士事務所</span>
                 </a>
               </li>
             </ul>
@@ -123,6 +130,7 @@
                   <span>News</span>
                 </a>
               </li>
+              <?php /*
               <li class="l-footer__nav-item">
                 <a href="<?php echo home_url(); ?>/global-network/">
                   <span>Global Network</span>
@@ -133,6 +141,7 @@
                   <span>Recruit</span>
                 </a>
               </li>
+              */ ?>
             </ul>
           </div>
         </nav>
