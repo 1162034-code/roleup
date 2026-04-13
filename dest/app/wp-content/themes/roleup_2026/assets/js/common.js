@@ -4,6 +4,7 @@ import ModalManager from './class/modal.js';
 import Accordion from './class/accordion.js';
 import TabModule from './class/tab.js';
 import { pageTop } from './module/pageTop.js';
+import { initOpening } from './module/opening.js';
 import { initScrollbarWidth } from './module/scrollbarWidth.js';
 import { initResizeTransition } from './module/resizeTransition.js';
 import { addActive, toggleActive, removeActiveOnScrollUp } from './module/handleIntersection.js';
@@ -74,8 +75,17 @@ import { initTextAnimeChar } from './module/text-anime-char.js';
   // ** オープニング（フロントページのみ）・スクロールアニメーション **
   // ページ全体の読み込み完了後に実行
   // ------------------------------------------------------------------
-  addActive('.js-text-anime-up', '-10%', null, 'is-active');
-  addActive('.js-fade-in', '-25%', null, 'is-active');
+  const runOpeningAndAnimations = () => {
+    initOpening().then(() => {
+      addActive('.js-text-anime-up', '-10%', null, 'is-active');
+      addActive('.js-fade-in', '-25%', null, 'is-active');
+    });
+  };
+  if (document.readyState === 'complete') {
+    runOpeningAndAnimations();
+  } else {
+    window.addEventListener('load', runOpeningAndAnimations);
+  }
 
   // ------------------------------------------------------------------
   // ** SimpleBar **
