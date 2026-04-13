@@ -574,7 +574,9 @@
     display: inline-block;
     padding-bottom: 0.2em;
     font-family: var(--ff-garamond);
-    font-size: rem(52);
+    font-size: rem(34);
+
+    // font-size: rem(52);
     font-weight: 400;
     line-height: 1.15;
     letter-spacing: -0.03em;
@@ -585,7 +587,9 @@
     -moz-osx-font-smoothing: grayscale;
 
     @include mq(tab) {
-      font-size: rem(100);
+      font-size: rem(70);
+
+      // font-size: rem(100);
     }
   }
 
@@ -594,7 +598,9 @@
     padding-left: rem(5);
     margin-top: rem(10);
     font-family: var(--ff-mincho);
-    font-size: rem(20);
+    font-size: rem(18);
+
+    // font-size: rem(20);
     font-weight: 600;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

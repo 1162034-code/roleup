@@ -491,7 +491,7 @@
   display: inline-block;
   padding-bottom: 0.2em;
   font-family: var(--ff-garamond);
-  font-size: 3.25rem;
+  font-size: 2.125rem;
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.03em;
@@ -503,7 +503,7 @@
 }
 @media screen and (min-width: 769px) {
   .home-mv__ttl {
-    font-size: 6.25rem;
+    font-size: 4.375rem;
   }
 }
 .home-mv__sttl {
@@ -511,7 +511,7 @@
   padding-left: 0.3125rem;
   margin-top: 0.625rem;
   font-family: var(--ff-mincho);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

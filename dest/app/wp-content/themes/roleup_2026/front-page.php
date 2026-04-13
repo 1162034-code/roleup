@@ -10,8 +10,8 @@
       <div class="p-opening__logo">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.webp" width="180" height="41" alt="">
       </div>
-      <p class="p-opening__ttl"><span class="p-opening__ttl-inner">Value, Structured.</span></p>
-      <p class="p-opening__sttl">意思決定に耐える、M&Aの設計と実行。</p>
+      <p class="p-opening__ttl"><span class="p-opening__ttl-inner"><span class="u-br">Rooted&nbsp;in&nbsp;People,</span>Innovating&nbsp;Value.</span></p>
+      <p class="p-opening__sttl">価値ある変革を、人と共に。</p>
       <div class="p-opening__line"></div>
     </div>
     <div class="p-opening__curtain"></div>
@@ -37,7 +37,7 @@
   <section class="home-mv">
     <div class="home-mv__content">
       <div class="js-text-anime-up">
-        <h1 class="home-mv__ttl js-text-anime-up__main" data-char-split><span class="u-br">Rooted&nbsp;in&nbsp;People,</span>Innovating&nbsp;Value.</h1>
+        <h1 class="home-mv__ttl js-text-anime-up__main u-txt-uppercase" data-char-split><span class="u-br">Rooted&nbsp;in&nbsp;People,</span>Innovating&nbsp;Value.</h1>
         <span class="home-mv__sttl js-text-anime-up__sub">
           <span class="js-text-anime-up__sub-txt">価値ある変革を、人と共に。</span>
         </span>
