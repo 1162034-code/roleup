@@ -1,5 +1,38 @@
 <?php get_header(); ?>
 
+  <!-- Opening -->
+  <?php $opening_variant = apply_filters('roleup_opening_variant', 'a'); ?>
+  <div class="p-opening js-opening p-opening--variant-<?php echo esc_attr($opening_variant); ?>" data-opening-variant="<?php echo esc_attr($opening_variant); ?>" aria-hidden="false">
+    <!-- Variant B: 背景 -->
+    <div class="p-opening__bg"></div>
+    <div class="p-opening__overlay"></div>
+    <div class="p-opening__inner">
+      <div class="p-opening__logo">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.webp" width="180" height="41" alt="">
+      </div>
+      <p class="p-opening__ttl"><span class="p-opening__ttl-inner">Value, Structured.</span></p>
+      <p class="p-opening__sttl">意思決定に耐える、M&Aの設計と実行。</p>
+      <div class="p-opening__line"></div>
+    </div>
+    <div class="p-opening__curtain"></div>
+    <!-- Variant B: 左右パネル -->
+    <div class="p-opening__split p-opening__split--left"></div>
+    <div class="p-opening__split p-opening__split--right"></div>
+    <!-- Variant C: 上下パネル -->
+    <div class="p-opening__split p-opening__split--top"></div>
+    <div class="p-opening__split p-opening__split--bottom"></div>
+    <div class="p-opening__gold-line"></div>
+    <!-- Variant D: 円形マスク / NELU風下から上にカーテン -->
+    <div class="p-opening__circle-mask"></div>
+    <div class="p-opening__bottom-curtain"></div>
+    <!-- Variant E: 縦ブラインド -->
+    <div class="p-opening__shutter">
+      <?php for ($i = 1; $i <= 8; $i++) : ?>
+      <div class="p-opening__shutter-strip"></div>
+      <?php endfor; ?>
+    </div>
+  </div>
+
   <!-- MV（メインビジュアル） -->
   <section class="home-mv">
     <div class="home-mv__content">
