@@ -184,7 +184,9 @@ $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リン�
     </header>
 
     <main class="l-main">
-      <div class="p-fixed-bg"></div>
+      <div class="p-fixed-bg">
+        <video src="<?php echo get_template_directory_uri(); ?>/assets/video/fixed_bg.mp4" autoplay loop muted playsinline></video>
+      </div>
 
       <?php if(!is_front_page()): ?>
       <div class="l-main__inner">
