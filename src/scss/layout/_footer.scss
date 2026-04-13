@@ -82,7 +82,7 @@
   &__nav {
     display: flex;
     flex-flow: column wrap;
-    gap: rem(32) rem(63);
+    gap: rem(32) rem(40);
 
     @include mq(tab) {
       flex-direction: row;

@@ -8,7 +8,7 @@
     </div>
     <hr class="p-page-header__line js-fade-in">
     <div class="p-page-header__caption js-fade-in">
-      <p>中小企業の事業承継と成長を、資本と経営の両面から支援。</p>
+      <p>企業の成長を、資本と経営の両面から支援。</p>
       <p>M&Aの実行だけでなく、検討・分析・統合後までを一気通貫で伴走します。</p>
     </div>
 

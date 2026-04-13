@@ -83,7 +83,7 @@
       <ul class="about-philosophy__items js-fade-in">
         <li class="about-philosophy__item">
           <p class="about-philosophy__item-num">MISSION</p>
-          <h3 class="about-philosophy__item-ttl">挑戦する企業と、日本経済の未来をつくる</h3>
+          <h3 class="about-philosophy__item-ttl">挑戦する企業と、日本経済の未来を創る</h3>
         </li>
         <li class="about-philosophy__item">
           <p class="about-philosophy__item-num">VISION</p>

@@ -9,20 +9,25 @@
 ---------------------------------------- */
 .global-partner {
   position: relative;
+  background: #f5f5f5 url("../../../img/page/global-network/partner_bg_sp.webp")
+    no-repeat left top / 100%;
+
   @include mq(tab) {
     background: #f5f5f5 url("../../../img/page/global-network/partner_bg.webp")
       no-repeat left top / 100%;
   }
 
   &__inner {
-    padding-block: rem(80) rem(100);
+    padding-block: rem(90) rem(85);
 
     @include mq(tab) {
-      padding-block: rem(150);
+      padding-block: rem(150) rem(140);
     }
   }
 
   &__desc {
+    margin-top: rem(25);
+
     @include mq(tab) {
       margin-top: rem(45);
     }
@@ -31,136 +36,108 @@
   &__regions {
     display: flex;
     flex-direction: column;
-    margin-top: rem(50);
+    gap: rem(24);
+    margin-top: rem(40);
 
     @include mq(tab) {
-      margin-top: rem(70);
+      gap: rem(22) rem(32);
+      margin-top: rem(60);
+    }
+
+    @media (1160px <= width) {
+      flex-flow: row wrap;
     }
   }
 
   &__region {
-    border-top: 1px solid rgb(255 255 255 / 20%);
-
-    &:last-child {
-      border-bottom: 1px solid rgb(255 255 255 / 20%);
-    }
-  }
-
-  &__accordion-head {
-    display: flex;
-    gap: rem(16);
-    align-items: center;
-    justify-content: space-between;
-    padding: rem(24) 0;
-    cursor: pointer;
-    list-style: none;
-
-    &::-webkit-details-marker {
-      display: none;
-    }
+    padding: rem(20) rem(10);
+    background-color: #fff;
+    border-radius: rem(4);
 
     @include mq(tab) {
-      padding: rem(32) 0;
+      padding: rem(28) rem(40) rem(32);
+    }
+
+    @media (1160px <= width) {
+      flex: 1 1 calc((100% - rem(64)) / 3);
     }
   }
 
-  &__accordion-ttl {
-    flex: 1;
-    font-family: var(--ff-mincho);
-    font-size: rem(16);
-    font-weight: 500;
-    line-height: 1;
-    color: #fff;
+  &__region-label {
+    display: block;
+    font-size: rem(18);
+    font-weight: 700;
 
     @include mq(tab) {
-      font-size: rem(20);
+      font-size: rem(22);
     }
   }
 
-  &__accordion-count {
+  &__region-en {
+    display: block;
     font-family: var(--ff-garamond);
     font-size: rem(12);
-    font-weight: 400;
-    line-height: 1;
-    color: rgb(255 255 255 / 60%);
+    font-weight: 700;
+    color: #d1b994;
+
+    @include mq(tab) {
+      font-size: rem(16);
+    }
   }
 
-  &__accordion-icon {
-    position: relative;
-    display: flex;
-    flex-shrink: 0;
-    width: rem(24);
-    height: rem(24);
-    transition: transform 0.3s ease;
-
-    &::before,
-    &::after {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      content: "";
-      background-color: #fff;
-      transform: translate(-50%, -50%);
+  &__countries-wrap {
+    @include mq(tab) {
+      padding-top: rem(24);
     }
 
-    &::before {
-      width: rem(12);
-      height: 1px;
-    }
-
-    &::after {
-      width: 1px;
-      height: rem(12);
+    @include mq(tab, max) {
+      padding: rem(10) rem(15);
     }
   }
 
   &__countries {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: rem(12) rem(16);
-    padding-bottom: rem(32);
+    display: flex;
+    flex-flow: column wrap;
+    gap: rem(10) rem(20);
+    max-height: 11lh;
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: 2.23;
 
     @include mq(tab) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: rem(16) rem(24);
-      padding-bottom: rem(48);
+      gap: rem(10) rem(25);
     }
 
-    @include mq(pc) {
-      grid-template-columns: repeat(4, 1fr);
+    &.-lg {
+      max-height: 35lh;
+
+      @media (1160px <= width) {
+        max-height: 17lh;
+      }
     }
   }
 
   &__country {
-    display: flex;
-    flex-direction: column;
-    gap: rem(2);
-  }
+    position: relative;
+    padding-left: rem(10);
+    line-height: 1.5;
 
-  &__country-en {
-    font-family: var(--ff-garamond);
-    font-size: rem(11);
-    font-weight: 400;
-    line-height: 1.4;
-    color: rgb(255 255 255 / 50%);
-  }
+    @include mq(tab, max) {
+      width: calc(50% - rem(10));
+    }
 
-  &__country-ja {
-    font-family: var(--ff-gothic);
-    font-size: rem(13);
-    font-weight: 400;
-    line-height: 1.4;
-    color: #fff;
-
-    @include mq(tab) {
-      font-size: rem(14);
+    &::before {
+      position: absolute;
+      top: calc((1lh / 2) - rem(3));
+      left: 0;
+      display: block;
+      width: rem(5);
+      height: rem(5);
+      content: "";
+      background-color: #d1b994;
+      border-radius: 50%;
     }
   }
-}
-
-// アコーディオン open 時にアイコンを回転
-.global-network__accordion[open] .global-network__accordion-icon {
-  transform: rotate(45deg);
 }
 
 /* ----------------------------------------
@@ -172,44 +149,44 @@
   background-color: #111;
 
   &__inner {
-    display: flex;
-    flex-direction: column;
-    gap: rem(48);
-    padding-block: rem(80);
+    padding-block: rem(92) rem(195);
 
-    @include mq(pc) {
-      flex-direction: row;
-      gap: rem(80);
-      align-items: flex-start;
-      padding-block: rem(140);
+    @include mq(tab) {
+      padding-block: rem(150) rem(210);
     }
   }
 
-  &__content {
+  &__head {
     display: flex;
-    flex: 1;
     flex-direction: column;
     gap: rem(24);
+
+    @media (1120px <= width) {
+      flex-direction: row;
+      align-items: end;
+    }
+
+    @include mq(tab) {
+      gap: rem(40);
+      justify-content: space-between;
+    }
+  }
+
+  &__txt-wrap {
+    @media (1120px <= width) {
+      flex: 0 0 rem(524);
+    }
   }
 
   &__desc {
-    font-family: var(--ff-mincho);
-    font-size: rem(15);
-    font-weight: 400;
-    line-height: 2;
     color: #fff;
     text-align: justify;
-
-    @include mq(tab) {
-      font-size: rem(16);
-    }
   }
 
   &__note {
-    font-family: var(--ff-gothic);
-    font-size: rem(12);
-    line-height: 1.8;
-    color: rgb(255 255 255 / 60%);
+    margin-top: rem(12);
+    font-size: rem(14);
+    color: #fff;
   }
 
   &__cards {

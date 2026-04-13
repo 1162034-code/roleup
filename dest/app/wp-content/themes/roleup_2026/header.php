@@ -52,9 +52,17 @@ $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リン�
 <html <?php language_attributes(); ?>>
 
 <head>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KFF9BFWJ');</script>
+	<!-- End Google Tag Manager -->
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width">
   <meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="kJqdXc2Gy3lw6OnpX8UNE3WkuonNREVse9mwOzri5HE" />
   <?php wp_head(); ?>
 </head>
 
@@ -72,7 +80,14 @@ $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リン�
     $post_types = ['news'];
     $matched = false;
     foreach ($post_types as $post_type) {
-      if (is_singular($post_type) || is_post_type_archive($post_type)) {
+      $is_tax_for_post_type = false;
+      if (is_tax()) {
+        $queried_term = get_queried_object();
+        if ($queried_term instanceof WP_Term) {
+          $is_tax_for_post_type = is_object_in_taxonomy($post_type, $queried_term->taxonomy);
+        }
+      }
+      if (is_singular($post_type) || is_post_type_archive($post_type) || $is_tax_for_post_type) {
         echo $post_type;
         $matched = true;
         break;
@@ -89,6 +104,10 @@ $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リン�
     }
   }
 ?>">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFF9BFWJ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
   <div class="l-wrapper">
     <header class="l-header">
       <div class="l-header__inner">

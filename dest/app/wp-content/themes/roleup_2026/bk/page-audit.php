@@ -79,60 +79,60 @@
           <span class="js-text-anime-up__sub-txt">サービス内容</span>
         </span>
       </h2>
-      <ul class="p-content-service__cards">
-        <li class="p-content-service__card js-fade-in">
-          <div class="p-content-service__card-inner">
-            <div class="p-content-service__card-head">
-              <p class="p-content-service__card-num">Service 01</p>
-              <div class="p-content-service__card-icon">
+      <ul class="p-content-cards">
+        <li class="p-content-card js-fade-in">
+          <div class="p-content-card__inner">
+            <div class="p-content-card__head">
+              <p class="p-content-card__num">Service 01</p>
+              <div class="p-content-card__icon">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/icon/circle_corporate.webp" alt="" width="44" height="44">
               </div>
             </div>
-            <div class="p-content-service__card-body">
-              <h3 class="p-content-service__card-ttl">監査・保証業務</h3>
-              <p class="p-content-service__card-desc">公認会計士法に基づく監査証明業務、レンダー監査をはじめとするM&A前後における財務諸表監査、合意された手続（AUP）を提供します。</p>
+            <div class="p-content-card__body">
+              <h3 class="p-content-card__ttl">監査・保証業務</h3>
+              <p class="p-content-card__desc">公認会計士法に基づく監査証明業務、レンダー監査をはじめとするM&A前後における財務諸表監査、合意された手続（AUP）を提供します。</p>
             </div>
           </div>
         </li>
-        <li class="p-content-service__card js-fade-in">
-          <div class="p-content-service__card-inner">
-            <div class="p-content-service__card-head">
-              <p class="p-content-service__card-num">Service 02</p>
-              <div class="p-content-service__card-icon">
+        <li class="p-content-card js-fade-in">
+          <div class="p-content-card__inner">
+            <div class="p-content-card__head">
+              <p class="p-content-card__num">Service 02</p>
+              <div class="p-content-card__icon">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/icon/circle_people.webp" alt="" width="44" height="44">
               </div>
             </div>
-            <div class="p-content-service__card-body">
-              <h3 class="p-content-service__card-ttl">会計・財務アドバイザリー業務</h3>
-              <p class="p-content-service__card-desc">財務会計適用・運用支援業務、国際会計基準（IFRS）導入支援業務、管理会計、原価計算制度構築支援、その他会計アドバイザリー業務を提供します。</p>
+            <div class="p-content-card__body">
+              <h3 class="p-content-card__ttl">会計・財務アドバイザリー業務</h3>
+              <p class="p-content-card__desc">財務会計適用・運用支援業務、国際会計基準（IFRS）導入支援業務、管理会計、原価計算制度構築支援、その他会計アドバイザリー業務を提供します。</p>
             </div>
           </div>
         </li>
-        <li class="p-content-service__card js-fade-in">
-          <div class="p-content-service__card-inner">
-            <div class="p-content-service__card-head">
-              <p class="p-content-service__card-num">Service 03</p>
-              <div class="p-content-service__card-icon">
+        <li class="p-content-card js-fade-in">
+          <div class="p-content-card__inner">
+            <div class="p-content-card__head">
+              <p class="p-content-card__num">Service 03</p>
+              <div class="p-content-card__icon">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/icon/circle_research.webp" alt="" width="44" height="44">
               </div>
             </div>
-            <div class="p-content-service__card-body">
-              <h3 class="p-content-service__card-ttl">内部統制アドバイザリー業務</h3>
-              <p class="p-content-service__card-desc">内部統制構築・改善支援、IPOに向けた体制構築、経営者による内部統制評価の実行支援、ガバナンス、リスクマネジメント、コンプライアンス強化支援業務等を提供します。</p>
+            <div class="p-content-card__body">
+              <h3 class="p-content-card__ttl">内部統制アドバイザリー業務</h3>
+              <p class="p-content-card__desc">内部統制構築・改善支援、IPOに向けた体制構築、経営者による内部統制評価の実行支援、ガバナンス、リスクマネジメント、コンプライアンス強化支援業務等を提供します。</p>
             </div>
           </div>
         </li>
-        <li class="p-content-service__card js-fade-in">
-          <div class="p-content-service__card-inner">
-            <div class="p-content-service__card-head">
-              <p class="p-content-service__card-num">Service 04</p>
-              <div class="p-content-service__card-icon">
+        <li class="p-content-card js-fade-in">
+          <div class="p-content-card__inner">
+            <div class="p-content-card__head">
+              <p class="p-content-card__num">Service 04</p>
+              <div class="p-content-card__icon">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/icon/circle_gears.webp" alt="" width="44" height="44">
               </div>
             </div>
-            <div class="p-content-service__card-body">
-              <h3 class="p-content-service__card-ttl">税務ストラクチャリング</h3>
-              <p class="p-content-service__card-desc">M&A・組織再編スキームに関わるリスク分析や最適な税務戦略の立案をします。</p>
+            <div class="p-content-card__body">
+              <h3 class="p-content-card__ttl">税務ストラクチャリング</h3>
+              <p class="p-content-card__desc">M&A・組織再編スキームに関わるリスク分析や最適な税務戦略の立案をします。</p>
             </div>
           </div>
         </li>

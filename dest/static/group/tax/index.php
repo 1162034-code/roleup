@@ -78,88 +78,88 @@
         <span class="js-text-anime-up__sub-txt">サービス内容</span>
       </span>
     </h2>
-    <ul class="p-content-service__cards">
-      <li class="p-content-service__card js-fade-in">
-        <div class="p-content-service__card-inner">
-          <div class="p-content-service__card-head">
-            <p class="p-content-service__card-num">Service 01</p>
-            <div class="p-content-service__card-icon">
+    <ul class="p-content-cards">
+      <li class="p-content-card js-fade-in">
+        <div class="p-content-card__inner">
+          <div class="p-content-card__head">
+            <p class="p-content-card__num">Service 01</p>
+            <div class="p-content-card__icon">
               <img src="<[theme_dir]/assets/img/common/icon/circle_corporate.webp" alt="" width="44" height="44">
             </div>
           </div>
-          <div class="p-content-service__card-body">
-            <h3 class="p-content-service__card-ttl">法人税務顧問</h3>
-            <p class="p-content-service__card-desc">月次決算・年次の税務申告、税務相談など、継続的な税務サポートを提供します。</p>
+          <div class="p-content-card__body">
+            <h3 class="p-content-card__ttl">法人税務顧問</h3>
+            <p class="p-content-card__desc">月次決算・年次の税務申告、税務相談など、継続的な税務サポートを提供します。</p>
           </div>
         </div>
       </li>
-      <li class="p-content-service__card js-fade-in">
-        <div class="p-content-service__card-inner">
-          <div class="p-content-service__card-head">
-            <p class="p-content-service__card-num">Service 02</p>
-            <div class="p-content-service__card-icon">
+      <li class="p-content-card js-fade-in">
+        <div class="p-content-card__inner">
+          <div class="p-content-card__head">
+            <p class="p-content-card__num">Service 02</p>
+            <div class="p-content-card__icon">
               <img src="<[theme_dir]/assets/img/common/icon/circle_people.webp" alt="" width="44" height="44">
             </div>
           </div>
-          <div class="p-content-service__card-body">
-            <h3 class="p-content-service__card-ttl">相続・事業承継税務</h3>
-            <p class="p-content-service__card-desc">相続・贈与税申告をはじめ、株式評価・納税猶予を含む事業承継対策の設計・実行を支援します。</p>
+          <div class="p-content-card__body">
+            <h3 class="p-content-card__ttl">相続・事業承継税務</h3>
+            <p class="p-content-card__desc">相続・贈与税申告をはじめ、株式評価・納税猶予を含む事業承継対策の設計・実行を支援します。</p>
           </div>
         </div>
       </li>
-      <li class="p-content-service__card js-fade-in">
-        <div class="p-content-service__card-inner">
-          <div class="p-content-service__card-head">
-            <p class="p-content-service__card-num">Service 03</p>
-            <div class="p-content-service__card-icon">
+      <li class="p-content-card js-fade-in">
+        <div class="p-content-card__inner">
+          <div class="p-content-card__head">
+            <p class="p-content-card__num">Service 03</p>
+            <div class="p-content-card__icon">
               <img src="<[theme_dir]/assets/img/common/icon/circle_research.webp" alt="" width="44" height="44">
             </div>
           </div>
-          <div class="p-content-service__card-body">
-            <h3 class="p-content-service__card-ttl">税務デューデリジェンス</h3>
-            <p class="p-content-service__card-desc">M&A対象企業の税務リスクを調査・分析し、取引条件への反映を支援します。</p>
+          <div class="p-content-card__body">
+            <h3 class="p-content-card__ttl">税務デューデリジェンス</h3>
+            <p class="p-content-card__desc">M&A対象企業の税務リスクを調査・分析し、取引条件への反映を支援します。</p>
           </div>
         </div>
       </li>
-      <li class="p-content-service__card js-fade-in">
-        <div class="p-content-service__card-inner">
-          <div class="p-content-service__card-head">
-            <p class="p-content-service__card-num">Service 04</p>
-            <div class="p-content-service__card-icon">
+      <li class="p-content-card js-fade-in">
+        <div class="p-content-card__inner">
+          <div class="p-content-card__head">
+            <p class="p-content-card__num">Service 04</p>
+            <div class="p-content-card__icon">
               <img src="<[theme_dir]/assets/img/common/icon/circle_gears.webp" alt="" width="44" height="44">
             </div>
           </div>
-          <div class="p-content-service__card-body">
-            <h3 class="p-content-service__card-ttl">税務ストラクチャリング</h3>
-            <p class="p-content-service__card-desc">M&A・組織再編スキームに関わるリスク分析や最適な税務戦略の立案をします。</p>
+          <div class="p-content-card__body">
+            <h3 class="p-content-card__ttl">税務ストラクチャリング</h3>
+            <p class="p-content-card__desc">M&A・組織再編スキームに関わるリスク分析や最適な税務戦略の立案をします。</p>
           </div>
         </div>
       </li>
-      <li class="p-content-service__card js-fade-in">
-        <div class="p-content-service__card-inner">
-          <div class="p-content-service__card-head">
-            <p class="p-content-service__card-num">Service 05</p>
-            <div class="p-content-service__card-icon">
+      <li class="p-content-card js-fade-in">
+        <div class="p-content-card__inner">
+          <div class="p-content-card__head">
+            <p class="p-content-card__num">Service 05</p>
+            <div class="p-content-card__icon">
               <img src="<[theme_dir]/assets/img/common/icon/circle_globe.webp" alt="" width="44" height="44">
             </div>
           </div>
-          <div class="p-content-service__card-body">
-            <h3 class="p-content-service__card-ttl">国際税務</h3>
-            <p class="p-content-service__card-desc">PE・移転価格・CFC・源泉税リスク調査など、クロスボーダー取引に関する税務アドバイスを提供します。</p>
+          <div class="p-content-card__body">
+            <h3 class="p-content-card__ttl">国際税務</h3>
+            <p class="p-content-card__desc">PE・移転価格・CFC・源泉税リスク調査など、クロスボーダー取引に関する税務アドバイスを提供します。</p>
           </div>
         </div>
       </li>
-      <li class="p-content-service__card js-fade-in">
-        <div class="p-content-service__card-inner">
-          <div class="p-content-service__card-head">
-            <p class="p-content-service__card-num">Service 06</p>
-            <div class="p-content-service__card-icon">
+      <li class="p-content-card js-fade-in">
+        <div class="p-content-card__inner">
+          <div class="p-content-card__head">
+            <p class="p-content-card__num">Service 06</p>
+            <div class="p-content-card__icon">
               <img src="<[theme_dir]/assets/img/common/icon/circle_partnership.webp" alt="" width="44" height="44">
             </div>
           </div>
-          <div class="p-content-service__card-body">
-            <h3 class="p-content-service__card-ttl">PMI税務支援</h3>
-            <p class="p-content-service__card-desc">統合後の税務・経理体制構築、決算早期化、グループ通算制度の導入などを支援します。</p>
+          <div class="p-content-card__body">
+            <h3 class="p-content-card__ttl">PMI税務支援</h3>
+            <p class="p-content-card__desc">統合後の税務・経理体制構築、決算早期化、グループ通算制度の導入などを支援します。</p>
           </div>
         </div>
       </li>

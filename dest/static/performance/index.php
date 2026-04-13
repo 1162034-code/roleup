@@ -91,7 +91,7 @@
       </ul>
       <p class="performance-league__rank-note">※ ランキングはLSEG（London Stock Exchange Group）が公表する日本M&Aレビューに基づく</p>
 
-      <div class="performance-league__history">
+      <!-- <div class="performance-league__history">
         <p class="performance-league__history-ttl">過去のランキング推移</p>
         <ul class="performance-league__history-list">
           <li class="performance-league__history-item">
@@ -115,7 +115,7 @@
             <p class="performance-league__history-type">公表案件</p>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

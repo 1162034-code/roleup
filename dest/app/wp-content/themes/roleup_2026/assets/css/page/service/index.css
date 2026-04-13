@@ -227,7 +227,7 @@
 @media screen and (min-width: 769px) {
   .service-process__step {
     flex: 1 1 0;
-    padding: 2rem;
+    padding: 2rem 1.875rem;
   }
 }
 .service-process__step + .service-process__step::before {

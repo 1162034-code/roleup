@@ -56,6 +56,14 @@
 
     .dots {
       width: max-content;
+
+      @media (hover: hover) {
+        &:hover {
+          color: initial;
+          cursor: default;
+          background: initial;
+        }
+      }
     }
 
     .current {
