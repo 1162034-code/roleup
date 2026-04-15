@@ -1,9 +1,7 @@
 <?php get_header(); ?>
 
   <!-- Opening -->
-  <?php $opening_variant = apply_filters('roleup_opening_variant', 'a'); ?>
-  <div class="p-opening js-opening p-opening--variant-<?php echo esc_attr($opening_variant); ?>" data-opening-variant="<?php echo esc_attr($opening_variant); ?>" aria-hidden="false">
-    <!-- Variant B: 背景 -->
+  <div class="p-opening js-opening" aria-hidden="false">
     <div class="p-opening__bg"></div>
     <div class="p-opening__overlay"></div>
     <div class="p-opening__inner">
@@ -12,24 +10,6 @@
       </div>
       <p class="p-opening__ttl"><span class="p-opening__ttl-inner"><span class="u-br">Rooted&nbsp;in&nbsp;People,</span>Innovating&nbsp;Value.</span></p>
       <p class="p-opening__sttl">価値ある変革を、人と共に。</p>
-      <div class="p-opening__line"></div>
-    </div>
-    <div class="p-opening__curtain"></div>
-    <!-- Variant B: 左右パネル -->
-    <div class="p-opening__split p-opening__split--left"></div>
-    <div class="p-opening__split p-opening__split--right"></div>
-    <!-- Variant C: 上下パネル -->
-    <div class="p-opening__split p-opening__split--top"></div>
-    <div class="p-opening__split p-opening__split--bottom"></div>
-    <div class="p-opening__gold-line"></div>
-    <!-- Variant D: 円形マスク / NELU風下から上にカーテン -->
-    <div class="p-opening__circle-mask"></div>
-    <div class="p-opening__bottom-curtain"></div>
-    <!-- Variant E: 縦ブラインド -->
-    <div class="p-opening__shutter">
-      <?php for ($i = 1; $i <= 8; $i++) : ?>
-      <div class="p-opening__shutter-strip"></div>
-      <?php endfor; ?>
     </div>
   </div>
 
@@ -37,7 +17,7 @@
   <section class="home-mv">
     <div class="home-mv__content">
       <div class="js-text-anime-up">
-        <h1 class="home-mv__ttl js-text-anime-up__main u-txt-uppercase" data-char-split><span class="u-br">Rooted&nbsp;in&nbsp;People,</span>Innovating&nbsp;Value.</h1>
+        <h1 class="home-mv__ttl js-text-anime-up__main" data-char-split><span class="u-br">Rooted&nbsp;in&nbsp;People,</span>Innovating&nbsp;Value.</h1>
         <span class="home-mv__sttl js-text-anime-up__sub">
           <span class="js-text-anime-up__sub-txt">価値ある変革を、人と共に。</span>
         </span>
