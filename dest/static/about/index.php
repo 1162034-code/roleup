@@ -68,6 +68,25 @@
   </div>
 </section>
 
+<section class="p-content-rep js-fade-in">
+  <div class="p-content-rep__inner c-container">
+    <div class="p-content-rep__card">
+      <div class="p-content-rep__content">
+        <p class="p-content-rep__role">代表社員</p>
+        <div class="p-content-rep__name-wrap">
+          <p class="p-content-rep__name-ja">伊東 正美</p>
+          <p class="p-content-rep__name-en">Masami Ito</p>
+        </div>
+        <ul class="p-content-rep__career-list">
+          <li>税理士、MBA(Leeds University Business School)</li>
+          <li>税理士法人にてM&A、組織再編、相続等、幅広い分野の税務助言に従事したのち、PEファンドにてバイアウト投資及び経営支援を担当。</li>
+          <li>2023年<span class="u-txt-uppercase">Roleup</span>税理士法人を設立。多数のデューデリジェンス、ストラクチャー助言に関与。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 経営理念 -->
 <section id="philosophy" class="about-philosophy">
   <div class="about-philosophy__overlay js-parallax-bg"></div>

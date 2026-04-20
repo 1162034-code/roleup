@@ -21,6 +21,15 @@
   pointer-events: none;
   opacity: 0;
 }
+.p-opening {
+  /* 再訪時: header の先行スクリプトが html に付与するクラス（チラつき防止） */
+}
+html.is-opening-skip .p-opening {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: none;
+}
 .p-opening__bg {
   position: absolute;
   inset: -10%;

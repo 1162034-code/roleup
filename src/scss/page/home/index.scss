@@ -26,6 +26,14 @@
     opacity: 0;
   }
 
+  /* 再訪時: header の先行スクリプトが html に付与するクラス（チラつき防止） */
+  html.is-opening-skip & {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: none;
+  }
+
   &__bg {
     position: absolute;
     inset: -10%;

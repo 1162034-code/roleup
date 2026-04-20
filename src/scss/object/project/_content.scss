@@ -475,7 +475,6 @@
   }
 
   &__ttl {
-    font-family: var(--ff-mincho);
     font-size: rem(20);
     font-weight: 600;
 
@@ -485,8 +484,8 @@
   }
 
   &__desc {
-    font-family: var(--ff-gothic);
     font-size: rem(16);
+    font-weight: 500;
     text-align: justify;
   }
 

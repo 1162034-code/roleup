@@ -130,12 +130,12 @@
                   <span>News</span>
                 </a>
               </li>
-              <?php /*
               <li class="l-footer__nav-item">
                 <a href="<?php echo home_url(); ?>/global-network/">
                   <span>Global Network</span>
                 </a>
               </li>
+              <?php /*
               <li class="l-footer__nav-item">
                 <a href="<?php echo home_url(); ?>/recruit/">
                   <span>Recruit</span>

@@ -38,7 +38,7 @@
 }
 @media screen and (min-width: 769px) {
   .global-partner__regions {
-    gap: 1.375rem 2rem;
+    gap: 3.75rem 2rem;
     margin-top: 3.75rem;
   }
 }
@@ -64,29 +64,19 @@
 }
 .global-partner__region-label {
   display: block;
-  font-size: 1.125rem;
-  font-weight: 700;
-}
-@media screen and (min-width: 769px) {
-  .global-partner__region-label {
-    font-size: 1.375rem;
-  }
-}
-.global-partner__region-en {
-  display: block;
   font-family: var(--ff-garamond);
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #d1b994;
 }
 @media screen and (min-width: 769px) {
-  .global-partner__region-en {
-    font-size: 1rem;
+  .global-partner__region-label {
+    font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 769px) {
   .global-partner__countries-wrap {
-    padding-top: 1.5rem;
+    padding-top: 0.625rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -109,11 +99,11 @@
   }
 }
 .global-partner__countries.-lg {
-  max-height: 35lh;
+  max-height: 22lh;
 }
 @media (1160px <= width) {
   .global-partner__countries.-lg {
-    max-height: 17lh;
+    max-height: 21lh;
   }
 }
 .global-partner__country {

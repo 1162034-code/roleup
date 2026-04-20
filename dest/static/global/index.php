@@ -64,8 +64,7 @@
       <li class="global-partner__region js-fade-in">
         <details class="p-accordion js-accordion-sp-toggle">
           <summary>
-            <span class="global-partner__region-label">アジア太平洋</span>
-            <span class="global-partner__region-en u-txt-uppercase">Asia Pacific</span>
+            <span class="global-partner__region-label u-txt-uppercase">Asia Pacific</span>
             <span class="p-accordion__icon"></span>
           </summary>
           <div class="p-accordion__content js-accordion-content">
@@ -103,8 +102,7 @@
       <li class="global-partner__region js-fade-in">
         <details class="p-accordion js-accordion-sp-toggle">
           <summary>
-            <span class="global-partner__region-label">北アメリカ</span>
-            <span class="global-partner__region-en u-txt-uppercase">North America</span>
+            <span class="global-partner__region-label u-txt-uppercase">North America</span>
             <span class="p-accordion__icon"></span>
           </summary>
           <div class="p-accordion__content js-accordion-content">
@@ -128,8 +126,7 @@
       <li class="global-partner__region js-fade-in">
         <details class="p-accordion js-accordion-sp-toggle">
           <summary>
-            <span class="global-partner__region-label">ラテンアメリカ</span>
-            <span class="global-partner__region-en u-txt-uppercase">Latin America</span>
+            <span class="global-partner__region-label u-txt-uppercase">Latin America</span>
             <span class="p-accordion__icon"></span>
           </summary>
           <div class="p-accordion__content js-accordion-content">
@@ -157,12 +154,11 @@
         </details>
       </li>
 
-      <!-- ヨーロッパ・中東・アフリカ地域 -->
+      <!-- ヨーロッパ -->
       <li class="global-partner__region js-fade-in">
         <details class="p-accordion js-accordion-sp-toggle">
           <summary>
-            <span class="global-partner__region-label"><span class="u-br-sp">ヨーロッパ・中東・</span>アフリカ地域</span>
-            <span class="global-partner__region-en u-txt-uppercase">Europe, Middle East, Africa</span>
+            <span class="global-partner__region-label u-txt-uppercase">Europe</span>
             <span class="p-accordion__icon"></span>
           </summary>
           <div class="p-accordion__content js-accordion-content">
@@ -170,71 +166,103 @@
               <ul class="global-partner__countries -lg">
                 <li class="global-partner__country">Albania</li>
                 <li class="global-partner__country">Austria</li>
-                <li class="global-partner__country">Azerbaijan</li>
                 <li class="global-partner__country">Belgium</li>
-                <li class="global-partner__country">Bosnia and Herzegovina</li>
+                <li class="global-partner__country"><span class="u-br">Bosnia and </span>Herzegovina</li>
                 <li class="global-partner__country">Bulgaria</li>
-                <li class="global-partner__country">Cameroon</li>
-                <li class="global-partner__country">Chad</li>
-                <li class="global-partner__country">Congo</li>
                 <li class="global-partner__country">Croatia</li>
                 <li class="global-partner__country">Cyprus</li>
                 <li class="global-partner__country">Czech Republic</li>
                 <li class="global-partner__country">Denmark</li>
-                <li class="global-partner__country">Egypt</li>
                 <li class="global-partner__country">Estonia</li>
                 <li class="global-partner__country">Finland</li>
                 <li class="global-partner__country">France</li>
                 <li class="global-partner__country">Georgia</li>
                 <li class="global-partner__country">Germany</li>
-                <li class="global-partner__country">Ghana</li>
                 <li class="global-partner__country">Gibraltar</li>
                 <li class="global-partner__country">Greece</li>
                 <li class="global-partner__country">Hungary</li>
                 <li class="global-partner__country">Ireland</li>
-                <li class="global-partner__country">Israel</li>
                 <li class="global-partner__country">Italy</li>
                 <li class="global-partner__country">Jersey</li>
-                <li class="global-partner__country">Jordan</li>
-                <li class="global-partner__country">Kenya</li>
                 <li class="global-partner__country">Kosovo</li>
-                <li class="global-partner__country">Kuwait</li>
-                <li class="global-partner__country">Lebanon</li>
-                <li class="global-partner__country">Libya</li>
                 <li class="global-partner__country">Luxembourg</li>
                 <li class="global-partner__country">Malta</li>
-                <li class="global-partner__country">Mauritius</li>
                 <li class="global-partner__country">Montenegro</li>
-                <li class="global-partner__country">Morocco</li>
-                <li class="global-partner__country">Namibia</li>
                 <li class="global-partner__country">Netherlands</li>
-                <li class="global-partner__country">Niger</li>
-                <li class="global-partner__country">Nigeria</li>
-                <li class="global-partner__country">North Macedonia</li>
+                <li class="global-partner__country"><span class="u-br">North </span>Macedonia</li>
                 <li class="global-partner__country">Norway</li>
-                <li class="global-partner__country">Palestine</li>
                 <li class="global-partner__country">Poland</li>
                 <li class="global-partner__country">Portugal</li>
-                <li class="global-partner__country">Qatar</li>
                 <li class="global-partner__country">Romania</li>
-                <li class="global-partner__country">Russian Federation</li>
-                <li class="global-partner__country">Saudi Arabia</li>
+                <li class="global-partner__country"><span class="u-br">Russian </span>Federation</li>
                 <li class="global-partner__country">Serbia</li>
                 <li class="global-partner__country">Slovakia</li>
                 <li class="global-partner__country">Slovenia</li>
-                <li class="global-partner__country">South Africa</li>
                 <li class="global-partner__country">Spain</li>
                 <li class="global-partner__country">Sweden</li>
                 <li class="global-partner__country">Switzerland</li>
+                <li class="global-partner__country">Ukraine</li>
+                <li class="global-partner__country">United Kingdom</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </li>
+
+      <!-- 中東 -->
+      <li class="global-partner__region js-fade-in">
+        <details class="p-accordion js-accordion-sp-toggle">
+          <summary>
+            <span class="global-partner__region-label u-txt-uppercase">Middle East</span>
+            <span class="p-accordion__icon"></span>
+          </summary>
+          <div class="p-accordion__content js-accordion-content">
+            <div class="global-partner__countries-wrap">
+              <ul class="global-partner__countries -lg">
+                <li class="global-partner__country">Azerbaijan</li>
+                <li class="global-partner__country">Emirates</li>
+                <li class="global-partner__country">Israel</li>
+                <li class="global-partner__country">Jordan</li>
+                <li class="global-partner__country">Kuwait</li>
+                <li class="global-partner__country">Lebanon</li>
+                <li class="global-partner__country">Palestine</li>
+                <li class="global-partner__country">Qatar</li>
+                <li class="global-partner__country">Saudi Arabia</li>
+                <li class="global-partner__country">Turkey</li>
+                <li class="global-partner__country">United Arab</li>
+                <li class="global-partner__country">Yemen</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </li>
+
+      <!-- アフリカ -->
+      <li class="global-partner__region js-fade-in">
+        <details class="p-accordion js-accordion-sp-toggle">
+          <summary>
+            <span class="global-partner__region-label u-txt-uppercase">Africa</span>
+            <span class="p-accordion__icon"></span>
+          </summary>
+          <div class="p-accordion__content js-accordion-content">
+            <div class="global-partner__countries-wrap">
+              <ul class="global-partner__countries -lg">
+                <li class="global-partner__country">Cameroon</li>
+                <li class="global-partner__country">Chad</li>
+                <li class="global-partner__country">Congo</li>
+                <li class="global-partner__country">Egypt</li>
+                <li class="global-partner__country">Ghana</li>
+                <li class="global-partner__country">Kenya</li>
+                <li class="global-partner__country">Libya</li>
+                <li class="global-partner__country">Mauritius</li>
+                <li class="global-partner__country">Morocco</li>
+                <li class="global-partner__country">Namibia</li>
+                <li class="global-partner__country">Niger</li>
+                <li class="global-partner__country">Nigeria</li>
+                <li class="global-partner__country">South Africa</li>
                 <li class="global-partner__country">Tanzania</li>
                 <li class="global-partner__country">Tunisia</li>
-                <li class="global-partner__country">Turkey</li>
                 <li class="global-partner__country">Uganda</li>
-                <li class="global-partner__country">Ukraine</li>
-                <li class="global-partner__country">United Arab</li>
-                <li class="global-partner__country">Emirates</li>
-                <li class="global-partner__country">United Kingdom</li>
-                <li class="global-partner__country">Yemen</li>
               </ul>
             </div>
           </div>

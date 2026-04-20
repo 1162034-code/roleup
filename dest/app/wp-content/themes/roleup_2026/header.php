@@ -43,7 +43,7 @@ $nav_items = [
   ],
   ['label' => 'Performance', 'url' => $nav_home . '/performance/'],
   ['label' => 'News', 'url' => $nav_archive],
-  // ['label' => 'Global Network', 'url' => $nav_home . '/global-network/'],
+  ['label' => 'Global Network', 'url' => $nav_home . '/global-network/'],
   // ['label' => 'Recruit', 'url' => $nav_home . '/recruit/'],
 ];
 $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リンクのみ
@@ -61,6 +61,17 @@ $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リン�
 	<!-- End Google Tag Manager -->
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width">
+  <?php if (function_exists('is_front_page') && is_front_page()) : ?>
+  <script>
+  (function () {
+    try {
+      if (window.sessionStorage.getItem('roleup_front_opening_seen') === '1') {
+        document.documentElement.classList.add('is-opening-skip');
+      }
+    } catch (_) {}
+  })();
+  </script>
+  <?php endif; ?>
   <meta name="format-detection" content="telephone=no">
 	<meta name="google-site-verification" content="kJqdXc2Gy3lw6OnpX8UNE3WkuonNREVse9mwOzri5HE" />
   <?php wp_head(); ?>

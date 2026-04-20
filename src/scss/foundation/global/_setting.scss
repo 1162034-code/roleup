@@ -41,9 +41,6 @@
     rgb(224 181 106) 85.05%
   );
 
-  // header 高さ設定
-  --header-h: #{rem(98)};
-
   // container 設定
   --container-w: #{rem(1194)};
   --container-space: #{rem(38)};
@@ -51,6 +48,10 @@
   @include mq(tab) {
     --header-h: #{rem(110)};
     --container-space: #{rem(80)};
+  }
+
+  @include mq(nav, max) {
+    --header-h: #{rem(60)};
   }
 
   // ---------------------------------------------- //

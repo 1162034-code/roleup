@@ -9,6 +9,16 @@
   width: 100%;
   height: var(--header-h);
 
+  @include mq(nav, max) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: z("header");
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 rem(10) rgb(0 0 0 / 10%);
+  }
+
   &__inner {
     height: inherit;
   }
@@ -19,7 +29,7 @@
     left: rem(20);
     z-index: z("header");
 
-    @include mq(tab) {
+    @include mq(nav, max) {
       left: rem(40);
     }
 

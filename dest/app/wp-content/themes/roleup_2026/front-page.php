@@ -199,7 +199,7 @@
         <h2 class="p-ttl-a -dark js-text-anime-up">
           <span class="p-ttl-a__en js-text-anime-up__main" data-char-split>Performance</span>
           <span class="p-ttl-a__ja js-text-anime-up__sub">
-            <span class="js-text-anime-up__sub-txt">実績</span>
+            <span class="js-text-anime-up__sub-txt">M&Aリーグテーブル実績</span>
           </span>
         </h2>
         <p class="home-performance__txt"><span class="u-br-pc">多様なニーズに対して一気通貫の支援を通じた、</span>信頼できる確かな実績。</p>
