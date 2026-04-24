@@ -29,7 +29,6 @@ fieldset {
 }
 
 .p-form__desc {
-  font-family: var(--ff-gothic);
 }
 
 .p-form__group {
@@ -58,7 +57,6 @@ fieldset {
   gap: 0 rem(10);
   align-items: center;
   justify-content: start;
-  font-family: var(--ff-gothic);
   line-height: 1.5;
 }
 
@@ -86,7 +84,6 @@ fieldset {
     width: 100%;
     height: rem(46);
     padding: 0.5em 1em;
-    font-family: var(--ff-gothic);
     font-size: rem(14);
     background-color: #fff;
     border: 1px solid #cdcdcd;
@@ -97,7 +94,6 @@ fieldset {
     width: 100%;
     height: rem(240);
     padding: 0.5em 1em;
-    font-family: var(--ff-gothic);
     resize: vertical;
     border: 1px solid #cdd6dd;
   }
@@ -152,7 +148,6 @@ fieldset {
   padding: rem(30);
   overflow-y: scroll;
   overscroll-behavior: contain;
-  font-family: var(--ff-gothic);
   border: 1px solid #cdcdcd;
 
   section {
@@ -237,7 +232,6 @@ fieldset {
   width: fit-content;
   margin-inline: auto;
   margin-top: rem(30);
-  font-family: var(--ff-gothic);
   font-size: rem(16);
   font-weight: 500;
 
@@ -326,7 +320,6 @@ fieldset {
   flex-wrap: wrap;
   gap: rem(10) rem(20);
   margin-top: rem(10);
-  font-family: var(--ff-gothic);
 
   label {
     position: relative;
@@ -393,5 +386,4 @@ fieldset {
 }
 
 .wpcf7-not-valid-tip {
-  font-family: var(--ff-gothic);
 }

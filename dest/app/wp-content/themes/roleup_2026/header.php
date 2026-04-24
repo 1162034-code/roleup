@@ -42,8 +42,8 @@ $nav_items = [
     ],
   ],
   ['label' => 'Performance', 'url' => $nav_home . '/performance/'],
-  ['label' => 'News', 'url' => $nav_archive],
   ['label' => 'Global Network', 'url' => $nav_home . '/global-network/'],
+  ['label' => 'News', 'url' => $nav_archive],
   // ['label' => 'Recruit', 'url' => $nav_home . '/recruit/'],
 ];
 $nav_mode = 'full'; // 'full' = ドロップダウン付き, 'simple' = リンクのみ

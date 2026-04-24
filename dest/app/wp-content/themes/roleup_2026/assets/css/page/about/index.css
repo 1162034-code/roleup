@@ -49,7 +49,6 @@
 }
 .about-president__txt {
   margin-top: 1.25rem;
-  font-family: var(--ff-gothic);
 }
 @media screen and (min-width: 769px) {
   .about-president__txt {
@@ -201,7 +200,6 @@
 .about-philosophy__item-txt {
   padding-left: 0.3125rem;
   margin-top: 0.625rem;
-  font-family: var(--ff-gothic);
   color: #fff;
 }
 @media screen and (min-width: 769px) {

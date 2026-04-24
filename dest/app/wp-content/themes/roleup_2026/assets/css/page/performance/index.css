@@ -105,7 +105,6 @@
 }
 .performance-league__about-txt {
   margin-top: 0.875rem;
-  font-family: var(--ff-gothic);
   font-size: 0.875rem;
   color: #fff;
 }
@@ -116,7 +115,6 @@
 }
 .performance-league__review-label {
   padding: 0.875rem;
-  font-family: var(--ff-gothic);
   font-size: 1.0625rem;
   font-weight: 500;
   color: #fff;
@@ -189,7 +187,6 @@
 }
 .performance-league__rank-note {
   margin-top: 0.625rem;
-  font-family: var(--ff-gothic);
   font-size: 0.875rem;
   color: #fff;
 }
@@ -207,7 +204,6 @@
   }
 }
 .performance-league__history-ttl {
-  font-family: var(--ff-gothic);
   color: #fff;
   text-align: center;
 }
@@ -231,7 +227,6 @@
   border-radius: 0.25rem;
 }
 .performance-league__history-quarter {
-  font-family: var(--ff-gothic);
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -252,7 +247,6 @@
 }
 .performance-league__history-type {
   margin-top: 0.1875rem;
-  font-family: var(--ff-gothic);
   font-size: 0.75rem;
 }
 @media screen and (min-width: 769px) {

@@ -110,7 +110,6 @@
 
   &__about-txt {
     margin-top: rem(14);
-    font-family: var(--ff-gothic);
     font-size: rem(14);
     color: #fff;
   }
@@ -123,7 +122,6 @@
 
   &__review-label {
     padding: rem(14);
-    font-family: var(--ff-gothic);
     font-size: rem(17);
     font-weight: 500;
     color: #fff;
@@ -199,7 +197,6 @@
 
   &__rank-note {
     margin-top: rem(10);
-    font-family: var(--ff-gothic);
     font-size: rem(14);
     color: #fff;
 
@@ -217,7 +214,6 @@
   }
 
   &__history-ttl {
-    font-family: var(--ff-gothic);
     color: #fff;
     text-align: center;
   }
@@ -243,7 +239,6 @@
   }
 
   &__history-quarter {
-    font-family: var(--ff-gothic);
     font-size: rem(14);
     font-weight: 500;
   }
@@ -266,7 +261,6 @@
 
   &__history-type {
     margin-top: rem(3);
-    font-family: var(--ff-gothic);
     font-size: rem(12);
 
     @include mq(tab) {

@@ -213,7 +213,6 @@
   }
 }
 .global-crossborder__card-desc {
-  font-family: var(--ff-gothic);
   font-size: 0.8125rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.8);

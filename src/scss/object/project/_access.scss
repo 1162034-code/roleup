@@ -23,8 +23,6 @@
   }
 
   &__info {
-    font-family: var(--ff-gothic);
-
     @include mq(pc) {
       grid-row: 1;
       grid-column: 2;

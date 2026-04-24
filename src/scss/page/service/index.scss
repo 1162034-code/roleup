@@ -130,7 +130,6 @@
       display: grid;
       grid-template-columns: rem(28) 1fr;
       gap: rem(14);
-      font-family: var(--ff-gothic);
 
       &::before {
         display: block;
@@ -288,7 +287,6 @@
   }
 
   &__step-desc {
-    font-family: var(--ff-gothic);
     color: #fff;
     text-align: justify;
   }

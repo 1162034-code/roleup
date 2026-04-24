@@ -130,7 +130,6 @@
   display: grid;
   grid-template-columns: 1.75rem 1fr;
   gap: 0.875rem;
-  font-family: var(--ff-gothic);
 }
 .service-item__features li::before {
   display: block;
@@ -275,7 +274,6 @@
   }
 }
 .service-process__step-desc {
-  font-family: var(--ff-gothic);
   color: #fff;
   text-align: justify;
 }

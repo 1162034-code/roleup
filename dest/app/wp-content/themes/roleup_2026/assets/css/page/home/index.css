@@ -302,7 +302,6 @@ html.is-opening-skip .p-opening {
   display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 2;
-  font-family: var(--ff-gothic);
   font-size: 0.875rem;
   -webkit-box-orient: vertical;
 }
@@ -652,7 +651,6 @@ html.is-opening-skip .p-opening {
   position: relative;
   z-index: 2;
   margin-top: 0.4375rem;
-  font-family: var(--ff-gothic);
   font-size: 1rem;
   line-height: 1.6;
   color: #fff;
@@ -1006,7 +1004,6 @@ html.is-opening-skip .p-opening {
   position: relative;
   padding-inline: 0.3125rem;
   margin-top: 1.75rem;
-  font-family: var(--ff-gothic);
   font-size: 0.625rem;
   color: #fff;
 }

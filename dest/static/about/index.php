@@ -68,24 +68,21 @@
   </div>
 </section>
 
-<section class="p-content-rep js-fade-in">
+<div class="p-content-rep js-fade-in">
   <div class="p-content-rep__inner c-container">
     <div class="p-content-rep__card">
       <div class="p-content-rep__content">
-        <p class="p-content-rep__role">代表社員</p>
-        <div class="p-content-rep__name-wrap">
-          <p class="p-content-rep__name-ja">伊東 正美</p>
-          <p class="p-content-rep__name-en">Masami Ito</p>
-        </div>
         <ul class="p-content-rep__career-list">
-          <li>税理士、MBA(Leeds University Business School)</li>
-          <li>税理士法人にてM&A、組織再編、相続等、幅広い分野の税務助言に従事したのち、PEファンドにてバイアウト投資及び経営支援を担当。</li>
-          <li>2023年<span class="u-txt-uppercase">Roleup</span>税理士法人を設立。多数のデューデリジェンス、ストラクチャー助言に関与。</li>
+          <li>公認会計士・税理士・行政書士</li>
+          <li>慶應義塾大学経済学部卒業後、有限責任監査法人トーマツにて監査業務、IPO支援、IFRS導入支援等に従事。</li>
+          <li>PwCアドバイザリー合同会社およびデロイト トーマツ グループにおいて、財務・税務デューデリジェンス、財務モデリング、ビジネスデューデリジェンス、PMI等の業務に従事。</li>
+          <li>日本プライベートエクイティ株式会社において、投資チームの責任者として、ファンドレイズから投資実行、投資先支援、Exitまでバイアウト業務を一気通貫で担当。</li>
+          <li>2022年、株式会社<span class="u-txt-uppercase">Roleup</span>を創業。その後<span class="u-txt-uppercase">Roleup</span>税理士法人および<span class="u-txt-uppercase">Roleup</span>監査法人を設立。<span class="u-txt-uppercase">Roleup</span>グループの代表として全体を統括。</li>
         </ul>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- 経営理念 -->
 <section id="philosophy" class="about-philosophy">
