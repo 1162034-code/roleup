@@ -467,10 +467,16 @@
     }
 
     > li {
-      flex: 0 0 calc(50% - rem(24));
+      flex: 1 1 calc(50% - rem(24));
 
       @include mq(tab) {
         flex: 0 0 auto;
+      }
+
+      &.-full-sp {
+        @include mq(tab, max) {
+          flex: 1 1 100%;
+        }
       }
     }
   }

@@ -24,6 +24,12 @@
     @include mq(tab) {
       font-size: rem(90);
     }
+
+    .recruit-reason & {
+      @include mq(tab, max) {
+        line-height: 1.2;
+      }
+    }
   }
 
   &__ja {
@@ -34,6 +40,12 @@
 
     @include mq(tab) {
       font-size: rem(16);
+    }
+
+    .recruit-reason & {
+      @include mq(tab) {
+        margin-top: rem(10);
+      }
     }
   }
 

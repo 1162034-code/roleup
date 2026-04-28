@@ -33,6 +33,10 @@
       left: rem(40);
     }
 
+    @include mq(tab, max) {
+      left: rem(12);
+    }
+
     a {
       display: flex;
       align-items: center;

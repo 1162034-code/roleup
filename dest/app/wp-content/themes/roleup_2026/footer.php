@@ -2,6 +2,7 @@
       </div>
       <?php endif; ?>
 
+      <?php if(!is_page('recruit')): ?>
       <!-- Get in Touch -->
       <section class="p-contact">
         <a href="<?php echo esc_url(home_url()); ?>/contact/" class="p-contact__link">
@@ -16,6 +17,7 @@
           </div>
         </a>
       </section>
+      <?php endif; ?>
     </main>
 
     <footer class="l-footer">

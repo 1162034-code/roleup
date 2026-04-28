@@ -34,6 +34,16 @@ $btn-sizes: (
       "sp": #{rem(58)},
     ),
   ),
+  "lg": (
+    "width": (
+      "pc": #{rem(400)},
+      "sp": #{rem(335)},
+    ),
+    "height": (
+      "pc": #{rem(66)},
+      "sp": #{rem(58)},
+    ),
+  ),
 ) !default;
 $btn-widths: (
   "full": (

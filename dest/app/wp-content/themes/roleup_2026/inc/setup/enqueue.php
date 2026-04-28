@@ -40,6 +40,11 @@ function custom_enqueue_styles() {
   if ( is_page( 'global-network' ) ) {
     wp_enqueue_style( 'style-global-network', get_theme_file_uri( 'assets/css/page/global/index.css' ), array('style-theme') );
   }
+
+  // 採用ページ専用スタイル
+  if ( is_page( 'recruit' ) ) {
+    wp_enqueue_style( 'style-recruit', get_theme_file_uri( 'assets/css/page/recruit/index.css' ), array('style-theme') );
+  }
 }
 
 /* スクリプト読み込み */

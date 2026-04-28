@@ -6,12 +6,14 @@
 .p-modal {
   position: fixed;
   width: 90%;
-  max-width: rem(600);
+  max-width: rem(1015);
   height: min(calc(100vh - #{rem(80)}), rem(660));
-  padding-block: rem(40);
-  padding-inline: rem(24) rem(40);
+  padding: 0;
+  overflow: hidden auto;
+  overscroll-behavior: contain;
   background-color: #fff;
   border: none;
+  border-radius: rem(4);
   box-shadow: 0 4px 6px rgba($color: #000, $alpha: 50%);
   opacity: 0;
   transform: scale(0.9);
@@ -40,7 +42,7 @@
       visibility 0s;
 
     &::backdrop {
-      background-color: rgba($color: #000, $alpha: 50%);
+      background-color: #111;
       opacity: 1;
       transition:
         background-color 0.3s ease,
@@ -65,25 +67,30 @@
 
 .p-modal-close {
   position: fixed;
-  top: rem(7);
-  right: rem(7);
+  top: rem(12);
+  right: rem(12);
   display: grid;
   place-content: center;
-  width: rem(30);
-  height: rem(30);
+  width: rem(38);
+  height: rem(38);
   padding: 0;
   margin: 0;
   color: #fff;
   cursor: pointer;
-  background: #000;
+  background-image: linear-gradient(135deg, #785e3e, #e7c8a3);
   border: none;
   border-radius: 50%;
+
+  @include mq(tab) {
+    top: rem(32);
+    right: rem(32);
+  }
 
   &::before,
   &::after {
     position: absolute;
     inset: 0;
-    width: 60%;
+    width: 50%;
     height: 1px;
     margin: auto;
     content: "";

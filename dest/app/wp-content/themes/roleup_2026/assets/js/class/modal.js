@@ -51,17 +51,30 @@ class ModalManager {
 
     this.lastFocusedElement = document.activeElement;
     this.activeModal = modal;
+    const savedWindowScrollY = window.scrollY;
 
     try {
       modal.showModal();
+      this.resetModalScroll(modal);
+      this.restoreWindowScroll(savedWindowScrollY);
       // requestAnimationFrameを使用してトランジションのタイミングを制御
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           modal.classList.add(this.CLASSES.MODAL_OPEN);
           this.body.classList.add(this.CLASSES.BODY_LOCKED);
-          this.setInitialFocus(modal);
+          this.resetModalScroll(modal);
+          this.restoreWindowScroll(savedWindowScrollY);
+          this.setInitialFocus(modal, savedWindowScrollY);
+          requestAnimationFrame(() => {
+            this.resetModalScroll(modal);
+            this.restoreWindowScroll(savedWindowScrollY);
+          });
         });
       });
+      setTimeout(() => {
+        this.resetModalScroll(modal);
+        this.restoreWindowScroll(savedWindowScrollY);
+      }, this.ANIMATION_DURATION + 50);
     } catch (error) {
       console.error('モーダルを開く際にエラーが発生しました:', error);
     }
@@ -84,13 +97,42 @@ class ModalManager {
     }, this.ANIMATION_DURATION);
   }
 
-  setInitialFocus(modal) {
-    const focusableElements = this.getFocusableElements(modal);
-    if (focusableElements.length > 0) {
-      setTimeout(() => {
-        focusableElements[0].focus();
-      }, 100);
-    }
+  /**
+   * showModal / focus / SimpleBar 内などでスクロールが文末まで動くのを防ぐ
+   */
+  resetModalScroll(modal) {
+    if (!modal) return;
+    const resetEl = (el) => {
+      el.scrollTop = 0;
+      el.scrollLeft = 0;
+    };
+    resetEl(modal);
+    modal.querySelectorAll('.simplebar-content-wrapper').forEach(resetEl);
+    modal.querySelectorAll('*').forEach(resetEl);
+  }
+
+  /** html { scroll-behavior: smooth } 下でもページ位置がずれないよう同期スクロールで戻す */
+  restoreWindowScroll(y) {
+    const el = document.documentElement;
+    const prev = el.style.scrollBehavior;
+    el.style.scrollBehavior = 'auto';
+    window.scrollTo(0, y);
+    el.style.scrollBehavior = prev;
+  }
+
+  setInitialFocus(modal, savedWindowScrollY) {
+    setTimeout(() => {
+      // DOM 順の先頭フォーカスが本文末尾の a のとき、フォーカス追従で内側スクロールが文末になる。
+      // position:fixed の閉じるボタンへフォーカスすると追従スクロールが起きにくい。
+      const closeBtn = modal.querySelector('.js-modal-close');
+      const fallback = this.getFocusableElements(modal)[0];
+      const target = closeBtn || fallback;
+      if (target) {
+        target.focus({ preventScroll: true });
+      }
+      this.resetModalScroll(modal);
+      this.restoreWindowScroll(savedWindowScrollY);
+    }, 100);
   }
 
   restoreFocus() {

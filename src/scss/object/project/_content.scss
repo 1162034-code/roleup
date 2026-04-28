@@ -387,12 +387,26 @@
     margin-top: rem(54);
   }
 
+  .global-crossborder &,
+  .recruit-reason & {
+    @media (1080px <= width) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
   .global-crossborder & {
     margin-top: rem(40);
 
     @media (1080px <= width) {
-      grid-template-columns: repeat(3, 1fr);
       margin-top: rem(75);
+    }
+  }
+
+  .recruit-reason & {
+    margin-top: rem(20);
+
+    @media (1080px <= width) {
+      margin-top: rem(105);
     }
   }
 }

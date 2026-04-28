@@ -1,0 +1,642 @@
+@use "../../foundation" as *;
+
+/* ========================================
+  recruit
+======================================== */
+
+/* ----------------------------------------
+  Reason（ROLEUPを選ぶ理由）
+---------------------------------------- */
+.recruit-reason {
+  position: relative;
+  margin-top: rem(20);
+  overflow: hidden;
+  background: #111 url("../../../img/page/recruit/bg_sp.webp") no-repeat
+    center / cover;
+
+  @include mq(tab) {
+    margin-top: rem(73);
+    background-image: url("../../../img/page/recruit/bg.webp");
+  }
+
+  &__inner {
+    padding-block: rem(90);
+
+    @include mq(tab) {
+      padding-block: rem(140) rem(155);
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+
+    @media (1200px <= width) {
+      flex-direction: row;
+      align-items: end;
+    }
+
+    @include mq(tab) {
+      gap: rem(20);
+      justify-content: space-between;
+    }
+  }
+
+  &__txt-wrap {
+    @media (1200px <= width) {
+      flex: 0 0 rem(550);
+    }
+  }
+
+  &__desc {
+    color: #fff;
+    text-align: justify;
+  }
+}
+
+/* ----------------------------------------
+  Jobs（採用情報）
+---------------------------------------- */
+.recruit-jobs {
+  background-color: #fff;
+
+  &__inner {
+    padding-block: rem(90);
+
+    @include mq(tab) {
+      padding-block: rem(150);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+  }
+
+  &__lead {
+    font-family: var(--ff-mincho);
+    font-size: rem(13);
+    line-height: 1.8;
+    color: #111;
+
+    @include mq(tab) {
+      margin-top: rem(30);
+      font-size: rem(16);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(60);
+    margin-top: rem(50);
+
+    @include mq(pc) {
+      flex-direction: row;
+      gap: rem(100);
+      align-items: flex-start;
+      margin-top: rem(98);
+    }
+  }
+
+  &__img {
+    text-align: center;
+  }
+
+  &__companies {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  &__company {
+    & + & {
+      margin-top: rem(72);
+
+      @include mq(tab) {
+        margin-top: rem(150);
+      }
+    }
+  }
+
+  &__company-name-ja {
+    font-size: rem(24);
+    font-weight: 600;
+    line-height: 1;
+
+    @include mq(tab) {
+      font-size: rem(32);
+    }
+  }
+
+  &__company-name-en {
+    margin-top: rem(15);
+    font-family: var(--ff-garamond);
+    font-size: rem(14);
+    line-height: 1;
+    color: #b09e88;
+
+    @include mq(tab) {
+      font-size: rem(16);
+    }
+  }
+
+  &__company-desc {
+    margin-top: rem(18);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(6);
+    margin-top: rem(35);
+
+    @include mq(tab) {
+      gap: rem(16);
+      margin-top: rem(40);
+    }
+  }
+
+  &__list-label {
+    padding-bottom: rem(12);
+    font-size: rem(14);
+    font-weight: 600;
+    color: #b09e88;
+    border-bottom: 1px solid #b09e88;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  &__item {
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  &__item-trigger {
+    position: relative;
+    display: grid;
+    align-items: center;
+    width: 100%;
+    padding: rem(19) rem(30) rem(19) rem(2);
+    font-size: rem(14);
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    transition: opacity 0.2s;
+
+    @include mq(tab) {
+      padding: rem(19) rem(30) rem(19) rem(2);
+      font-size: rem(16);
+    }
+
+    &::after {
+      position: absolute;
+      inset-block: 0;
+      right: rem(4);
+      display: block;
+      width: rem(24);
+      height: rem(7);
+      margin-block: auto;
+      content: "";
+      background: url("../../../img/common/icon/arrow_solid_r_black.webp")
+        no-repeat center / contain;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.55;
+      }
+    }
+  }
+
+  &__item-ttl {
+    font-family: var(--ff-mincho);
+    font-size: rem(14);
+    line-height: 1.8;
+    color: #111;
+
+    @include mq(tab) {
+      font-size: rem(16);
+    }
+  }
+
+  &__item-arrow {
+    display: inline-block;
+    flex-shrink: 0;
+  }
+}
+
+/* ----------------------------------------
+  Flow（選考フロー）
+---------------------------------------- */
+.recruit-flow {
+  background: #f2f2f2 url("../../../img/common/logo_05.webp") no-repeat right
+    rem(-70) top / rem(290);
+
+  @include mq(tab) {
+    background-position: right top;
+    background-size: rem(550);
+  }
+
+  &__inner {
+    padding-block: rem(90);
+
+    @include mq(tab) {
+      padding-block: rem(142) rem(150);
+    }
+  }
+
+  &__lead {
+    margin-top: rem(20);
+
+    @include mq(tab) {
+      margin-top: rem(45);
+    }
+  }
+
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    justify-content: space-between;
+    margin-top: rem(50);
+    list-style: none;
+
+    @include mq(tab) {
+      position: relative;
+      flex-direction: row;
+      gap: rem(10);
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: rem(60);
+      z-index: 0;
+      width: 1px;
+      height: 100%;
+      content: "";
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        #e7c8a3 8%,
+        #785e3e 50%,
+        #e7c8a3 92%,
+        transparent
+      );
+
+      @include mq(tab) {
+        top: rem(90);
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #e7c8a3 8%,
+          #785e3e 50%,
+          #e7c8a3 92%,
+          transparent
+        );
+      }
+    }
+  }
+
+  &__step {
+    position: relative;
+    z-index: 1;
+
+    @include mq(tab) {
+      width: rem(180);
+      height: rem(180);
+      overflow: hidden;
+      background-image: linear-gradient(135deg, #785e3e, #e7c8a3);
+      border-radius: 50%;
+    }
+  }
+
+  &__step-inner {
+    position: relative;
+    z-index: 2;
+
+    @include mq(tab) {
+      top: 1px;
+      left: 1px;
+      width: calc(100% - rem(2));
+      height: calc(100% - rem(2));
+      padding: rem(28) rem(10);
+      text-align: center;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    @include mq(tab, max) {
+      display: grid;
+      grid-template-columns: rem(120) 1fr;
+      gap: rem(45);
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__step-ttl {
+    position: relative;
+    display: grid;
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: 1;
+    color: #b09e88;
+    text-align: center;
+
+    @include mq(tab, max) {
+      width: rem(120);
+      height: rem(120);
+      font-size: rem(16);
+      background-image: linear-gradient(135deg, #785e3e, #e7c8a3);
+      border-radius: 50%;
+    }
+
+    &::after {
+      @include mq(tab) {
+        display: block;
+        width: rem(32);
+        height: 1px;
+        margin: rem(15) auto rem(10);
+        content: "";
+        background: #d8d8d8;
+      }
+    }
+  }
+
+  &__step-ttl-inner {
+    @include mq(tab, max) {
+      position: relative;
+      top: 1px;
+      left: 1px;
+      z-index: 2;
+      display: grid;
+      place-content: center;
+      width: calc(100% - rem(2));
+      height: calc(100% - rem(2));
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  }
+
+  &__step-name {
+    margin-top: rem(10);
+    font-size: rem(14);
+    color: #b09e88;
+
+    @include mq(tab) {
+      font-size: rem(18);
+    }
+  }
+
+  &__step-desc {
+    position: relative;
+    font-family: var(--ff-mincho);
+    font-size: rem(16);
+    line-height: 1.7;
+    color: #111;
+
+    @include mq(tab) {
+      font-size: rem(14);
+      text-align: center;
+    }
+
+    &::before {
+      position: absolute;
+      inset-block: 0;
+      left: rem(-35);
+      display: block;
+      width: rem(25);
+      height: 1px;
+      margin-block: auto;
+      content: "";
+      background-color: #d8d8d8;
+    }
+  }
+}
+
+/* ----------------------------------------
+  Entry（エントリー CTA）
+---------------------------------------- */
+.recruit-entry {
+  position: relative;
+  background: url("../../../img/page/recruit/contact_bg.webp") no-repeat
+    center / cover;
+
+  &__inner {
+    padding-block: rem(48) rem(60);
+    text-align: center;
+
+    @include mq(tab) {
+      padding-block: rem(105) rem(140);
+    }
+  }
+
+  &__ttl {
+    font-family: var(--ff-garamond);
+    font-size: rem(50);
+    font-weight: 400;
+    background: var(--gradient-text-dark);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include mq(tab) {
+      font-size: rem(90);
+    }
+  }
+
+  &__btn-wrap {
+    margin-top: rem(18);
+
+    @include mq(tab) {
+      margin-top: rem(13);
+    }
+
+    .c-btn-gradient-gold {
+      font-size: rem(16);
+
+      @include mq(tab) {
+        font-size: rem(18);
+      }
+    }
+  }
+}
+
+/* ----------------------------------------
+  Modal（モーダル）
+---------------------------------------- */
+.recruit-modal {
+  padding: rem(55) rem(24);
+
+  @include mq(tab) {
+    padding: rem(80);
+  }
+
+  &__head {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: rem(-24);
+      display: block;
+      width: rem(6);
+      height: 100%;
+      content: "";
+      background-color: #8e7352;
+
+      @include mq(tab) {
+        left: rem(-80);
+        width: rem(14);
+      }
+    }
+  }
+
+  &__category {
+    display: inline-block;
+    padding: rem(4) rem(10);
+    font-size: rem(14);
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    background-color: #b09e88;
+    border-radius: 100vmax;
+  }
+
+  &__ttl {
+    font-size: rem(20);
+    font-weight: 900;
+
+    @include mq(tab) {
+      font-size: rem(32);
+    }
+  }
+
+  &__company {
+    font-size: rem(14);
+    font-weight: 600;
+    color: #858585;
+
+    @include mq(tab) {
+      font-size: rem(16);
+    }
+  }
+
+  &__body {
+    margin-top: rem(32);
+
+    @include mq(tab) {
+      margin-top: rem(48);
+    }
+  }
+
+  &__section {
+    & + & {
+      margin-top: rem(40);
+
+      @include mq(tab) {
+        margin-top: rem(56);
+      }
+    }
+  }
+
+  &__section-ttl {
+    padding-bottom: rem(5);
+    margin-bottom: rem(24);
+    font-size: rem(14);
+    font-weight: 600;
+    color: #b09e88;
+    border-bottom: 1px solid #b09e88;
+
+    @include mq(tab) {
+      margin-bottom: rem(32);
+    }
+  }
+
+  &__list {
+    li {
+      position: relative;
+      padding-left: 1em;
+      font-size: rem(14);
+      font-weight: 500;
+
+      @include mq(tab) {
+        font-size: rem(16);
+      }
+
+      & + li {
+        margin-top: rem(6);
+      }
+
+      &::before {
+        position: absolute;
+        top: calc(1lh - rem(16));
+        left: 0;
+        display: block;
+        width: rem(5);
+        height: rem(5);
+        content: "";
+        background-color: #111;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__dl {
+    div {
+      display: grid;
+      gap: rem(2);
+      padding-block: rem(20);
+      border-bottom: 1px solid #d8d8d8;
+
+      @include mq(tab) {
+        grid-template-columns: rem(130) 1fr;
+        gap: rem(16);
+      }
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      dt {
+        font-weight: 600;
+      }
+
+      dd {
+        font-size: rem(14);
+        font-weight: 500;
+
+        @include mq(tab) {
+          font-size: rem(16);
+        }
+      }
+    }
+  }
+
+  &__btn-wrap {
+    margin-top: rem(32);
+    text-align: center;
+
+    @include mq(tab) {
+      margin-top: rem(64);
+    }
+
+    .c-btn-gradient-gold {
+      font-size: rem(16);
+
+      @include mq(tab) {
+        font-size: rem(18);
+      }
+    }
+  }
+}
