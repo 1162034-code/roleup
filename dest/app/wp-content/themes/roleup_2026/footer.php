@@ -137,13 +137,21 @@
                   <span>Global Network</span>
                 </a>
               </li>
-              <?php /*
               <li class="l-footer__nav-item">
                 <a href="<?php echo home_url(); ?>/recruit/">
                   <span>Recruit</span>
                 </a>
               </li>
-              */ ?>
+              <li class="l-footer__nav-item">
+                <a href="<?php echo home_url(); ?>/contact/#privacy">
+                  <span>個人情報保護方針</span>
+                </a>
+              </li>
+              <li class="l-footer__nav-item">
+                <a href="<?php echo home_url(); ?>/contact/#security">
+                  <span>情報セキュリティ方針</span>
+                </a>
+              </li>
             </ul>
           </div>
         </nav>

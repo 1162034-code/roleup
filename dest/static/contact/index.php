@@ -13,7 +13,8 @@
     </div>
     <div class="p-page-header__info js-fade-in">
       <p class="p-page-header__tel">
-        <a href="tel:0368262170"><span class="p-page-header__tel-label u-txt-uppercase">tel</span>03<span class="hyphen">-</span>6826<span class="hyphen">-</span>2170</a></p>
+        <a href="tel:0368262170"><span class="p-page-header__tel-label u-txt-uppercase">tel</span>03<span class="hyphen">-</span>6826<span class="hyphen">-</span>2170</a>
+      </p>
       <p class="p-page-header__time">受付時間：平日 9:00〜17:30</p>
     </div>
   </div>
@@ -34,9 +35,9 @@
           </div>
           <address class="p-access__txt">
             <p>株式会社<span class="u-txt-uppercase">Roleup</span><br>
-            〒100-6328<br>
-            東京都千代田区丸の内２丁目４－１<br>
-            丸の内ビルディング２８階</p>
+              〒100-6328<br>
+              東京都千代田区丸の内２丁目４－１<br>
+              丸の内ビルディング２８階</p>
             <p class="u-mt-1lh">アクセス：東京駅 丸の内南口より徒歩3分</p>
           </address>
         </div>
@@ -45,5 +46,21 @@
         </div>
       </div>
     </section>
+
+    <div id="privacy" class="p-content-box js-fade-in">
+      <div class="p-editor">[privacy_policy id="3163" title="true"]</div>
+    </div>
+
+    <div id="handling-of-personal-information" class="p-content-box js-fade-in">
+      <div class="p-editor">[privacy_policy id="3164" title="true"]</div>
+    </div>
+
+    <div id="request-for-disclosure-of-personal-information" class="p-content-box js-fade-in">
+      <div class="p-editor">[privacy_policy id="3164" title="true"]</div>
+    </div>
+
+    <div id="security" class="p-content-box js-fade-in">
+      <div class="p-editor">[privacy_policy id="3165" title="true"]</div>
+    </div>
   </div>
 </div>

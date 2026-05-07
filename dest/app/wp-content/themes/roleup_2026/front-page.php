@@ -205,11 +205,15 @@
         <p class="home-performance__txt"><span class="u-br-pc">多様なニーズに対して一気通貫の支援を通じた、</span>信頼できる確かな実績。</p>
       </div>
       <div class="home-performance__body js-fade-in">
+        <?php
+        $announced_matter = get_field('announced-matter', 'option');
+        $completed_case = get_field('completed-case', 'option');
+        ?>
         <ul class="home-performance__stats">
           <li class="home-performance__stat">
             <h3 class="home-performance__stat-label">公表案件</h3>
             <p class="home-performance__stat-value">
-              <span class="home-performance__stat-num">12</span>
+              <span class="home-performance__stat-num"><?php echo $announced_matter; ?></span>
               <span class="home-performance__stat-unit">位</span>
             </p>
             <p class="home-performance__stat-sublabel">Announced Deals</p>
@@ -217,7 +221,7 @@
           <li class="home-performance__stat">
             <h3 class="home-performance__stat-label">完了案件</h3>
             <p class="home-performance__stat-value">
-              <span class="home-performance__stat-num">13</span>
+              <span class="home-performance__stat-num"><?php echo $completed_case; ?></span>
               <span class="home-performance__stat-unit">位</span>
             </p>
             <p class="home-performance__stat-sublabel">Completed Deals</p>

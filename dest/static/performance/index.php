@@ -75,48 +75,7 @@
         <p class="performance-league__about-txt">LSEG（London Stock Exchange Group）が四半期ごとに発表するM&Aアドバイザーのランキング。案件の金額・件数をもとに、各アドバイザーの実績を客観的に評価した業界標準の指標です。大手証券会社、投資銀行、独立系アドバイザーなど、すべてのM&Aアドバイザーが対象となります。</p>
       </div>
     </div>
-    <div class="performance-league__right">
-      <h3 class="performance-league__review-label">LSEG 日本M&Aレビュー</h3>
-      <ul class="performance-league__ranks">
-        <li class="performance-league__rank">
-          <h4 class="performance-league__rank-label">公表案件</h4>
-          <p class="performance-league__rank-num"><span class="performance-league__rank-val">12</span>位</p>
-          <p class="performance-league__rank-en">Announced Deals</p>
-        </li>
-        <li class="performance-league__rank">
-          <h4 class="performance-league__rank-label">完了案件</h4>
-          <p class="performance-league__rank-num"><span class="performance-league__rank-val">13</span>位</p>
-          <p class="performance-league__rank-en">Completed Deals</p>
-        </li>
-      </ul>
-      <p class="performance-league__rank-note">※ ランキングはLSEG（London Stock Exchange Group）が公表する日本M&Aレビューに基づく</p>
-
-      <!-- <div class="performance-league__history">
-        <p class="performance-league__history-ttl">過去のランキング推移</p>
-        <ul class="performance-league__history-list">
-          <li class="performance-league__history-item">
-            <p class="performance-league__history-quarter">2024年 Q3</p>
-            <p class="performance-league__history-rank"><span class="performance-league__history-val">32</span>位</p>
-            <p class="performance-league__history-type">公表案件</p>
-          </li>
-          <li class="performance-league__history-item">
-            <p class="performance-league__history-quarter">2024年 Q4</p>
-            <p class="performance-league__history-rank"><span class="performance-league__history-val">30</span>位</p>
-            <p class="performance-league__history-type">公表案件</p>
-          </li>
-          <li class="performance-league__history-item">
-            <p class="performance-league__history-quarter">2025年 Q1</p>
-            <p class="performance-league__history-rank"><span class="performance-league__history-val">28</span>位</p>
-            <p class="performance-league__history-type">公表案件</p>
-          </li>
-          <li class="performance-league__history-item">
-            <p class="performance-league__history-quarter">2025年 Q2</p>
-            <p class="performance-league__history-rank"><span class="performance-league__history-val">25</span>位</p>
-            <p class="performance-league__history-type">公表案件</p>
-          </li>
-        </ul>
-      </div> -->
-    </div>
+    [performance_league]
   </div>
 </section>
 

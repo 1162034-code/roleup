@@ -169,19 +169,19 @@ body.block-editor-page .wp-block-post-content h3,
 body.block-editor-page .wp-block-post-content h4,
 .block-editor-page .wp-block-post-content h4,
 .wp-block-post-content h4 {
-  margin-block: 3.125rem 1.5625rem;
+  margin-block: 1.25rem 0.625rem;
   font-size: 1.125rem;
 }
 body.block-editor-page .wp-block-post-content h5,
 .block-editor-page .wp-block-post-content h5,
 .wp-block-post-content h5 {
-  margin-block: 3.125rem 1.5625rem;
+  margin-block: 1.25rem 0.625rem;
   font-size: 1rem;
 }
 body.block-editor-page .wp-block-post-content h6,
 .block-editor-page .wp-block-post-content h6,
 .wp-block-post-content h6 {
-  margin-block: 3.125rem 1.5625rem;
+  margin-block: 1.25rem 0.625rem;
   font-size: 1rem;
 }
 body.block-editor-page .wp-block-post-content p,

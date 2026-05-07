@@ -344,13 +344,15 @@
     background: #d8d8d8;
   }
 }
+.recruit-flow__step-ttl-inner {
+  display: grid;
+}
 @media screen and (max-width: 768px) {
   .recruit-flow__step-ttl-inner {
     position: relative;
     top: 1px;
     left: 1px;
     z-index: 2;
-    display: grid;
     place-content: center;
     width: calc(100% - 0.125rem);
     height: calc(100% - 0.125rem);

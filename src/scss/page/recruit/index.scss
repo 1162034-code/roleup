@@ -375,12 +375,12 @@
   }
 
   &__step-ttl-inner {
+    display: grid;
     @include mq(tab, max) {
       position: relative;
       top: 1px;
       left: 1px;
       z-index: 2;
-      display: grid;
       place-content: center;
       width: calc(100% - rem(2));
       height: calc(100% - rem(2));

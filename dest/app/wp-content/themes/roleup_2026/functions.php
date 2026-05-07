@@ -6,6 +6,8 @@ $inc_files = [
   'setup/enqueue',
   // コンテンツ
   'content/post-types/news',
+  'content/post-types/privacy',
+  'content/post-types/recruit',
   // ヘルパー
   'helpers/template-tags',
   'helpers/shortcodes',

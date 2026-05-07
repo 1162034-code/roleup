@@ -150,80 +150,13 @@ fieldset {
   overscroll-behavior: contain;
   border: 1px solid #cdcdcd;
 
-  section {
-    counter-reset: ttl-counter;
-
-    & + section {
-      margin-top: rem(80);
-    }
-
+  .p-editor {
     h2 {
-      margin-bottom: 1em;
-      font-size: rem(26);
-      font-weight: 500;
-      text-align: center;
-    }
-
-    h3 {
-      margin-block: 2em 1em;
-      font-size: rem(20);
-      font-weight: 500;
-      counter-increment: ttl-counter;
-
-      &::before {
-        margin-right: 0.5em;
-        content: counter(ttl-counter) "." attr(title);
+      &:first-of-type {
+        margin-block-start: 0;
+        text-align: center;
       }
     }
-
-    h4 {
-      margin-block: 1em 0;
-      font-size: rem(18);
-      font-weight: 500;
-    }
-
-    ol,
-    ul {
-      padding-left: 1.4em;
-      margin-bottom: rem(12);
-
-      li + li {
-        margin-top: rem(4);
-      }
-    }
-
-    ol {
-      counter-reset: my-counter;
-
-      li {
-        position: relative;
-        padding-left: 1.4em;
-
-        &::before {
-          position: absolute;
-          top: calc(1lh - 0.45em);
-          left: 0;
-          box-sizing: border-box;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 1.3em;
-          height: 1.3em;
-          font-size: 0.8em;
-          line-height: 1;
-          content: counter(my-counter);
-          counter-increment: my-counter;
-          border: 1px solid;
-          border-radius: 50%;
-        }
-      }
-    }
-  }
-
-  .p-form__policy-address {
-    margin: rem(12) 0;
-    font-style: normal;
-    line-height: 1.6;
   }
 }
 
@@ -296,9 +229,14 @@ fieldset {
   width: min(100%, rem(320));
   margin-inline: auto;
   margin-top: 40px;
+  transition: 0.3s;
+  transition-property: opacity, filter;
 
   &.is-disabled {
+    pointer-events: none;
     cursor: not-allowed;
+    opacity: 0.5;
+    filter: grayscale(100%);
   }
 
   input[type="submit"] {
