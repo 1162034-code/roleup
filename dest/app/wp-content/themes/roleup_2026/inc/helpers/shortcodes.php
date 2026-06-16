@@ -38,7 +38,7 @@ if (! defined('ABSPATH')) exit;
           '株式会社ROLEUP' => array(
             'name_ja' => '株式会社<span class="u-txt-uppercase">Roleup</span>',
             'name_en' => 'M&amp;A Advisory',
-            'desc' => '<span class="u-br">中小企業の事業承継・M&amp;Aを、</span>ソーシングからクロージングまで一気通貫で支援するM&amp;Aアドバイザリーファームです。'
+            'desc' => '<span class="u-br">企業の成長を、資本と経営の両面から</span>一気通貫で支援するM&amp;Aプロフェッショナルファームです。'
           ),
           'ROLEUP税理士法人' => array(
             'name_ja' => '<span class="u-txt-uppercase">Roleup</span>税理士法人',
@@ -48,7 +48,7 @@ if (! defined('ABSPATH')) exit;
           'ROLEUP監査法人' => array(
             'name_ja' => '<span class="u-txt-uppercase">Roleup</span>監査法人',
             'name_en' => 'Audit &amp; Assurance',
-            'desc' => '<span class="u-br">M&amp;A関連の財務デューデリジェンス、バリュエーション、上場準備支援など、</span>監査・保証業務を担います。'
+            'desc' => '<span class="u-br">M&amp;A後における財務諸表監査・AUP業務をはじめ、会計・財務支援等、ステークホルダーに求められる品質を担保するための監査・保証業務やアドバイザリー業務を提供します。'
           )
         );
 
@@ -254,6 +254,13 @@ if (! defined('ABSPATH')) exit;
 
         // ACFフィールド取得（投稿IDを明示的に指定）
         $business_contents = get_field('business-contents-field', $post_id);
+        $business_contents_items = array_values(array_filter(
+          is_array($business_contents) ? $business_contents : [],
+          function ($content) {
+            return !empty($content['business-contents']);
+          }
+        ));
+        $business_text = get_field('business-text', $post_id);
         $requirements_group = get_field('requirements-group', $post_id);
         $employment_group = get_field('employment-group', $post_id);
 
@@ -287,20 +294,19 @@ if (! defined('ABSPATH')) exit;
           <?php endif; ?>
         </div>
         <div id="<?php echo esc_attr($modal_desc_id); ?>" class="recruit-modal__body">
-          <?php if ($business_contents && is_array($business_contents)) : ?>
-            <section class="recruit-modal__section">
-              <h3 class="recruit-modal__section-ttl">業務内容</h3>
+          <section class="recruit-modal__section">
+            <h3 class="recruit-modal__section-ttl">業務内容</h3>
+              <?php if ($business_contents_items) : ?>
               <ul class="recruit-modal__list">
-                <?php foreach ($business_contents as $content) :
-                  if (!empty($content['business-contents'])) :
-                ?>
-                  <li class="recruit-modal__item"><?php echo esc_html($content['business-contents']); ?></li>
-                <?php
-                  endif;
-                endforeach; ?>
+                <?php foreach ($business_contents_items as $content) : ?>
+                  <li class="recruit-modal__item"><?php echo wp_kses_post($content['business-contents']); ?></li>
+                <?php endforeach; ?>
               </ul>
+              <?php endif; ?>
+              <?php if (!empty($business_text)) : ?>
+                <p><?php echo nl2br(wp_kses_post($business_text)); ?></p>
+              <?php endif; ?>
             </section>
-          <?php endif; ?>
 
           <?php if ($requirements_group || ($requirements_field && is_array($requirements_field))) : ?>
             <section class="recruit-modal__section">

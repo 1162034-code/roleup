@@ -188,7 +188,7 @@
           <h3 class="recruit-flow__step-ttl">
             <span class="recruit-flow__step-ttl-inner">
               <span class="recruit-flow__step-num">03</span>
-              <span class="recruit-flow__step-name">一次面接</span>
+              <span class="recruit-flow__step-name">一次（二次）面接</span>
             </span>
           </h3>
           <p class="recruit-flow__step-desc">マネージャーによる<br>面接を実施します</p>

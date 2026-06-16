@@ -701,12 +701,7 @@ address {
   main（共通）
 ======================================== */
 .l-main__inner {
-  padding-top: calc(var(--header-h) - 0.625rem);
-}
-@media screen and (min-width: 769px) {
-  .l-main__inner {
-    padding-top: calc(var(--header-h) + 0.9375rem);
-  }
+  padding-top: calc(var(--header-h) + 0.9375rem);
 }
 
 /* ========================================
