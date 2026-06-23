@@ -99,6 +99,11 @@
                   <span>監査・AUP</span>
                 </a>
               </li>
+              <li class="l-footer__nav-item">
+                <a href="<?php echo home_url(); ?>/service/#professional">
+                  <span>プロフェッショナル人材紹介</span>
+                </a>
+              </li>
             </ul>
           </div>
           <div class="l-footer__nav-col">

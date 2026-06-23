@@ -30,6 +30,7 @@ $nav_items = [
       ['label' => 'PMI支援', 'url' => $nav_home . '/service/#pmi'],
       ['label' => '税務サービス', 'url' => $nav_home . '/service/#tax'],
       ['label' => '監査・AUP', 'url' => $nav_home . '/service/#audit'],
+      ['label' => 'プロフェッショナル人材紹介', 'url' => $nav_home . '/service/#professional'],
     ],
   ],
   [

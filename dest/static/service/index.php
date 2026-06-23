@@ -33,6 +33,9 @@
           <li>
             <a class="p-nav-page__link" href="#audit">監査・AUP</a>
           </li>
+          <li>
+            <a class="p-nav-page__link" href="#professional">プロフェッショナル人材紹介</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -182,6 +185,29 @@
     </div>
     <div class="service-item__img">
       <img src="[theme_dir]/assets/img/page/service/img_06.webp" alt="監査・AUP" width="430" height="287">
+    </div>
+  </div>
+</section>
+
+<!-- 07: プロフェッショナル人材紹介業 -->
+<section id="professional" class="service-item js-fade-in">
+  <div class="service-item__inner c-container">
+    <p class="service-item__num-wrap">
+      <span class="service-item__num">07</span>
+      <span class="service-item__label">Service</span>
+    </p>
+    <div class="service-item__content">
+      <h2 class="service-item__ttl">プロフェッショナル人材紹介</h2>
+      <p class="service-item__desc">M&Aの支援先やクライアントに対して、経営の中核を担う人材を紹介。後継者候補・CEO・CXOなど、企業のフェーズやニーズに合わせた経営幹部のマッチングを支援します。</p>
+      <hr class="service-item__line">
+      <ul class="service-item__features">
+        <li>後継者候補・CEO・CXOなどの経営幹部人材の紹介</li>
+        <li>PMI支援における経営・専門人材の紹介</li>
+        <li>企業のフェーズ・ニーズに応じた最適人材のマッチング</li>
+      </ul>
+    </div>
+    <div class="service-item__img">
+      <img src="[theme_dir]/assets/img/page/service/img_07.webp" alt="プロフェッショナル人材紹介" width="430" height="287">
     </div>
   </div>
 </section>

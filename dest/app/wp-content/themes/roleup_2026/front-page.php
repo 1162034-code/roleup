@@ -152,6 +152,14 @@
             <p class="home-service__card-desc">法定監査およびAUP業務の実施。</p>
           </a>
         </li>
+        <!-- Card 7 -->
+        <li class="home-service__card js-fade-in">
+          <a href="<?php echo home_url(); ?>/service/#professional" class="home-service__card-link">
+            <p class="home-service__card-category">Professional Talent Introduction</p>
+            <h3 class="home-service__card-ttl">プロフェッショナル人材紹介</h3>
+            <p class="home-service__card-desc">後継者候補・CEO・CXOなどの経営幹部人材の紹介。</p>
+          </a>
+        </li>
       </ul>
     </div>
   </section>
