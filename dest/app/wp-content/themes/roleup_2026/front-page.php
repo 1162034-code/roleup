@@ -138,13 +138,29 @@
         </li>
         <!-- Card 5 -->
         <li class="home-service__card js-fade-in">
+          <span class="home-service__card-link">
+            <p class="home-service__card-category">Strategy & Organization Consulting</p>
+            <h3 class="home-service__card-ttl">戦略・組織コンサルティング</h3>
+            <p class="home-service__card-desc">経営戦略の立案から業務改革・経営管理高度化の支援。</p>
+          </span>
+        </li>
+        <!-- Card 6 -->
+        <li class="home-service__card js-fade-in">
+          <span class="home-service__card-link">
+            <p class="home-service__card-category">Risk Advisory</p>
+            <h3 class="home-service__card-ttl">リスクアドバイザリー</h3>
+            <p class="home-service__card-desc">ガバナンス・サイバーセキュリティ・GX等の経営基盤の構築。</p>
+          </span>
+        </li>
+        <!-- Card 7 -->
+        <li class="home-service__card js-fade-in">
           <a href="<?php echo home_url(); ?>/service/#tax" class="home-service__card-link">
             <p class="home-service__card-category">Tax Service</p>
             <h3 class="home-service__card-ttl">税務サービス</h3>
             <p class="home-service__card-desc">税務顧問・申告、税務ストラクチャリングサポートの実行。</p>
           </a>
         </li>
-        <!-- Card 6 -->
+        <!-- Card 8 -->
         <li class="home-service__card js-fade-in">
           <a href="<?php echo home_url(); ?>/service/#audit" class="home-service__card-link">
             <p class="home-service__card-category">Audit Service</p>
@@ -152,12 +168,12 @@
             <p class="home-service__card-desc">法定監査およびAUP業務の実施。</p>
           </a>
         </li>
-        <!-- Card 7 -->
+        <!-- Card 9 -->
         <li class="home-service__card js-fade-in">
           <a href="<?php echo home_url(); ?>/service/#professional" class="home-service__card-link">
             <p class="home-service__card-category">Professional Talent Introduction</p>
             <h3 class="home-service__card-ttl">プロフェッショナル人材紹介</h3>
-            <p class="home-service__card-desc">後継者候補・CEO・CXOなどの経営幹部人材の紹介。</p>
+            <p class="home-service__card-desc">後継者候補・CEO・CXOなど経営幹部人材紹介。</p>
           </a>
         </li>
       </ul>

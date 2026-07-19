@@ -90,6 +90,15 @@
                 </a>
               </li>
               <li class="l-footer__nav-item">
+                <a class="no-link">
+                  <span>戦略・組織コンサルティング</span>
+                </a>
+              </li>
+              <li class="l-footer__nav-item">
+                <a class="no-link">
+                  <span>リスクアドバイザリー</span>
+                </a>
+              <li class="l-footer__nav-item">
                 <a href="<?php echo home_url(); ?>/service/#tax">
                   <span>税務サービス</span>
                 </a>
